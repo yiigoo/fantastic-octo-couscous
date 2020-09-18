@@ -20,8 +20,8 @@ a{
 a:link,a:visited,a:hover,a:active{
     text-decoration: none;
 }
-.link-focus:active{
-	background-color: #eee;
+a.item:active{
+	background-color: #f8f8f8;
 }
 .text-primary{
 	color: #413122 !important;
@@ -81,7 +81,42 @@ a:link,a:visited,a:hover,a:active{
 	position: relative;
 	z-index: 2;
 	.home-swiper{
-		padding: .533333rem 0;
+		margin-top: .533333rem;
+		padding: 0 0.426667rem .426667rem;
+		.van-swipe__indicators{
+			bottom: .266667rem;
+		}
+		.wrapper{
+			.title{
+				position: absolute;
+				color: #fff;
+				font-weight: bold;
+				font-size: .533333rem;
+				line-height: .8rem;
+				height: .8rem;
+				overflow: hidden;
+				bottom: .52rem;
+				width: 100%;
+				padding: 0 .426667rem;
+			}
+			img{
+				max-width: 100%;
+				height: 4rem;
+				border-radius: .16rem;
+				display: block;
+				font-size: 0;
+			}
+		}
+		.van-swipe__indicator{
+			width: .213333rem;
+			height: .106667rem;
+			opacity: 1;
+			border-radius: .133333rem;
+			transition: .3s width;
+		}
+		.van-swipe__indicator--active{
+			width: .453333rem;
+		}
 	}
 	.home-header{
 		margin-top: -4rem;
@@ -139,10 +174,9 @@ a:link,a:visited,a:hover,a:active{
 		float: right;
 		font-size: .32rem;
 		color:#999;
-		height: .64rem;
-		line-height: .586667rem;
-		padding: 0 .32rem;
+		padding: 0.05rem 0.32rem;
 		font-weight: normal;
+		line-height: 1.5;
 	}
 }
 .base-list{
@@ -185,9 +219,17 @@ a:link,a:visited,a:hover,a:active{
 }
 .base-img-list{
 	height: 3.866667rem;
+	margin-bottom: .426667rem;
 	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling:touch;
 	display: flex;
 	margin-right: -.426667rem;
+	.temp-item{
+		content: ' ';
+		width: .426667rem;
+		height: 3.866667rem;
+	}
 	.item{
 		position: relative;
 		width: 3.866667rem;
@@ -256,14 +298,32 @@ a:link,a:visited,a:hover,a:active{
 	}
 }
 .base-list-2{
+	margin: 0 -.426667rem;
+	
+	.van-swipe{
+		padding-bottom: .44rem;
+	}
+	.van-swipe__indicator{
+		opacity: 1;
+		background-color: #ccc;
+		width: 8px;
+		height: 8px;
+		
+	}
+	.van-swipe__indicator:not(:last-child){
+		margin-right: 10px;
+	}
+	.van-swipe__indicator--active{
+		background-color: #36B37E !important;
+	}
 	.wrapper{
-		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-		border-radius: .16rem;
 		padding: .373333rem;
 	}
 	.item{
-		display: block;
 		display: flex;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+		border-radius: .16rem;
+		padding: .373333rem;
 		.img{
 			width: 3.093333rem;
 			height: 4.266667rem;

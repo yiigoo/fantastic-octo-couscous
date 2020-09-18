@@ -9,8 +9,11 @@
     <script src="assets/js/flexible.min.js"></script>
     <script src="assets/js/fastclick.js"></script>
     <script src="assets/js/base.js"></script>
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/vant.js"></script>
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/icon.css">
+    <link rel="stylesheet" href="assets/css/vant.css">
 </head>
 <body>
     <div class="index-bg">
@@ -23,8 +26,27 @@
                 <input type="text" placeholder="搜索你感兴趣的内容" />
             </div>
         </div>
-        <div class="home-swiper">
-            
+        <div class="home-swiper" id="swiper-1">
+            <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
+                <van-swipe-item>
+                    <div class="wrapper">
+                        <img src="./assets/images/p8.png" alt="" />
+                        <div class="title">欢迎来到叙州区文旅云</div>
+                    </div>
+                </van-swipe-item>
+                <van-swipe-item>
+                    <div class="wrapper">
+                        <img src="./assets/images/p8.png" alt="" />
+                        <div class="title">欢迎来到叙州区文旅云</div>
+                    </div>
+                </van-swipe-item>
+                <van-swipe-item>
+                    <div class="wrapper">
+                        <img src="./assets/images/p8.png" alt="" />
+                        <div class="title">欢迎来到叙州区文旅云</div>
+                    </div>
+                </van-swipe-item>
+            </van-swipe>
         </div>
         <div class="home-md page-gapper">
             <div class="home-guide">
@@ -84,28 +106,78 @@
                 <div class="item">11月</div>
                 <div class="item">12月</div>
             </div>
-            <div class="base-list-2">
-                <div class="wrapper">
-                    <a href="#" class="item">
-                        <div class="img">
-                            <div class="tag">报名中</div>
-                            <img src="./assets/images/p3.png" alt="" />
-                            <div class="title">
-                                叙州区<br />
-                                最佳活动
-                            </div>
+            <div class="base-list-2" id="swiper-2">
+                <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
+                    <van-swipe-item>
+                        <div class="wrapper">
+                            <a href="#" class="item">
+                                <div class="img">
+                                    <div class="tag">报名中</div>
+                                    <img src="./assets/images/p3.png" alt="" />
+                                    <div class="title">
+                                        叙州区<br />
+                                        最佳活动
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        文旅资讯活动新闻发布会文旅资讯文旅资讯活动
+                                    </div>
+                                    <div class="text">
+                                        活动时间：2020年9月20日 星期五下午2点到6点<br />
+                                        报名时间：2020年8月1日至8月30日
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="info">
-                            <div class="title">
-                                文旅资讯活动新闻发布会文旅资讯文旅资讯活动
-                            </div>
-                            <div class="text">
-                                活动时间：2020年9月20日 星期五下午2点到6点<br />
-                                报名时间：2020年8月1日至8月30日
-                            </div>
+                    </van-swipe-item>
+                    <van-swipe-item>
+                        <div class="wrapper">
+                            <a href="#" class="item">
+                                <div class="img">
+                                    <div class="tag">报名中</div>
+                                    <img src="./assets/images/p3.png" alt="" />
+                                    <div class="title">
+                                        叙州区<br />
+                                        最佳活动
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        文旅资讯活动新闻发布会文旅资讯文旅资讯活动
+                                    </div>
+                                    <div class="text">
+                                        活动时间：2020年9月20日 星期五下午2点到6点<br />
+                                        报名时间：2020年8月1日至8月30日
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    </van-swipe-item>
+                    <van-swipe-item>
+                        <div class="wrapper">
+                            <a href="#" class="item">
+                                <div class="img">
+                                    <div class="tag">报名中</div>
+                                    <img src="./assets/images/p3.png" alt="" />
+                                    <div class="title">
+                                        叙州区<br />
+                                        最佳活动
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        文旅资讯活动新闻发布会文旅资讯文旅资讯活动
+                                    </div>
+                                    <div class="text">
+                                        活动时间：2020年9月20日 星期五下午2点到6点<br />
+                                        报名时间：2020年8月1日至8月30日
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </van-swipe-item>
+                </van-swipe>
             </div>
     
             <div class="base-title">
@@ -166,9 +238,20 @@
                     <div class="tag">4A景区</div>
                     <div class="title">景点景点名称景点名称名称</div>
                 </a>
+                <!-- temp-item flex 布局补个空隙 -->
+                <div class="temp-item">&nbsp;</div>
             </div>
     
         </div>    
     </div>
 </body>
+<script>
+    Vue.use(vant)
+    new Vue({
+        el: '#swiper-1'
+    })
+    new Vue({
+        el: '#swiper-2'
+    })
+</script>
 </html>
