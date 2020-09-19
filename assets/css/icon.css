@@ -7,6 +7,12 @@
   background: url('../images/icon/icon-search.svg') no-repeat;
   background-size: 0.4rem 0.4rem;
 }
+.icon-clear {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: url('../images/icon/icon-clear.svg') no-repeat;
+  background-size: 0.4rem 0.4rem;
+}
 .icon-guide {
   width: 1.333333rem;
   height: 1.333333rem;
