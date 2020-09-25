@@ -6,6 +6,7 @@ inherit  非遗传承
 news  文旅资讯
 reserve  场馆预订
 server  文旅服务
+shop  积分商城
 team  明星团队
 user 个人中心
 volunteer  志愿者
