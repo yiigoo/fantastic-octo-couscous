@@ -505,12 +505,16 @@ a.item:active {
   background: #D9F1EF;
 }
 .art-list .item {
+  width: 33.3333%;
+  padding: 0 15px 15px;
+  float: left;
   display: block;
   text-align: center;
 }
 .art-list .item img {
   width: 2.133333rem;
   height: 2.133333rem;
+  border-radius: 50%;
 }
 .art-list .item .name {
   font-size: 0.373333rem;
@@ -543,7 +547,7 @@ a.item:active {
 }
 .page-detail .title {
   font-size: 18px;
-  padding: 10px 0 10px;
+  padding: 15px 0 10px;
   font-weight: bold;
 }
 .page-detail .sub-title {
@@ -584,6 +588,9 @@ a.item:active {
   display: inline-block;
   text-align: center;
   min-width: 75px;
+}
+.page-table-cell .cell .label .auto-width {
+  min-width: auto;
 }
 .page-table-cell .cell .value {
   padding-top: 3px;
@@ -848,4 +855,37 @@ a.item:active {
   text-align: right;
   font-weight: bold;
   font-size: 18px;
+}
+.base-large-list .item {
+  margin-bottom: 0;
+  padding: 8px 0;
+}
+.base-large-list .item .img {
+  width: 128px;
+  height: 128px;
+}
+.base-large-list .item .img img {
+  width: 128px;
+  height: 128px;
+}
+.base-large-list .item .sub {
+  margin-top: 8px;
+}
+.full-img-title {
+  position: relative;
+}
+.full-img-title img {
+  width: 100%;
+  display: block;
+  font-size: 0;
+}
+.full-img-title .text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  padding-left: 30px;
+  z-index: 1;
 }
