@@ -1,10 +1,10 @@
 /* font icon */
 html {
-  background: #fff;
+  background-color: #eee;
 }
 body {
   color: #000;
-  background: #fff;
+  background-color: #eee;
   font-size: 0.32rem !important;
   line-height: 1.7;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
@@ -24,9 +24,6 @@ a:active {
 a.item:active {
   background-color: #f8f8f8;
 }
-.text-primary {
-  color: #413122 !important;
-}
 .text-info {
   color: #82766a;
 }
@@ -35,8 +32,35 @@ a.item:active {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.pull-left {
+  float: left;
+}
 .pull-right {
   float: right;
+}
+.clearfix {
+  display: block;
+  zoom: 1;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.mt5 {
+  margin-top: 0.133333rem;
+}
+.mt10 {
+  margin-top: 0.266667rem;
+}
+.mt15 {
+  margin-top: 0.4rem;
+}
+.mt20 {
+  margin-top: 0.533333rem;
 }
 .mb5 {
   margin-bottom: 0.133333rem;
@@ -60,6 +84,24 @@ a.item:active {
   width: 100%;
   display: block;
   font-size: 0;
+}
+.text-sub {
+  color: #999;
+}
+.text-primary {
+  color: #158A7E;
+}
+.text-green {
+  color: #2DB553;
+}
+.text-danger {
+  color: #FF5630;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
 }
 .page-gapper {
   padding: 0 0.426667rem;
@@ -410,21 +452,21 @@ a.item:active {
 .page-tabs .item:not(:last-child) {
   margin-right: 0.266667rem;
 }
-.base-news-list .item {
+.base-page-list .item {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0.266667rem 0;
 }
-.base-news-list .item .img {
+.base-page-list .item .img {
   width: 2.666667rem;
   height: 1.76rem;
   margin-right: 0.1rem;
 }
-.base-news-list .item .img img {
+.base-page-list .item .img img {
   width: 2.666667rem;
   height: 1.76rem;
 }
-.base-news-list .item .sub {
+.base-page-list .item .sub {
   margin-top: 0.2rem;
 }
 .btn {
@@ -454,6 +496,9 @@ a.item:active {
   border-color: #ccc;
   color: #fff;
 }
+.btn-long {
+  width: 100%;
+}
 .page-tag {
   color: #158A7E;
   padding: 0.106667rem 0.213333rem;
@@ -472,4 +517,335 @@ a.item:active {
 }
 .art-list .item .sub {
   color: #999;
+}
+.page-md-bg {
+  background-color: #fff;
+}
+.loading-over {
+  margin: 0.533333rem 0;
+  color: #999;
+  text-align: center;
+  position: relative;
+}
+.loading-over::before,
+.loading-over::after {
+  background-color: #ddd;
+  height: 1px;
+  width: 98px;
+  position: absolute;
+  top: 50%;
+  left: 27px;
+  content: ' ';
+}
+.loading-over::after {
+  left: auto;
+  right: 27px;
+}
+.page-detail .title {
+  font-size: 18px;
+  padding: 10px 0 10px;
+  font-weight: bold;
+}
+.page-detail .sub-title {
+  margin-bottom: 15px;
+  display: flex;
+}
+.page-detail .sub-title .sub {
+  color: #999;
+}
+.page-detail .sub-title .pull-right {
+  text-align: right;
+  flex: 1;
+}
+.page-detail .sub-title .primary {
+  color: #2DB553;
+}
+.page-table-cell {
+  padding: 16px 0;
+  margin-bottom: 15px;
+}
+.page-table-cell.border {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.page-table-cell.border-dashed {
+  border-top: 1px dashed #ddd;
+  border-bottom: 1px dashed #ddd;
+}
+.page-table-cell .cell {
+  display: flex;
+  justify-items: start;
+}
+.page-table-cell .cell .label span {
+  background: #D9F1EF;
+  border-radius: 4px;
+  color: #158A7E;
+  padding: 3px 5px;
+  display: inline-block;
+  text-align: center;
+  min-width: 75px;
+}
+.page-table-cell .cell .value {
+  padding-top: 3px;
+  padding-left: 10px;
+  flex: 1;
+}
+.page-table-cell .cell:not(:last-child) {
+  margin-bottom: 10px;
+}
+.page-table-cell .primary {
+  color: #2DB553;
+}
+.page-table-cell-sub .cell .label span {
+  background-color: transparent;
+  color: #999;
+}
+.editor {
+  padding-bottom: 20px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.editor p {
+  margin-bottom: 20px;
+}
+.editor img {
+  max-width: 100%;
+}
+.share-bar {
+  padding: 18px 0;
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+}
+.share-bar .item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.share-bar .item:not(:last-child) {
+  margin-right: 10px;
+}
+.page-title {
+  padding: 0.2rem 0.426667rem;
+  font-size: 14px;
+  font-weight: bold;
+}
+.comment-list .item {
+  padding-top: 12px;
+  display: flex;
+}
+.comment-list .item .avatar {
+  margin-right: 7px;
+  width: 30px;
+  height: 30px;
+}
+.comment-list .item .avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.comment-list .item .text {
+  font-size: 14px;
+  padding: 7px 0 15px 0;
+}
+.comment-list .item .info {
+  margin-top: 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+}
+.comment-list .item .info .name {
+  color: #666;
+}
+.comment-list .item .info .date {
+  color: #999;
+}
+.comment-list .item .info .bottom {
+  text-align: right;
+  color: #999;
+}
+.more-list {
+  text-align: center;
+  padding: 10px 0;
+}
+.more-list a {
+  color: #158A7E;
+}
+.relation-list .item {
+  margin: 0;
+  padding: 10px 0;
+}
+.relation-list .item .img {
+  width: 100px;
+  height: 66px;
+}
+.relation-list .item .img img {
+  width: 100px;
+  height: 66px;
+}
+.relation-list .item .sub {
+  margin-top: 5px;
+}
+.fiexd-bottom .height {
+  height: 65px;
+}
+.fiexd-bottom .wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+.base-activity-list .item {
+  padding: 8px 0 18px;
+  position: relative;
+}
+.base-activity-list .tag {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  padding: 2px 12px;
+  background-color: #ddd;
+  color: #999;
+  border-radius: 0px 4px 4px 0px;
+}
+.base-activity-list .tag-active {
+  background-color: #FFAB00;
+  color: #333;
+}
+.base-activity-list .img img {
+  width: 100%;
+  border-radius: 6px;
+}
+.base-activity-list .title {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+.base-activity-list .clearfix {
+  line-height: 20px;
+}
+.base-activity-list .clearfix .icon {
+  vertical-align: top;
+}
+.base-activity-list .sub {
+  color: #999;
+}
+.base-activity-list .primary {
+  color: #2DB553;
+}
+.page-card {
+  position: relative;
+  min-height: 80px;
+  padding-top: 30px;
+}
+.page-card .card-bg {
+  position: absolute;
+  background-color: #158A7E;
+  height: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.page-card .card-wrapper {
+  margin: 0 16px;
+  padding: 12px;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.page-card .card-wrapper .relation-list .item {
+  padding: 0;
+}
+.page-card .success,
+.page-card .fail {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2DB553;
+  padding-bottom: 40px;
+}
+.page-card .success .icon,
+.page-card .fail .icon {
+  display: block;
+  margin: 25px auto 10px;
+}
+.page-card .fail {
+  color: #FF5630;
+}
+.base-cell-list {
+  font-size: 14px;
+}
+.base-cell-list .item {
+  margin-bottom: 12px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 18px 16px;
+  border-bottom: 1px solid #ddd;
+}
+.base-cell-list .item .label {
+  color: #999;
+}
+.base-cell-list .item .value {
+  flex: 1;
+  text-align: right;
+}
+.base-cell-list .item .text {
+  max-width: 180px;
+  display: inline-block;
+}
+.base-cell-list .icon-arrow-right {
+  margin-top: 3px;
+  margin-left: 16px;
+  vertical-align: top;
+}
+.base-cell-list .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.point-md .point-header {
+  height: 140px;
+  background: linear-gradient(270deg, #F25613 11.2%, #FF8731 83.47%);
+  color: #fff;
+  text-align: center;
+  padding-top: 15px;
+}
+.point-md .point-header span {
+  font-weight: bold;
+  font-size: 48px;
+}
+.point-md .cate {
+  padding: 6px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #999;
+}
+.point-md .point-list .item {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 10px 16px;
+}
+.point-md .point-list .item .info {
+  flex: 1;
+}
+.point-md .point-list .item .info .text {
+  font-size: 14px;
+}
+.point-md .point-list .item .info .date {
+  color: #999;
+}
+.point-md .point-list .count {
+  min-width: 80px;
+  padding: 0 12px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
 }

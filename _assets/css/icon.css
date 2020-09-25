@@ -1,5 +1,6 @@
 .icon {
   display: inline-block;
+  vertical-align: middle;
 }
 .icon-search {
   width: 0.4rem;
@@ -17,6 +18,40 @@
   width: 1.333333rem;
   height: 1.333333rem;
   background-size: 1.333333rem 1.333333rem;
+}
+.icon-favourite {
+  width: 20px;
+  height: 18px;
+  background: url('../images/icon/icon-favourite.svg') no-repeat;
+  background-size: 20px 18px;
+}
+.icon-like {
+  width: 20px;
+  height: 20px;
+  background: url('../images/icon/icon-like.svg') no-repeat;
+  background-size: 20px 20px;
+}
+.icon-time {
+  width: 20px;
+  height: 20px;
+  background: url('../images/icon/icon-time.svg') no-repeat;
+  background-size: 20px 20px;
+}
+.icon-success,
+.icon-fail {
+  width: 48px;
+  height: 48px;
+  background: url('../images/icon/icon-success.svg') no-repeat;
+  background-size: 48px 48px;
+}
+.icon-fail {
+  background: url('../images/icon/icon-fail.svg') no-repeat;
+}
+.icon-arrow-right {
+  width: 18px;
+  height: 18px;
+  background: url('../images/icon/icon-arrow-right.svg') no-repeat;
+  background-size: 18px 18px;
 }
 .icon-guide-1 {
   background-image: url('../images/icon/icon-guide-1.svg');
