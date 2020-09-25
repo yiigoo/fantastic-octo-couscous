@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ year }} - {{ month + 1 >= 10 ? month + 1 : `0${month+1}` }} 
+        <div class="dayPicker">
+            <div class="header">
+                <div class="cell">
+                    星期一
+                </div>
+                <div class="cell">
+                    星期二
+                </div>
+                <div class="cell">
+                    星期三
+                </div>
+                <div class="cell">
+                    星期四
+                </div>
+                <div class="cell">
+                    星期五
+                </div>
+                <div class="cell">
+                    星期六
+                </div>
+                <div class="cell">
+                    星期日
+                </div>
+            </div>
+            <div class="body">
+                <div 
+                    class="cell" 
+                    v-for="item in dates" 
+                    :key="item.day">
+                    <a class="item" v-if="setActive(item.fullDate)" @click="onClick(item.fullDate)">
+                        {{ item.date }}
+                        <span class="active"></span>
+                    </a>
+                    <span v-else>
+                        {{ item.date }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <a href="#" @click="prevMonth">上一月</a>
+        <a href="#" @click="nextMonth">下一月</a>
+    </div>
+</body>
+<style>
+    .body,.header{
+        box-sizing: border-box;
+        width: 560px;
+    }
+    .cell{
+        border:1px solid #ddd;
+        box-sizing: border-box;
+        margin-left: -1px;
+        margin-top: -1px;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        float: left;
+        position: relative;
+    }
+    .active{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 5px;
+        background-color: blueviolet;
+        display: block;
+    }
+    .item{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<script>
+
+    new Vue({
+        el: '#app',
+        props: {
+            datas: {
+                type: Array,
+                default:  [
+                    '2020-09-01',
+                    '2020-10-01',
+                    '2020-11-01'
+                ]
+            }
+        },
+        data: {
+            dates: [],
+            year: new Date().getFullYear(),
+            month: new Date().getMonth(),
+        },
+        methods: {
+            getList() {
+                let year = this.year
+                let month = this.month
+                this.dates = []
+                let dates = new Date(year,month+1,0).getDate()
+                let week = new Date(`${year}/${month + 1}/1`).getDay()
+                for (let index = 0; index < week - 1; index++) {
+                    this.dates.push({
+                        date: null,
+                        fullDate: null
+                    })
+                }
+                for (let index = 1; index < dates + 1; index++) {
+                    // 补0
+                    let _index = index >= 10 ? index : `0${index}`
+                    let _month = month + 1 >= 10 ? month + 1 : `0${month+1}`
+                    this.dates.push({
+                        date: index ,
+                        fullDate: `${year}-${_month}-${_index}`
+                    })
+                }
+                //  补全
+                if( this.dates.length % 7 !== 0) {
+                    let appendLenth = 7 - this.dates.length % 7
+                    appendLenth === 7 && (appendLenth = 0)
+                    for (let index = 0; index < appendLenth; index++) {
+                        this.dates.push({
+                            date: null,
+                            fullDate: null
+                        })
+                    }
+                }
+            },
+            nextMonth() {
+                this.month += 1
+                if( this.month === 12 ) {
+                    this.month = 0
+                    this.year += 1
+                }
+                this.getList()
+            },
+            prevMonth() {
+                this.month -= 1
+                if( this.month === -1 ) {
+                    this.month = 11
+                    this.year -= 1
+                }
+                this.getList()
+            },
+            setActive(date) {
+                if( date ){
+                    let status = false
+                    for (let index = 0; index < this.datas.length; index++) {
+                        const item =  this.datas[index]
+                        if( new Date(item).getTime() === new Date(date).getTime() ){
+                            status = true
+                        }
+                    }
+                    return status
+                }
+                return false
+            },
+            onClick(date) {
+                alert(date)
+                this.$emit('on-click',date)
+            }
+        },
+        mounted() {
+            this.getList()
+        }
+    })
+</script>
+</html>
