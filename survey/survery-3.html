@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>首页</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app" class="survery-md">
+        <div class="survery-header">
+            <div class="title">中小学生网络直播课效果问卷调查</div>
+            <div class="desc">同学们，从开始网络直播，已有半月时间，你是否已经适应这种教学方式，对老师的教学是否满意？请认真填写本问卷，让老师们及时了解你的想法，及时调整教学策略。谢谢！</div>
+        </div>
+        <div class="page-card survery-page-card">
+            <div class="card-wrapper">
+                <div class="card-form survery-card-form">
+                    <van-form @submit="onSubmit">
+                        <van-field
+                            v-model="surveryForm.q1"
+                            name="radio"
+                            label="Q1：你感觉网络授课和线下授课效果一样吗？（单选）"
+                            :rules="[{ required: true, message: '请选择选项' }]">
+                            <template #input>
+                                <van-radio-group v-model="surveryForm.q1">
+                                    <van-radio name="1">效果很好，完全一样。效果很好，完全一样。效果很好，完全一样。</van-radio>
+                                    <van-radio name="2">效果还行，基本一样</van-radio>
+                                    <van-radio name="3">效果不好，相差太多</van-radio>
+                                </van-radio-group>
+                              </template>
+                        </van-field>
+
+                        
+                        <van-field
+                            v-model="surveryForm.q2"
+                            name="radio"
+                            label="Q2：你每天能按时听直播课吗？（单选）"
+                            :rules="[{ required: true, message: '请选择选项' }]">
+                            <template #input>
+                                <van-radio-group v-model="surveryForm.q2">
+                                    <van-radio name="1">按时听直播</van-radio>
+                                    <van-radio name="2">有时需要听回放</van-radio>
+                                    <van-radio name="3"> 时间冲突，只能听回放</van-radio>
+                                </van-radio-group>
+                              </template>
+                        </van-field>
+
+                        
+                        <van-field
+                            v-model="surveryForm.q3"
+                            name="radio"
+                            label="Q3：英语资料的质量如何？"
+                            :rules="[{ required: true, message: '请选择选项' }]">
+                            <template #input>
+                                <van-radio-group v-model="surveryForm.q3">
+                                    <van-radio name="1">高，没错</van-radio>
+                                    <van-radio name="2">偶尔出错</van-radio>
+                                    <van-radio name="3">经常出错</van-radio>
+                                </van-radio-group>
+                            </template>
+                            
+                        </van-field>
+
+                        <div class="btns btns-pager">
+                            <div class="item">
+                                <button class="btn btn-primary btn-large">上一页</button>
+                            </div>
+                            <div class="item current text-info">2/5</div>
+                            <div class="item">
+                                <button class="btn btn-primary btn-large">下一页</button>
+                            </div>
+                        </div>
+                      </van-form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    Vue.use(vant)
+    new Vue({
+        el: '#app',
+        data: {
+            surveryForm: {
+                q1: '1',
+                q2: '',
+                q3: '',
+            }
+        },
+        methods: {
+            onSubmit(values) {
+            },
+        },
+    })
+</script>
+</html>
