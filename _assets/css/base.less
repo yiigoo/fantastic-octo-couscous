@@ -23,9 +23,6 @@ a:link,a:visited,a:hover,a:active{
 a.item:active{
 	background-color: #f8f8f8;
 }
-.text-info{
-	color: #82766a;
-}
 .text-ellipsis{
 	overflow:hidden;
 	text-overflow:ellipsis; 
@@ -106,6 +103,10 @@ a.item:active{
 }
 .text-right{
 	text-align: right;
+}
+
+::-webkit-input-placeholder{
+	color: #999 !important;
 }
 // 首页
 .page-gapper{
@@ -591,6 +592,13 @@ a.item:active{
 			color: @green;
 		}
 	}
+	.title-img{
+		img{
+			display: block;
+			font-size: 0;
+			width: 100%;
+		}
+	}
 }
 .page-table-cell{
 	padding: 16px 0;
@@ -929,6 +937,9 @@ a.item:active{
 		.sub{
 			margin-top: 8px;
 		}
+		.wrapper{
+			padding-left: 12px;
+		}
 	}
 }
 
@@ -948,5 +959,69 @@ a.item:active{
 		font-size: 24px;
 		padding-left: 30px;
 		z-index: 1;
+	}
+}
+
+
+.card-form{
+	.van-cell{
+		padding: 0;
+		padding-bottom: 24px;
+		display: block;
+		font-size: 14px;
+		.van-field__label{
+			width: auto;
+			margin-right: 0;
+			margin-bottom: 5px;
+		}
+		&::after{
+			border-bottom: none;
+		}
+		input.van-field__control,textarea.van-field__control{
+			padding: 5px 8px;
+			border: 1px solid #999999;
+			border-radius: 4px;
+			background: none;
+			line-height: 1.75;
+		}
+		textarea.van-field__control{
+			line-height: inherit;
+		}
+	}
+	.van-field__error-message{
+		font-size: 14px;
+	}
+	.van-field__word-limit{
+		position: relative;
+		height: 26px;
+		line-height: 18px;
+		color: @subColor;
+		margin-top: -26px;
+		margin-right: 8px;
+	}
+	.upload-md{
+		background: #FFFFFF;
+		border: 1px dashed #CCCCCC;
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: 80px;
+		height: 80px;
+		margin: 0 12px 0 0;
+		text-align: center;
+		color: @subColor;
+		font-size: 12px !important;
+		padding-top: 15px;
+	}
+	.van-field-upload{
+		.van-uploader__preview{
+			margin: 0 12px 0 0;
+		}
+		.van-field__control--custom{
+			align-items: flex-start;
+		}
+		.text-sub{
+			font-size: 12px !important;
+			line-height: 1.5;
+		}
 	}
 }

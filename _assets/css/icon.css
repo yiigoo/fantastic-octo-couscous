@@ -53,6 +53,12 @@
   background: url('../images/icon/icon-arrow-right.svg') no-repeat;
   background-size: 18px 18px;
 }
+.icon-camera {
+  width: 24px;
+  height: 24px;
+  background: url('../images/icon/icon-camera.svg') no-repeat;
+  background-size: 24px 24px;
+}
 .icon-guide-1 {
   background-image: url('../images/icon/icon-guide-1.svg');
 }

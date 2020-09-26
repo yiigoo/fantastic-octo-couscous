@@ -24,9 +24,6 @@ a:active {
 a.item:active {
   background-color: #f8f8f8;
 }
-.text-info {
-  color: #82766a;
-}
 .text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -102,6 +99,9 @@ a.item:active {
 }
 .text-right {
   text-align: right;
+}
+::-webkit-input-placeholder {
+  color: #999 !important;
 }
 .page-gapper {
   padding: 0 0.426667rem;
@@ -564,6 +564,11 @@ a.item:active {
 .page-detail .sub-title .primary {
   color: #2DB553;
 }
+.page-detail .title-img img {
+  display: block;
+  font-size: 0;
+  width: 100%;
+}
 .page-table-cell {
   padding: 16px 0;
   margin-bottom: 15px;
@@ -871,6 +876,9 @@ a.item:active {
 .base-large-list .item .sub {
   margin-top: 8px;
 }
+.base-large-list .item .wrapper {
+  padding-left: 12px;
+}
 .full-img-title {
   position: relative;
 }
@@ -888,4 +896,63 @@ a.item:active {
   font-size: 24px;
   padding-left: 30px;
   z-index: 1;
+}
+.card-form .van-cell {
+  padding: 0;
+  padding-bottom: 24px;
+  display: block;
+  font-size: 14px;
+}
+.card-form .van-cell .van-field__label {
+  width: auto;
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+.card-form .van-cell::after {
+  border-bottom: none;
+}
+.card-form .van-cell input.van-field__control,
+.card-form .van-cell textarea.van-field__control {
+  padding: 5px 8px;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  background: none;
+  line-height: 1.75;
+}
+.card-form .van-cell textarea.van-field__control {
+  line-height: inherit;
+}
+.card-form .van-field__error-message {
+  font-size: 14px;
+}
+.card-form .van-field__word-limit {
+  position: relative;
+  height: 26px;
+  line-height: 18px;
+  color: #999;
+  margin-top: -26px;
+  margin-right: 8px;
+}
+.card-form .upload-md {
+  background: #FFFFFF;
+  border: 1px dashed #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 80px;
+  height: 80px;
+  margin: 0 12px 0 0;
+  text-align: center;
+  color: #999;
+  font-size: 12px !important;
+  padding-top: 15px;
+}
+.card-form .van-field-upload .van-uploader__preview {
+  margin: 0 12px 0 0;
+}
+.card-form .van-field-upload .van-field__control--custom {
+  align-items: flex-start;
+}
+.card-form .van-field-upload .text-sub {
+  font-size: 12px !important;
+  line-height: 1.5;
 }
