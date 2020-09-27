@@ -335,6 +335,31 @@ a.item:active {
   border-left: 0.3rem solid transparent;
   transform: rotate(45deg);
 }
+.tab-headers {
+  height: 46px;
+  line-height: 46px;
+}
+.tab-headers .item {
+  width: 25%;
+  float: left;
+  text-align: center;
+  position: relative;
+  color: #666;
+}
+.tab-headers .item.active {
+  color: #000;
+  font-weight: bold;
+}
+.tab-headers .item.active::after {
+  position: absolute;
+  width: 47px;
+  height: 3px;
+  bottom: 8px;
+  left: 50%;
+  margin-left: -23px;
+  content: " ";
+  background: #F36A1C;
+}
 .base-list-2 {
   margin: 0 -0.426667rem;
 }
@@ -738,6 +763,9 @@ a.item:active {
   font-size: 0.373333rem;
   padding: 7px 0 15px 0;
 }
+.comment-list .item .img-list {
+  padding-bottom: 15px;
+}
 .comment-list .item .img-list .img {
   float: left;
   width: 100px;
@@ -767,6 +795,7 @@ a.item:active {
   margin-top: 5px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 12px;
+  flex: 1;
 }
 .comment-list .item .info .name {
   color: #666;
@@ -777,6 +806,15 @@ a.item:active {
 .comment-list .item .info .bottom {
   text-align: right;
   color: #999;
+}
+.comment-list .item .info .bottom .icon {
+  vertical-align: bottom;
+}
+.comment-list .item .sub-title {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .more-list {
   text-align: center;
@@ -892,6 +930,32 @@ a.item:active {
 .page-card .fail {
   color: #FF5630;
 }
+.page-card-feekback .card-bg {
+  position: absolute;
+  background: linear-gradient(0deg, #53B824 12.5%, #81D219 88.33%);
+  height: 140px;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.page-card-feekback .feekback-header {
+  padding: 0 16px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+.page-card-feekback .feekback-header a {
+  color: #fff;
+  display: block;
+  border: 1px solid #F5F5F5;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+.page-card-feekback .feekback-header .title {
+  font-weight: bold;
+  font-size: 24px;
+}
 .base-cell-list {
   font-size: 0.373333rem;
 }
@@ -990,6 +1054,10 @@ a.item:active {
   width: 100%;
   display: block;
   font-size: 0;
+}
+.full-img-title .shadow {
+  height: 120px;
+  background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
 }
 .full-img-title .text {
   position: absolute;
@@ -1119,6 +1187,21 @@ a.item:active {
 .card-form .btns-pager .btn {
   min-width: 100px;
 }
+.card-form .label-list .item {
+  display: inline-block;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: center;
+  color: #999;
+  min-width: 90px;
+  padding: 5px 10px;
+  margin: 0 10px 10px 0;
+}
+.card-form .label-list .item.active {
+  border: 1px solid #158A7E;
+  color: #158A7E;
+}
 .van-uploader .van-uploader__preview-delete {
   width: 0.48rem;
   height: 0.48rem;
@@ -1209,7 +1292,6 @@ a.item:active {
   left: 0;
   top: 55px;
   background-color: #fff;
-  height: 100%;
   overflow-y: auto;
   width: 93px;
 }
@@ -1228,7 +1310,6 @@ a.item:active {
   top: 55px;
   right: 0;
   padding: 16px;
-  height: 100%;
   overflow-y: auto;
 }
 .catalogue-md .wrapper .item {
@@ -1299,4 +1380,167 @@ a.item:active {
   left: 10px;
   content: ' ';
   background-color: #C2C2C2;
+}
+.feedback-md .feedback-group .item {
+  margin-top: 16px;
+  display: flex;
+  height: 120px;
+  padding: 0 30px;
+  color: #fff;
+  background: linear-gradient(0deg, #53B824 12.5%, #81D219 88.33%);
+  border-radius: 6px;
+  align-items: center;
+}
+.feedback-md .feedback-group .item .info {
+  flex: 1;
+}
+.feedback-md .feedback-group .item .info .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.feedback-md .feedback-group .item:last-child {
+  background: linear-gradient(0deg, #2C91ED 12.5%, #63ABFF 87.5%);
+}
+.feedback-detail .comment-list {
+  padding-bottom: 5px;
+}
+.feedback-detail .comment-list .info {
+  border: none;
+}
+.feedback-detail .feedback-detail-title {
+  margin-bottom: 16px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+}
+.service-md .maps-show {
+  height: 350px;
+}
+.service-md .maps-show img {
+  max-height: 350px;
+  width: 100%;
+}
+.service-md .address-list {
+  position: fixed;
+  top: 396px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+.service-md .address-list .item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #DDDDDD;
+  color: #666;
+}
+.service-md .address-list .item .img {
+  width: 60px;
+  height: 60px;
+}
+.service-md .address-list .item .img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.service-md .address-list .item .info {
+  padding: 0 12px;
+  flex: 1;
+}
+.service-md .address-list .item .info .title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 4px;
+}
+.service-md .address-list .item .info .right {
+  padding: 0 4px;
+}
+.star-md .star-list .item {
+  padding: 20px 24px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.star-md .star-list .item .tag {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.star-md .star-list .item .avatar {
+  width: 60px;
+  height: 60px;
+}
+.star-md .star-list .item .avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.star-md .star-list .item .info {
+  flex: 1;
+  padding-left: 10px;
+}
+.star-md .star-list .item .title {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+.star-md .star-list .item .sub {
+  color: #999;
+}
+.star-md .star-list .item .line {
+  background-color: #eee;
+  margin: 5px 0;
+  height: 10px;
+  position: relative;
+}
+.star-md .star-list .item .line .progress {
+  height: 10px;
+  left: 0;
+  top: 0;
+  background-color: #2DB553;
+  position: relative;
+}
+.volunteer-md .page-grid-3 {
+  padding: 16px 11px 10px;
+}
+.volunteer-md .page-grid-3 .item {
+  padding: 0 5px 10px;
+  display: block;
+  float: left;
+  width: 33.3333%;
+}
+.volunteer-md .page-grid-3 .item .wrapper {
+  padding: 13px 0 13px 12px;
+  line-height: 24px;
+  color: #000;
+  background: #EEEEEE;
+  border-radius: 4px;
+}
+.volunteer-md .page-grid-3 .item .icon {
+  vertical-align: top;
+  margin-right: 5px;
+}
+.volunteer-md .page-grid-4 {
+  padding: 0 12px;
+}
+.volunteer-md .page-grid-4 .item {
+  padding: 0 4px 0;
+  display: block;
+  float: left;
+  width: 25%;
+}
+.volunteer-md .page-grid-4 .item .wrapper {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px 0;
+  text-align: center;
+  color: #666;
+}
+.volunteer-md .page-grid-4 .item .wrapper div {
+  color: #158A7E;
+  font-size: 18px;
 }

@@ -65,6 +65,26 @@
   background: url('../images/icon/icon-no-search.svg') no-repeat;
   background-size: 48px 48px;
 }
+.icon-feedback {
+  width: 60px;
+  height: 60px;
+  background: url('../images/icon/icon-feedback.svg') no-repeat;
+  background-size: 60px 60px;
+}
+.icon-survery {
+  width: 60px;
+  height: 60px;
+  background: url('../images/icon/icon-survery.svg') no-repeat;
+  background-size: 60px 60px;
+}
+.icon-rang {
+  width: 17px;
+  height: 27px;
+  background: url('../images/icon/icon-rang.svg') no-repeat;
+  background-size: 17px 27px;
+  text-align: center;
+  color: #fff;
+}
 .icon-guide-1 {
   background-image: url('../images/icon/icon-guide-1.svg');
 }
@@ -94,4 +114,27 @@
 }
 .icon-guide-10 {
   background-image: url('../images/icon/icon-guide-10.svg');
+}
+.icon-nav {
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+}
+.icon-nav-1 {
+  background-image: url('../images/icon/icon-nav-1.svg');
+}
+.icon-nav-2 {
+  background-image: url('../images/icon/icon-nav-2.svg');
+}
+.icon-nav-3 {
+  background-image: url('../images/icon/icon-nav-3.svg');
+}
+.icon-nav-4 {
+  background-image: url('../images/icon/icon-nav-4.svg');
+}
+.icon-nav-5 {
+  background-image: url('../images/icon/icon-nav-5.svg');
+}
+.icon-nav-6 {
+  background-image: url('../images/icon/icon-nav-6.svg');
 }
