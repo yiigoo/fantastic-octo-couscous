@@ -1,8 +1,8 @@
-_assets 资源文件夹
+﻿_assets 资源文件夹
 activity  文旅活动
 comment  我的评论
 feedback  我的反馈
-inherit  非遗传承
+heritage_inherit 非遗传承
 news  文旅资讯
 reserve  场馆预订
 server  文旅服务
