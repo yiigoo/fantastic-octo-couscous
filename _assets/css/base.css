@@ -572,22 +572,22 @@ a.item:active {
   padding: 0.106667rem 0.213333rem;
   background: #D9F1EF;
 }
-.art-list .item {
+.master-list .item {
   width: 33.3333%;
   padding: 0 15px 15px;
   float: left;
   display: block;
   text-align: center;
 }
-.art-list .item img {
+.master-list .item img {
   width: 2.133333rem;
   height: 2.133333rem;
   border-radius: 50%;
 }
-.art-list .item .name {
+.master-list .item .name {
   font-size: 0.373333rem;
 }
-.art-list .item .sub {
+.master-list .item .sub {
   color: #999;
 }
 .page-md-bg {
@@ -970,12 +970,12 @@ a.item:active {
   padding: 12px 0;
 }
 .base-large-list .item .img {
-  width: 128px;
-  height: 128px;
+  width: 120px;
+  height: 120px;
 }
 .base-large-list .item .img img {
-  width: 128px;
-  height: 128px;
+  width: 120px;
+  height: 120px;
 }
 .base-large-list .item .sub {
   margin-top: 8px;
@@ -1255,4 +1255,48 @@ a.item:active {
 }
 .catalogue-header .page-tabs {
   height: 55px;
+}
+.master-header {
+  height: 110px;
+  background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+  position: relative;
+  padding-left: 112px;
+  padding-top: 50px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.master-header .avatar {
+  left: 16px;
+  top: 35px;
+  position: absolute;
+}
+.master-header .avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+.master-header .name {
+  font-size: 18px;
+}
+.page-sub-title {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.radius-ul-list li {
+  position: relative;
+  color: #666;
+  padding: 4px 0;
+  padding-left: 23px;
+}
+.radius-ul-list li:before {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  top: 12px;
+  left: 10px;
+  content: ' ';
+  background-color: #C2C2C2;
 }

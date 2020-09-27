@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>首页</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+</head>
+<body>
+    <div id="app">
+        <div class="page-gapper page-md-bg">
+            <div class="page-search-md">
+                <div class="input-wrapper">
+                    <span class="icon icon-search"></span>
+                    <input type="text" placeholder="搜索你感兴趣的内容" />
+                    <span class="icon icon-clear"></span>
+                </div>
+            </div>
+            <div class="page-tabs">
+                <div class="item item-active">
+                    文字内容
+                </div>
+                <div class="item">
+                    文字内容
+                </div>
+                <div class="item">
+                    文字内容
+                </div>
+            </div>
+            <div class="base-list base-large-list">
+                <van-list
+                    v-model="loading"
+                    :finished="finished"
+                    :finished-text="null"
+                    @load="onLoad"
+                    >
+                    <a href="#" class="item" v-for="item in list" :key="item">
+                        <div class="img">
+                            <img :src="item.src" alt="" />
+                        </div>
+                        <div class="wrapper">
+                            <div class="title">
+                                {{ item.title }}
+                            </div>
+                            <div class="sub">
+                                {{ item.sub }}
+                            </div>
+                        </div>
+                    </a>
+                </van-list>
+            </div>
+        </div>
+        <div class="loading-over" v-show="finished">
+            已经全部加载完毕
+        </div>
+    </div>
+
+    <script>
+        Vue.use(vant)
+        new Vue({
+            el: '#app',
+            data: {
+                list: [],
+                loading: false,
+                finished: false,
+            },
+            methods: {
+                onLoad() {
+                    // 异步更新数据
+                    // setTimeout 仅做示例，真实场景中一般为 ajax 请求
+                    setTimeout(() => {
+                        for (let i = 0; i < 10; i++) {
+                            this.list.push({
+                                src: '../_assets/images/p1.png',
+                                title: '社团名称社团名称社团名称',
+                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
+                            })
+                        }
+
+                        // 加载状态结束
+                        this.loading = false;
+                        // 数据全部加载完成
+                        if (this.list.length >= 40) {
+                        this.finished = true;
+                        }
+                    }, 1000);
+                },
+            },
+        })
+    </script>
+</body>
+</html>

@@ -607,7 +607,7 @@ a.item:active{
 	background: #D9F1EF;
 }
 
-.art-list{
+.master-list{
 	.item{
 		width: 33.3333%;
 		padding: 0 15px 15px;
@@ -1042,11 +1042,11 @@ a.item:active{
 		margin-bottom: 0;
 		padding: 12px 0;
 		.img{
-			width: 128px;
-			height: 128px;
+			width: 120px;
+			height: 120px;
 			img{
-				width: 128px;
-				height: 128px;
+				width: 120px;
+				height: 120px;
 			}
 		}
 		.sub{
@@ -1356,5 +1356,52 @@ a.item:active{
 .catalogue-header{
 	.page-tabs{
 		height: 55px;
+	}
+}
+
+.master-header{
+	height: 110px;
+	background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+	position: relative;
+	padding-left: 112px;
+	padding-top: 50px;
+	color: #fff;
+	margin-bottom: 30px;
+	.avatar{
+		left: 16px;
+		top:35px;
+		position: absolute;
+		img{
+			width: 90px;
+			height: 90px;
+			border-radius: 50%;
+		}
+	}
+	.name{
+		font-size: 18px;
+	}
+}
+.page-sub-title{
+	font-size: 14px;
+	color: #000;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.radius-ul-list{
+	li{
+		position: relative;
+		color: #666;
+		padding: 4px 0;
+		padding-left: 23px;
+		&:before{
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			top: 12px;
+			left: 10px;
+			content: ' ';
+			background-color: #C2C2C2;
+		}
 	}
 }
