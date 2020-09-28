@@ -11,7 +11,8 @@ server_star  服务之星
 server  文旅服务
 star_team  明星团队 / 团队注册
 survey  问卷调查
-volunteer  志愿者
+server_star  服务之星
+volunteer  志愿者 / 志愿者风采
 
 shop  积分商城
 user 个人中心

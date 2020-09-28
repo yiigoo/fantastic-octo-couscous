@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>文旅活动</title>
+    <title>志愿者活动</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -22,18 +22,15 @@
             <div class="page-swiper">
                 <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
                     <van-swipe-item>
-                        <img src="../_assets/images/201.png" alt="" />
+                        <img src="../_assets/images/801.png" alt="" />
                     </van-swipe-item>
                     <van-swipe-item>
-                        <img src="../_assets/images/201.png" alt="" />
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <img src="../_assets/images/201.png" alt="" />
+                        <img src="../_assets/images/802.png" alt="" />
                     </van-swipe-item>
                 </van-swipe>
             </div>
             <div class="page-md-bg page-gapper">
-                <div class="title">资讯标题资讯标题</div>
+                <div class="title">志愿者活动志愿者活动志愿者活动志愿者活动志愿者活动</div>
                 <div class="sub-title clearfix">
                     <div class="tag-active pull-left">
                         报名中
@@ -59,8 +56,8 @@
                         <div class="value">2020/11/13 - 2020/11/25</div>
                     </div>
                     <div class="cell">
-                        <div class="label"><span>主办单位</span></div>
-                        <div class="value">叙州区文化馆、叙州区图书馆</div>
+                        <div class="label"><span>活动规模</span></div>
+                        <div class="value">500人</div>
                     </div>
                 </div>
                 <div class="editor">
@@ -121,7 +118,7 @@
         <div class="fiexd-bottom">
             <div class="height"></div>
             <div class="wrapper">
-                <button class="btn btn-large btn-warning btn-long">立即报名</button>
+                <button class="btn btn-large btn-warning btn-long" @click="apply">立即报名</button>
             </div>
         </div>
     </div>
@@ -131,7 +128,9 @@
             data: {
             },
             methods: {
-                
+                apply() {
+                    window.location.href="apply.html"
+                }
             },
         })
     </script>

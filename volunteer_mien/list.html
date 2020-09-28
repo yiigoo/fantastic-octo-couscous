@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>社团</title>
+    <title>志愿者风采</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -21,18 +21,7 @@
         <div class="page-gapper page-md-bg">
             <!-- _assets/js/components.js -->
             <header-search @enter="search"></header-search>
-            <div class="page-tabs">
-                <div class="item item-active">
-                    文字内容
-                </div>
-                <div class="item">
-                    文字内容
-                </div>
-                <div class="item">
-                    文字内容
-                </div>
-            </div>
-            <div class="base-list base-large-list">
+            <div class="base-list base-page-list">
                 <van-list
                     v-model="loading"
                     :finished="finished"
@@ -44,11 +33,11 @@
                             <img :src="item.src" alt="" />
                         </div>
                         <div class="wrapper">
-                            <div class="title">
+                            <div class="title title-line-2">
                                 {{ item.title }}
                             </div>
                             <div class="sub">
-                                {{ item.sub }}
+                                {{ item.date }}
                             </div>
                         </div>
                     </a>
@@ -59,7 +48,6 @@
             已经全部加载完毕
         </div>
     </div>
-
     <script>
         new Vue({
             el: '#app',
@@ -79,14 +67,14 @@
                     setTimeout(() => {
                         for (let i = 0; i < 10; i++) {
                             this.list.push({
-                                src: '../_assets/images/1101.png',
-                                title: '团队名称团队名称',
-                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
-                            })
+                                src: '../_assets/images/100.png',
+                                title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
+                                date: '2020-08-09 10:09:01'
+                            });
                             this.list.push({
-                                src: '../_assets/images/1101.png',
-                                title: '团队名称团队名称',
-                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
+                                src: '../_assets/images/101.png',
+                                title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
+                                date: '2020-08-09 10:09:01'
                             })
                         }
 

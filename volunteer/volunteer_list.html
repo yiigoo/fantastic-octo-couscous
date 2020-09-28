@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>社团</title>
+    <title>活动招募</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -23,35 +23,42 @@
             <header-search @enter="search"></header-search>
             <div class="page-tabs">
                 <div class="item item-active">
-                    文字内容
+                    招募中
                 </div>
                 <div class="item">
-                    文字内容
-                </div>
-                <div class="item">
-                    文字内容
+                    往期回顾
                 </div>
             </div>
-            <div class="base-list base-large-list">
+            <div class="base-activity-list">
                 <van-list
                     v-model="loading"
                     :finished="finished"
                     :finished-text="null"
                     @load="onLoad"
                     >
-                    <a href="detail.html" class="item" v-for="item in list" :key="item">
-                        <div class="img">
-                            <img :src="item.src" alt="" />
-                        </div>
-                        <div class="wrapper">
-                            <div class="title">
-                                {{ item.title }}
+                    <div class="item"  v-for="item in list" :key="item">
+                        <a href="volunteer_detail.html">
+                            <div class="tag" :class="{'tag-active': item.status === 10}">
+                                {{ item.status === 10 ? '招募中' : '已结束' }}
                             </div>
-                            <div class="sub">
-                                {{ item.sub }}
+                            <div class="img">
+                                <img :src="item.src" alt="" />
+                            </div>
+                            <div class="wrapper">
+                                <div class="title">
+                                    志愿者活动志愿者活动志愿者活动志愿者活动志愿者活动志愿者活动志愿者活动志愿者活动
+                                </div>
+                            </div>
+                        </a>
+                        <div class="clearfix">
+                            <div class="pull-left sub">
+                                <span class="icon icon-time"></span> 2020/10/12 - 2020/10/20
+                            </div>
+                            <div class="pull-right primary">
+                                166人已报名
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </van-list>
             </div>
         </div>
@@ -59,12 +66,14 @@
             已经全部加载完毕
         </div>
     </div>
-
     <script>
         new Vue({
             el: '#app',
             data: {
-                list: [], // 列表
+                // 10 未报名，20 已结束
+                list: [
+                    { status : 10 , src: '../_assets/images/801.png'},
+                ], // 列表
                 loading: false, // 是否加载中
                 finished: false, // 加载完成
             },
@@ -77,17 +86,8 @@
                     // 异步更新数据
                     // setTimeout 仅做示例，真实场景中一般为 ajax 请求
                     setTimeout(() => {
-                        for (let i = 0; i < 10; i++) {
-                            this.list.push({
-                                src: '../_assets/images/1101.png',
-                                title: '团队名称团队名称',
-                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
-                            })
-                            this.list.push({
-                                src: '../_assets/images/1101.png',
-                                title: '团队名称团队名称',
-                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
-                            })
+                        for (let i = 0; i < 5; i++) {
+                            this.list.push( { status : 10 , src: '../_assets/images/202.png'} );
                         }
 
                         // 加载状态结束

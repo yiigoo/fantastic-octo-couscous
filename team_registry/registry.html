@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>团队注册</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -23,14 +23,14 @@
                 <van-form @submit="onSubmit">
 
                     <van-field
-                        v-model="name"
+                        v-model="pageForm.name"
                         label="团队名称"
                         placeholder="请输入团队名称"
                         :rules="[{ required: true, message: '请输入团队名称' }]">
                     </van-field>
 
                     <van-field
-                        v-model="theme"
+                        v-model="pageForm.theme"
                         rows="4"
                         autosize
                         label="团队主题"
@@ -43,7 +43,7 @@
 
                     <van-field name="团队徽章" label="团队徽章" class="van-field-upload">
                         <template #input>
-                            <van-uploader max-count="1" v-model="uploadList" :max-size="1 * 1024 * 1024">
+                            <van-uploader max-count="1" v-model="pageForm.uploadList" :max-size="1 * 1024 * 1024">
                                 <div class="upload-md">
                                     <span class="icon icon-camera"></span>
                                     <br />
@@ -54,7 +54,7 @@
                         </template>
                     </van-field>
                     <div class="btns">
-                        <button class="btn btn-primary btn-large btn-long">立即提交申请</button>
+                        <button class="btn btn-warning btn-large btn-long">立即提交申请</button>
                     </div>
                   </van-form>
             </div>
@@ -62,13 +62,14 @@
     </div>
 </body>
 <script>
-    Vue.use(vant)
     new Vue({
         el: '#app',
         data: {
-            name: '',
-            theme: '',
-            uploadList: []
+            pageForm: {
+                name: '',
+                theme: '',
+                uploadList: []
+            }
         },
         methods: {
             onSubmit(values) {

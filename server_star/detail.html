@@ -19,7 +19,7 @@
 <body>
     <div id="app" class="page-md-bg">
         <div class="master-header">
-            <div class="avatar"><img src="../_assets/images/p1.png" alt="" /></div>
+            <div class="avatar"><img src="../_assets/images/avatar.png" alt="" /></div>
             <div class="info">
                 <div class="name">王东庆</div>
                 <div class="sub">南方团队</div>
@@ -27,7 +27,7 @@
         </div>
         <div class="page-detail">
             <div class="page-gapper">
-                <div class="page-table-cell border">
+                <div class="page-table-cell border border-top-none">
                     <div class="cell">
                         <div class="label"><span>活动地点</span></div>
                         <div class="value">叙州区某某路某某号某某地区一楼叙州区某某路某叙州区某某路某叙州区某某路某</div>
@@ -49,21 +49,15 @@
                     <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。</p>
 
                     <p>除了医疗健康服务外，记者在服贸会各个展区了解到，数字化技术也融入了教育服务、文化服务、体育服务等多个领域。</p>
-                    <img src="../_assets/images/p1.png" alt="" />
-                </div>
-                <div class="radius-ul-list">
-                    <div class="page-sub-title">
-                        热门评论
-                    </div>
-                    <ul>
-                        <li>全国2018年优秀老师</li>
-                        <li>全国2018年优秀老师</li>
-                        <li>全国2018年优秀老师</li>
-                    </ul>
                 </div>
                 <share-bar :count="100" :id="'文章id'"></share-bar>
             </div>
         </div>
     </div>
+    <script>
+        new Vue({
+            el: "#app"
+        })
+    </script>
 </body>
 </html>

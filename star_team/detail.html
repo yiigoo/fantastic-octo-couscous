@@ -17,10 +17,19 @@
     <link rel="stylesheet" href="../_assets/css/icon.css">
 </head>
 <body>
-    <div class="news-md">
+    <div id="app">
+        <div class="page-swiper">
+            <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
+                <van-swipe-item>
+                    <img src="../_assets/images/801.png" alt="" />
+                </van-swipe-item>
+                <van-swipe-item>
+                    <img src="../_assets/images/802.png" alt="" />
+                </van-swipe-item>
+            </van-swipe>
+        </div>
         <div class="page-detail">
             <div class="page-md-bg page-gapper">
-                <div class="title-img"><img src="../_assets/images/img-title2.png" alt="" /></div>
                 <div class="title">团队名称</div>
                 <div class="editor">
                     <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。</p>
@@ -87,7 +96,7 @@
                             文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯
                         </div>
                         <div class="bottom">
-                            <span class="icon icon-like"></span> 1224
+                            <likes :count="1"></likes>
                         </div>
                     </div>
                 </div>
@@ -104,7 +113,7 @@
                             文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯
                         </div>
                         <div class="bottom">
-                            <span class="icon icon-like"></span> 1224
+                            <likes :count="1"></likes>
                         </div>
                     </div>
                 </div>
@@ -117,5 +126,14 @@
             <div><br></div>
         </div>
     </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+            },
+        })
+    </script>
 </body>
 </html>

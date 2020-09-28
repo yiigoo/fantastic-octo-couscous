@@ -252,6 +252,7 @@ a.item:active {
 }
 .base-list .item .img img {
   width: 3.093333rem;
+  border-radius: 0.08rem;
 }
 .base-list .item .wrapper {
   padding-left: 0.213333rem;
@@ -1574,6 +1575,7 @@ a.item:active {
   margin-right: 0.133333rem;
 }
 .volunteer-md .page-grid-4 {
+  margin-bottom: 0.266667rem;
   padding: 0 0.32rem;
 }
 .volunteer-md .page-grid-4 .item {
