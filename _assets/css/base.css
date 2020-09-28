@@ -791,7 +791,13 @@ a.item:active {
   margin-right: 0;
 }
 .comment-list .item .img-list .more {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #C4C4C4;
+  position: relative;
+}
+.comment-list .item .img-list .more .shadow {
+  position: absolute;
+  width: 2.666667rem;
+  height: 2.666667rem;
+  background: rgba(0, 0, 0, 0.5);
   line-height: 2.666667rem;
   text-align: center;
   color: #fff;

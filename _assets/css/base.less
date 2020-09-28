@@ -845,12 +845,18 @@ a.item:active{
 				}
 			}
 			.more{
-				background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #C4C4C4;
-				line-height: 2.666667rem;
-				text-align: center;
-				color:#fff;
-				font-size: .64rem;
-				border-radius: .106667rem;
+				position: relative;
+				.shadow{
+					position: absolute;
+					width: 2.666667rem;
+					height: 2.666667rem;
+					background:rgba(0, 0, 0, 0.5);
+					line-height: 2.666667rem;
+					text-align: center;
+					color:#fff;
+					font-size: .64rem;
+					border-radius: .106667rem;
+				}
 			}
 		}
 		.info{

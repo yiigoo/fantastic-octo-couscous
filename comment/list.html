@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>评论列表</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -50,12 +50,12 @@
                                 <div class="img more" 
                                     v-if="item.imgs.length > 3 && !item.showMore" 
                                     @click="more(item)">
-                                    + {{ item.imgs.length - 2 }}
+                                    <div class="shadow">+ {{ item.imgs.length - 2 }}</div>
+                                    <img :src="item.imgs[2].src" alt="" />
                                 </div>
                             </div>
                             <div class="bottom">
-                                <span @click="addLike(item)"><span class="icon icon-like"></span> {{ item.likes }}</span>
-                                
+                                <likes :count="2"></likes>
                             </div>
                         </div>
                     </div>
@@ -73,12 +73,11 @@
         <div class="fiexd-bottom">
             <div class="height"></div>
             <div class="wrapper">
-                <button class="btn btn-large btn-primary btn-long">发表我的评论</button>
+                <button class="btn btn-large btn-warning btn-long" @click="comment">发表我的评论</button>
             </div>
         </div>
     </div>
     <script>
-        Vue.use(vant)
         new Vue({
             el: '#app',
             data: {
@@ -86,7 +85,7 @@
                 imagesPreview: [],
                 imagesPreviewIndex: 3,
                 list: [{
-                    avatar: '../_assets/images/p1.png',
+                    avatar: '../_assets/images/404.png',
                     userName: '1586565878用户',
                     text: '文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯',
                     date: '2020-08-20  11:08',
@@ -143,10 +142,8 @@
                     this.imagesPreviewIndex = index
                     this.showPreview = true
                 },
-                addLike(item) {
-                    this.$toast('点赞+1');
-                    // Toast.success('成功文案')
-                    item.likes += 1
+                comment() {
+                    window.location.href="comment.html"
                 },
                 onLoad() {
                     // 异步更新数据
@@ -154,7 +151,7 @@
                     setTimeout(() => {
                         for (let i = 0; i < 3; i++) {
                             this.list.push({
-                            avatar: '../_assets/images/p1.png',
+                            avatar: '../_assets/images/403.png',
                             userName: '1586565878用户',
                             text: '文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯',
                             date: '2020-08-20  11:08',
