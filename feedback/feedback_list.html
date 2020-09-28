@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>我的反馈</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -27,14 +27,15 @@
                     @load="onLoad">
                     <div class="item" v-for="item in list" :key="item">
                         <div class="info">
-                            <div class="top text-sub">
-                                <div class="sub-title">文旅资讯活动新闻发布会文旅资讯新闻发布会文旅...</div>
-                            </div>
-                            <div class="text">
-                                {{ item.text }}
-                            </div>
+                            <a href="feedback_detail.html" class="link-area">
+                                <div class="top text-sub">
+                                    <div class="sub-title">文旅资讯活动新闻发布会文旅资讯新闻发布会文旅...</div>
+                                </div>
+                                <div class="text">
+                                    {{ item.text }}
+                                </div>
+                            </a>
                             <div class="img-list clearfix">
-                                
                                 <div 
                                     @click="preview(item.imgs,index)"
                                     v-for="(img, index) in item.imgs" 
@@ -46,8 +47,8 @@
                                 <div class="img more" 
                                     v-if="item.imgs.length > 3 && !item.showMore" 
                                     @click="more(item)">
-                                    <img :src="item.imgs[3].src" alt="" />
-                                    + {{ item.imgs.length - 2 }}
+                                    <div class="shadow">+ {{ item.imgs.length - 2 }}</div>
+                                    <img :src="item.imgs[2].src" alt="" />
                                 </div>
                             </div>
                             <div class="bottom clearfix">
@@ -55,9 +56,7 @@
                                     <span class="text-sub">2019年8月20日  09:22</span>
                                 </div>
                                 <div class="pull-right">
-                                    <span @click="addLike(item)">
-                                        <span class="icon icon-like"></span> {{ item.likes }}
-                                    </span>
+                                    <a href="feedback_detail.html"><span class="icon icon-comment"></span> 10</a>
                                 </div>
                             </div>
                         </div>
@@ -73,15 +72,8 @@
         <div class="loading-over" v-show="finished">
             已经全部加载完毕
         </div>
-        <div class="fiexd-bottom">
-            <div class="height"></div>
-            <div class="wrapper">
-                <button class="btn btn-large btn-primary btn-long">发表我的评论</button>
-            </div>
-        </div>
     </div>
     <script>
-        Vue.use(vant)
         new Vue({
             el: '#app',
             data: {

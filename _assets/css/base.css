@@ -1448,6 +1448,9 @@ a.item:active {
 .feedback-detail .comment-list .info {
   border: none;
 }
+.feedback-detail .comment-list .link-area {
+  display: block;
+}
 .feedback-detail .feedback-detail-title {
   margin-bottom: 0.426667rem;
   padding: 0.266667rem 0;
