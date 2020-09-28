@@ -9,7 +9,7 @@ news  文旅资讯
 reserve  场馆预订
 server_star  服务之星
 server  文旅服务
-star_team  明星团队
+star_team  明星团队 / 团队注册
 survey  问卷调查
 volunteer  志愿者
 

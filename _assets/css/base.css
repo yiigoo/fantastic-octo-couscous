@@ -1134,7 +1134,7 @@ a.item:active {
   transition-duration: 0s;
 }
 .card-form .van-radio .van-radio__icon--checked .van-icon {
-  background-color: #158A7E;
+  background-color: #F36A1C;
   border: none;
 }
 .card-form .van-radio .van-radio__icon--checked .van-icon::before {
