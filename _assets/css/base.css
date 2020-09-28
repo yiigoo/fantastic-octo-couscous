@@ -1596,3 +1596,59 @@ a.item:active {
   color: #158A7E;
   font-size: 0.48rem;
 }
+.calendar-md .header-bar {
+  background: #EEEEEE;
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  text-align: center;
+  display: flex;
+}
+.calendar-md .header-bar .prev,
+.calendar-md .header-bar .next {
+  width: 56px;
+  text-align: center;
+}
+.calendar-md .header-bar .text {
+  font-weight: bold;
+  font-size: 0.48rem;
+  text-align: center;
+  flex: 1;
+}
+.calendar-md .dayPicker {
+  background-color: #fff;
+}
+.calendar-md .dayPicker .header {
+  height: 1.066667rem;
+  font-size: 0.373333rem;
+}
+.calendar-md .dayPicker .header .cell {
+  color: #999;
+  height: 1.066667rem;
+  line-height: 1.066667rem;
+}
+.calendar-md .dayPicker .cell {
+  width: 14.285%;
+  height: 1.44rem;
+  line-height: 1.44rem;
+  text-align: center;
+  float: left;
+}
+.calendar-md .dayPicker .cell.isToday {
+  background: #FFF1DD;
+  border-radius: 0.16rem;
+}
+.calendar-md .dayPicker .cell .item {
+  position: relative;
+  display: block;
+}
+.calendar-md .dayPicker .cell .item .active {
+  background-color: #2DB553;
+  width: 0.16rem;
+  height: 0.16rem;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.133333rem;
+}

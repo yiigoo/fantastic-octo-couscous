@@ -48,10 +48,24 @@ Vue.component('share-bar', {
             type: String,
             default: ''
         },
+        shareParams: {
+            type: Object,
+            default: {}
+        },
+        options: {
+            type: Array,
+            default:  [
+                { name: '微信', icon: 'wechat' },
+                { name: '微博', icon: 'weibo' },
+                { name: '复制链接', icon: 'link' },
+                { name: '分享海报', icon: 'poster' },
+            ],
+        }
     },
     data() {
         return {
             tempCount: this.count,
+            showShare: false,
         }
     },
     methods: {
@@ -60,13 +74,25 @@ Vue.component('share-bar', {
             this.$toast('点赞+1')
         },
         share() {
-            console.log('调用分享')
+            this.showShare = true
+        },
+        onSelect(type) {
+            console.log(this.shareParams)
+            console.log(type)
+            this.showShare = false
+            this.$toast(type.name + '分享')
         }
     },
     template: 
     `<div class="share-bar">
         <div class="item" @click="addLikes"><span class="icon icon-favourite"></span> 点赞 {{ tempCount }}</div>
         <div class="item" @click="share"><span class="icon icon-share"></span> 分享</div>
+        <van-share-sheet
+            v-model="showShare"
+            title="立即分享给好友"
+            :options="options"
+            @select="onSelect">
+        </van-share-sheet>
     </div>`
 })
 

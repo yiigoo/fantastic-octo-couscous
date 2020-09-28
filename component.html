@@ -11,6 +11,7 @@
     <script src="_assets/js/base.js"></script>
     <script src="_assets/js/vue.min.js"></script>
     <script src="_assets/js/vant.js"></script>
+    <script src="_assets/js/components.js"></script>
     <link rel="stylesheet" href="_assets/css/base.css">
     <link rel="stylesheet" href="_assets/css/icon.css">
     <link rel="stylesheet" href="_assets/css/vant.css">
@@ -20,7 +21,18 @@
         <div class="page-md-bg">
             <header-search v-model="keyword" @enter="enter"></header-search>
         </div>
-        
+        <!-- shareParams 分享的参数 -->
+        <share-bar :count="1111" :shareParams="{ a: 1 }"></share-bar>
+            <div class="popup-share">
+                <div class="shareList">
+                    
+                </div>
+                <div class="cancel">
+                    取消
+                </div>
+            </div>
+            
+
             <button class="btn"> 按钮</button>
             <button class="btn btn-primary"> 按钮</button>
             <button class="btn btn-large"> 按钮</button>

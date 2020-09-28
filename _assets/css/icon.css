@@ -89,6 +89,18 @@
   background: url('../images/icon/icon-survery.svg') no-repeat;
   background-size: 1.6rem 1.6rem;
 }
+.icon-prev {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-prev.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
+.icon-next {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-next.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
 .icon-rang {
   width: 0.453333rem;
   height: 0.72rem;

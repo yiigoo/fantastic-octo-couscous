@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>活动日历</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <script src="../_assets/js/calendar.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <calendar 
+            @on-click="calendarChange"
+            :datas="['2020-09-28','2020-10-01','2020-10-15','2020-11-01','2020-11-15']"
+        >
+        </calendar>
+        <div class="page-title">
+            今天有3个活动
+        </div>
+        <div class="page-md-bg page-gapper">
+            <div class="base-list relation-list">
+                <a href="#" class="item">
+                    <div class="img">
+                        <img src="../_assets/images/101.png" alt="" />
+                    </div>
+                    <div class="wrapper">
+                        <div class="title title-line-2">
+                            文旅资讯活动新闻发布会文旅资讯文旅资讯活动
+                        </div>
+                        <div class="sub">
+                            2020-08-09 10:09:01
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="item">
+                    <div class="img">
+                        <img src="../_assets/images/100.png" alt="" />
+                    </div>
+                    <div class="wrapper">
+                        <div class="title title-line-2">
+                            文旅资讯活动新闻发布会文旅资讯文旅资讯活动
+                        </div>
+                        <div class="sub">
+                            2020-08-09 10:09:01
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                calendarChange( date) {
+                    alert(date)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

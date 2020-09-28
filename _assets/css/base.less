@@ -1733,3 +1733,62 @@ a.item:active{
 		}
 	}
 }
+
+
+.calendar-md{
+	.header-bar {
+		background: #EEEEEE;
+		height: 1.333333rem;
+		line-height: 1.333333rem;
+		text-align: center;
+		display: flex;
+		.prev,.next{
+			width: 56px;
+			text-align: center;
+		}
+		.text{
+			font-weight: bold;
+			font-size: .48rem;
+			text-align: center;
+			flex: 1;
+		}
+	}
+	.dayPicker{
+		background-color: #fff;
+		.header{
+			height: 1.066667rem;
+			font-size: .373333rem;
+			.cell{
+				color: @subColor;
+				height: 1.066667rem;
+				line-height: 1.066667rem;
+			}
+		}
+		.cell{
+			width: 14.285%;
+			height: 1.44rem;
+			line-height: 1.44rem;
+			text-align: center;
+			float: left;
+			&.isToday{
+				background: #FFF1DD;
+				border-radius: .16rem;
+			}
+			.item{
+				position: relative;
+				display: block;
+				.active{
+					background-color: #2DB553;
+					width: .16rem;
+					height: .16rem;
+					border-radius: 50%;
+					display: block;
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom: .133333rem;
+				}
+			}
+		}
+	}
+}
