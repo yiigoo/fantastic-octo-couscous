@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>名师列表</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -19,13 +19,8 @@
 <body>
     <div id="app">
         <div class="page-gapper page-md-bg">
-            <div class="page-search-md">
-                <div class="input-wrapper">
-                    <span class="icon icon-search"></span>
-                    <input type="text" placeholder="搜索你感兴趣的内容" />
-                    <span class="icon icon-clear"></span>
-                </div>
-            </div>
+            <!-- _assets/js/components.js -->
+            <header-search @enter="search"></header-search>
             <div class="page-tabs">
                 <div class="item item-active">
                     全部
@@ -45,29 +40,29 @@
             </div>
         </div>
         <div class="master-list clearfix mt15">
-            <a href="#" class="item">
-                <img src="../_assets/images/p1.png" alt="" />
+            <a href="master_detail.html" class="item">
+                <img src="../_assets/images/403.png" alt="" />
                 <div class="name">
                     梅兰芳
                 </div>
                 <div class="sub">著名老师著名老师著名老师</div>
             </a>
-            <a href="#" class="item">
-                <img src="../_assets/images/p1.png" alt="" />
+            <a href="master_detail.html" class="item">
+                <img src="../_assets/images/404.png" alt="" />
                 <div class="name">
                     梅兰芳
                 </div>
                 <div class="sub">著名老师著名老师著名老师</div>
             </a>
-            <a href="#" class="item">
-                <img src="../_assets/images/p1.png" alt="" />
+            <a href="master_detail.html" class="item">
+                <img src="../_assets/images/403.png" alt="" />
                 <div class="name">
                     梅兰芳
                 </div>
                 <div class="sub">著名老师著名老师著名老师</div>
             </a>
-            <a href="#" class="item">
-                <img src="../_assets/images/p1.png" alt="" />
+            <a href="master_detail.html" class="item">
+                <img src="../_assets/images/404.png" alt="" />
                 <div class="name">
                     梅兰芳
                 </div>
@@ -75,6 +70,19 @@
             </a>
        </div>
     </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                 // 去搜索
+                 search(keyword) {
+                    console.log(keyword)
+                },
+            },
+        })
+    </script>
     <style>
         html,body{
             background-color: #fff;

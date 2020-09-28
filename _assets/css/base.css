@@ -674,6 +674,9 @@ a.item:active {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
+.page-table-cell.border-top-none {
+  border-top: none;
+}
 .page-table-cell.border-dashed {
   border-top: 1px dashed #ddd;
   border-bottom: 1px dashed #ddd;
@@ -1073,6 +1076,10 @@ a.item:active {
   height: 3.2rem;
   background: linear-gradient(0deg, #2C91ED 12.5%, #63ABFF 87.5%);
 }
+.full-img-title .shadow-green {
+  height: 3.2rem;
+  background: linear-gradient(0deg, #53B824 12.5%, #81D219 88.33%);
+}
 .full-img-title .text {
   position: absolute;
   top: 50%;
@@ -1250,6 +1257,11 @@ a.item:active {
 .van-dialog__confirm:active {
   color: #158A7E;
 }
+.page-swiper img {
+  width: 100%;
+  font-size: 0;
+  display: block;
+}
 .brand-md .brand-index-list .item {
   margin-top: 0.426667rem;
   display: block;
@@ -1359,10 +1371,10 @@ a.item:active {
   height: 2.933333rem;
   background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
   position: relative;
-  padding-left: 2.986667rem;
+  padding-left: 3.2rem;
   padding-top: 1.333333rem;
   color: #fff;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 .master-header .avatar {
   left: 0.426667rem;
@@ -1376,6 +1388,9 @@ a.item:active {
 }
 .master-header .name {
   font-size: 0.48rem;
+}
+.master-header .sub {
+  color: rgba(255, 255, 255, 0.7);
 }
 .page-sub-title {
   font-size: 0.373333rem;
