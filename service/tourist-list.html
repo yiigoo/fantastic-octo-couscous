@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>旅游景点</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="page-gapper page-md-bg">
+            <!-- _assets/js/components.js -->
+            <header-search @enter="search"></header-search>
+            <div class="page-tabs">
+                <div class="item item-active">
+                    全部
+                </div>
+                <div class="item">
+                    4A景区
+                </div>
+                <div class="item">
+                    3A景区
+                </div>
+                <div class="item">
+                    2A景区
+                </div>
+                <div class="item">
+                    1A景区
+                </div>
+            </div>
+            <div class="base-list base-large-list">
+                <van-list
+                    v-model="loading"
+                    :finished="finished"
+                    :finished-text="null"
+                    @load="onLoad"
+                    >
+                    <a href="tourist-detail.html" class="item" v-for="item in list" :key="item">
+                        <div class="img">
+                            <img :src="item.src" alt="" />
+                        </div>
+                        <div class="wrapper">
+                            <div class="title">
+                                {{ item.title }}
+                            </div>
+                            <div class="sub">
+                                {{ item.sub }}
+                            </div>
+                        </div>
+                    </a>
+                </van-list>
+            </div>
+        </div>
+        <div class="loading-over" v-show="finished">
+            已经全部加载完毕
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                list: [], // 列表
+                loading: false, // 是否加载中
+                finished: false, // 加载完成
+            },
+            methods: {
+                // 去搜索
+                search(keyword) {
+                    console.log(keyword)
+                },
+                onLoad() {
+                    // 异步更新数据
+                    // setTimeout 仅做示例，真实场景中一般为 ajax 请求
+                    setTimeout(() => {
+                        for (let i = 0; i < 10; i++) {
+                            this.list.push({
+                                src: '../_assets/images/501.png',
+                                title: '景点名称景点名称景点名称',
+                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
+                            })
+                            this.list.push({
+                                src: '../_assets/images/502.png',
+                                title: '景点名称景点名称景点名称',
+                                sub: '中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种中国影响最大的戏曲剧种'
+                            })
+                        }
+
+                        // 加载状态结束
+                        this.loading = false;
+                        // 数据全部加载完成
+                        if (this.list.length >= 40) {
+                        this.finished = true;
+                        }
+                    }, 500);
+                },
+            },
+        })
+    </script>
+</body>
+</html>

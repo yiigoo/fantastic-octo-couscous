@@ -1080,6 +1080,10 @@ a.item:active {
   height: 3.2rem;
   background: linear-gradient(0deg, #53B824 12.5%, #81D219 88.33%);
 }
+.full-img-title .shadow-cyan {
+  height: 3.2rem;
+  background: linear-gradient(180deg, #49C2A5 0%, #0C8D80 100%);
+}
 .full-img-title .text {
   position: absolute;
   top: 50%;
@@ -1446,6 +1450,12 @@ a.item:active {
   font-size: 0.373333rem;
   color: #000000;
   font-weight: bold;
+}
+.service-md .service-index-map {
+  height: 3.2rem;
+}
+.service-md .service-index-map img {
+  width: 100%;
 }
 .service-md .maps-show {
   height: 9.333333rem;
