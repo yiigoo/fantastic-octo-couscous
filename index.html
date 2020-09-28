@@ -11,6 +11,7 @@
     <script src="_assets/js/base.js"></script>
     <script src="_assets/js/vue.min.js"></script>
     <script src="_assets/js/vant.js"></script>
+    <script src="_assets/js/components.js"></script>
     <link rel="stylesheet" href="_assets/css/vant.css">
     <link rel="stylesheet" href="_assets/css/base.css">
     <link rel="stylesheet" href="_assets/css/icon.css">
@@ -22,9 +23,9 @@
         </div>
         <div class="index-md">
             <div class="home-header">
-                <div class="input-wrapper">
-                    <span class="icon icon-search"></span>
-                    <input type="text" placeholder="搜索你感兴趣的内容" />
+                <div @click="toSearch">
+                    <!-- _assets/js/components.js -->
+                    <header-search :disabled="true"></header-search>
                 </div>
             </div>
             <div class="home-swiper">
@@ -52,24 +53,24 @@
             <div class="home-md page-gapper">
                 <div class="home-guide">
                     <ul>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-1"></span>文旅资讯</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-2"></span>文旅活动</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-3"></span>场馆预订</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-4"></span>文化社团</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-5"></span>品牌推荐</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-6"></span>文旅服务 </a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-7"></span>非遗传承</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-8"></span>志愿者</a></li>
-                        <li><a href="#"><span class="icon icon-guide icon-guide-9"></span>意见反馈</a></li>
+                        <li><a href="news/list.html"><span class="icon icon-guide icon-guide-1"></span>文旅资讯</a></li>
+                        <li><a href="activity/list.html"><span class="icon icon-guide icon-guide-2"></span>文旅活动</a></li>
+                        <li><a href="reserve/list.html"><span class="icon icon-guide icon-guide-3"></span>场馆预订</a></li>
+                        <li><a href="culture_team/index.html"><span class="icon icon-guide icon-guide-4"></span>文化社团</a></li>
+                        <li><a href="brand/index.html"><span class="icon icon-guide icon-guide-5"></span>品牌推荐</a></li>
+                        <li><a href="service/index.html"><span class="icon icon-guide icon-guide-6"></span>文旅服务 </a></li>
+                        <li><a href="heritage_inherit/index.html"><span class="icon icon-guide icon-guide-7"></span>非遗传承</a></li>
+                        <li><a href="volunteer.html"><span class="icon icon-guide icon-guide-8"></span>志愿者</a></li>
+                        <li><a href="feedback/index.html"><span class="icon icon-guide icon-guide-9"></span>意见反馈</a></li>
                         <li><a href="#"><span class="icon icon-guide icon-guide-10"></span>更多</a></li>
                     </ul>
                 </div>
                 <div class="base-title">
-                    <a href="#" class="more">更多</a>
+                    <a href="news/list.html" class="more">更多</a>
                     文旅资讯
                 </div>
                 <div class="base-list">
-                    <a href="#" class="item">
+                    <a href="news/news-detail.html" class="item">
                         <div class="img">
                             <img src="./_assets/images/p1.png" alt="" />
                         </div>
@@ -82,7 +83,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="news/news-detail.html" class="item">
                         <div class="img">
                             <img src="./_assets/images/p2.png" alt="" />
                         </div>
@@ -98,7 +99,7 @@
                 </div>
         
                 <div class="base-title">
-                    <a href="#" class="more">更多</a>
+                    <a href="activity/list.html" class="more">更多</a>
                     文旅活动
                 </div>
                 <div class="tabs">
@@ -111,7 +112,7 @@
                     <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
                         <van-swipe-item>
                             <div class="wrapper">
-                                <a href="#" class="item">
+                                <a href="activity/detail.html" class="item">
                                     <div class="img">
                                         <div class="tag">报名中</div>
                                         <img src="./_assets/images/p3.png" alt="" />
@@ -134,7 +135,7 @@
                         </van-swipe-item>
                         <van-swipe-item>
                             <div class="wrapper">
-                                <a href="#" class="item">
+                                <a href="activity/detail.html" class="item">
                                     <div class="img">
                                         <div class="tag">报名中</div>
                                         <img src="./_assets/images/p3.png" alt="" />
@@ -157,7 +158,7 @@
                         </van-swipe-item>
                         <van-swipe-item>
                             <div class="wrapper">
-                                <a href="#" class="item">
+                                <a href="activity/detail.html" class="item">
                                     <div class="img">
                                         <div class="tag">报名中</div>
                                         <img src="./_assets/images/p3.png" alt="" />
@@ -191,11 +192,11 @@
                 </div>
         
                 <div class="base-title">
-                    <a href="#" class="more">更多</a>
+                    <a href="culture_team/index.html" class="more">更多</a>
                     文化团体
                 </div>
                 <div class="base-list">
-                    <a href="#" class="item">
+                    <a href="culture_team/master_detail.html" class="item">
                         <div class="img">
                             <img src="./_assets/images/p4.png" alt="" />
                         </div>
@@ -208,7 +209,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="culture_team/master_detail.html" class="item">
                         <div class="img">
                             <img src="./_assets/images/p5.png" alt="" />
                         </div>
@@ -224,26 +225,26 @@
                 </div>
         
                 <div class="base-title">
-                    <a href="#" class="more">更多</a>
+                    <a href="service/list.html" class="more">更多</a>
                     旅游景点
                 </div>
                 <div class="base-img-list">
-                    <a class="item" href="#">
+                    <a class="item" href="service/detail.html">
                         <img src="./_assets/images/p6.png" alt="" />
                         <div class="tag">5A景区</div>
                         <div class="title">景点名称</div>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="service/detail.html">
                         <img src="./_assets/images/p7.png" alt="" />
                         <div class="tag">4A景区</div>
                         <div class="title">景点名称</div>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="service/detail.html">
                         <img src="./_assets/images/p7.png" alt="" />
                         <div class="tag">4A景区</div>
                         <div class="title">景点名称</div>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="service/detail.html">
                         <img src="./_assets/images/p7.png" alt="" />
                         <div class="tag">4A景区</div>
                         <div class="title">景点景点名称景点名称名称</div>
@@ -257,15 +258,19 @@
     </div>
 </body>
 <script>
-    Vue.use(vant)
     new Vue({
         el: '#app',
         data: {
             activityActive: '9月'
         },
         methods: {
-            activityChange: function(name) {
+            // 月份切换
+            activityChange(name) {
                 this.activityActive = name
+            },
+            // 跳转到搜索
+            toSearch() {
+                window.location.href = 'index-search.html'
             }
         },
     })

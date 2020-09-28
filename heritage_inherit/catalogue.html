@@ -5,15 +5,16 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>非遗展示</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
     <script src="../_assets/js/vue.min.js"></script>
     <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
     <link rel="stylesheet" href="../_assets/css/base.css">
     <link rel="stylesheet" href="../_assets/css/icon.css">
-    <link rel="stylesheet" href="../_assets/css/vant.css">
 </head>
 <body>
     <div id="app">
@@ -38,52 +39,90 @@
         </div>
         <div class="catalogue-md">
             <div class="dir">
-                <div class="item active">民间文学</div>
-                <div class="item">传统音乐</div>
-                <div class="item">传统舞蹈</div>
-                <div class="item">传统戏曲</div>
-                <div class="item">曲艺</div>
-                <div class="item">传统体育杂技</div>
+                <div 
+                    @click="dirToggle(item)"
+                    class="item" 
+                    :class="{ active: item.value === dirCurrent}" 
+                    v-for="(item, index) in dirs" 
+                    :key="index">
+                    {{ item.label }}
+                </div>
             </div>
             <div class="wrapper">
-                <a href="" class="item">
-                    <img src="../_assets/images/img.png" alt="" />
+                <a href="detail.html" class="item" v-for="(item, index) in list" >
+                    <img :src="item.src" alt="" />
                     <div class="title">
-                        非遗名称非遗名称非遗名称
-                    </div>
-                </a>
-                <a href="" class="item">
-                    <img src="../_assets/images/img.png" alt="" />
-                    <div class="title">
-                        非遗名称非遗名称非遗名称
-                    </div>
-                </a>
-                <a href="" class="item">
-                    <img src="../_assets/images/img.png" alt="" />
-                    <div class="title">
-                        非遗名称非遗名称非遗名称
-                    </div>
-                </a>
-                <a href="" class="item">
-                    <img src="../_assets/images/img.png" alt="" />
-                    <div class="title">
-                        非遗名称非遗名称非遗名称
-                    </div>
-                </a>
-                <a href="" class="item">
-                    <img src="../_assets/images/img.png" alt="" />
-                    <div class="title">
-                        非遗名称非遗名称非遗名称
-                    </div>
-                </a>
-                <a href="" class="item">
-                    <img src="../_assets/images/img.png" alt="" />
-                    <div class="title">
-                        非遗名称非遗名称非遗名称
+                        {{ item.title }}
                     </div>
                 </a>
             </div>
         </div>
     </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                dirs: [{
+                    value: '1',
+                    label: '民间文学'
+                },
+                {
+                    value: '2',
+                    label: '传统音乐'
+                },
+                {
+                    value: '3',
+                    label: '传统舞蹈'
+                },
+                {
+                    value: '4',
+                    label: '传统戏曲'
+                },
+                {
+                    value: '5',
+                    label: '曲艺'
+                },
+                {
+                    value: '6',
+                    label: '传统体育杂技'
+                }],
+                dirCurrent: '1',
+                list: [
+                    {
+                        title: '非遗名称非遗名称非遗名称',
+                        src: '../_assets/images/306.png'
+                    },
+                    {
+                        title: '',
+                        src: '../_assets/images/307.png'
+                    },
+                    {
+                        title: '',
+                        src: '../_assets/images/308.png'
+                    },
+                    {
+                        title: '',
+                        src: '../_assets/images/309.png'
+                    }
+                ]
+            },
+            methods: {
+                dirToggle(item) {
+                    this.dirCurrent = item.value
+                    // 设置list 
+                    this.list = [
+                    {
+                        title: '',
+                        src: '../_assets/images/308.png'
+                    },
+                    {
+                        title: '',
+                        src: '../_assets/images/309.png'
+                    }
+                    ]
+                }
+            }
+        })
+    </script>
 </body>
 </html>

@@ -11,9 +11,10 @@
     <script src="../_assets/js/base.js"></script>
     <script src="../_assets/js/vue.min.js"></script>
     <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
     <link rel="stylesheet" href="../_assets/css/base.css">
     <link rel="stylesheet" href="../_assets/css/icon.css">
-    <link rel="stylesheet" href="../_assets/css/vant.css">
 </head>
 <body>
     <div class="news-md">
@@ -30,10 +31,7 @@
 
                     <p> 王炳南表示，我国数字经济规模巨大，互联网基础完善，在5G、大数据、云计算、人工智能等新技术领域积累了较强的优势，将为数字服务贸易发展提供重要支撑。</p>
                 </div>
-                <div class="share-bar">
-                    <div class="item"><span class="icon icon-favourite"></span> 点赞</div>
-                    <div class="item"><span class="icon icon-share"></span> 分享</div>
-                </div>
+                <share-bar :count="100" :id="'文章id'"></share-bar>
             </div>
         </div>
             

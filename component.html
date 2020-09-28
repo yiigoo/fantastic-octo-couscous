@@ -37,37 +37,6 @@
         </div>
     </div>
    <script>
-    Vue.component('header-search', {
-        props: {
-            placeholder: {
-                type: String,
-                default: '搜索你感兴趣的内容'
-            }
-        },
-        data() {
-            return {
-                currentValue: ''
-            }
-        },
-        methods: {
-            enter() {
-                this.$emit('input',this.currentValue)
-                this.$emit('enter',this.currentValue)
-            },
-            clear() {
-                this.currentValue = ''
-                this.enter()
-            }
-        },
-        template: 
-        `<div class="page-search-md">
-            <div class="input-wrapper">
-                <span class="icon icon-search"></span>
-                <input @keyup.enter ="enter" type="text" :placeholder="placeholder" v-model="currentValue" />
-                <span class="icon icon-clear" v-show="currentValue" @click="clear"></span>
-            </div>
-        </div>`
-    })
     new Vue({
         el: '#app',
         data: {

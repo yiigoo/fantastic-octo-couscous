@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>非遗传承</title>
+    <title>文旅活动</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -19,45 +19,55 @@
 <body>
     <div id="app">
         <div class="page-gapper page-md-bg">
-             <!-- _assets/js/components.js -->
-             <header-search @enter="search"></header-search>
+            <!-- _assets/js/components.js -->
+            <header-search @enter="search"></header-search>
             <div class="page-tabs">
                 <div class="item item-active">
                     全部
                 </div>
                 <div class="item">
-                    民间文学
+                    培训
                 </div>
                 <div class="item">
-                    传统音乐
+                    讲座
                 </div>
                 <div class="item">
-                    传统舞蹈
+                    演出
                 </div>
                 <div class="item">
-                    传统体育
+                    展览
                 </div>
             </div>
-            <div class="base-list base-page-list">
+            <div class="base-activity-list">
                 <van-list
                     v-model="loading"
                     :finished="finished"
                     :finished-text="null"
                     @load="onLoad"
                     >
-                    <a href="detail.html" class="item" v-for="item in list" :key="item">
-                        <div class="img">
-                            <img :src="item.src" alt="" />
-                        </div>
-                        <div class="wrapper">
-                            <div class="title title-line-2">
-                                {{ item.title }}
+                    <div class="item"  v-for="item in list" :key="item">
+                        <a href="detail.html">
+                            <div class="tag" :class="{'tag-active': item.status === 10}">
+                                {{ item.status === 10 ? '报名中' : '已结束' }}
                             </div>
-                            <div class="sub">
-                                {{ item.date }}
+                            <div class="img">
+                                <img :src="item.src" alt="" />
+                            </div>
+                            <div class="wrapper">
+                                <div class="title">
+                                    2020叙州-戏曲活动戏曲活动戏曲活动戏曲活动戏曲活动戏曲活动
+                                </div>
+                            </div>
+                        </a>
+                        <div class="clearfix">
+                            <div class="pull-left sub">
+                                <span class="icon icon-time"></span> 2020/10/12 - 2020/10/20
+                            </div>
+                            <div class="pull-right primary">
+                                166人已报名
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </van-list>
             </div>
         </div>
@@ -69,30 +79,26 @@
         new Vue({
             el: '#app',
             data: {
-                list: [], // 列表
+                // 10 未报名，20 已结束
+                list: [
+                    { status : 10 , src: '../_assets/images/202.png'},
+                    { status : 20 , src: '../_assets/images/201.png'},
+                ], // 列表
                 loading: false, // 是否加载中
                 finished: false, // 加载完成
             },
             methods: {
-                 // 去搜索
-                 search(keyword) {
+                // 去搜索
+                search(keyword) {
                     console.log(keyword)
                 },
                 onLoad() {
                     // 异步更新数据
                     // setTimeout 仅做示例，真实场景中一般为 ajax 请求
                     setTimeout(() => {
-                        for (let i = 0; i < 10; i++) {
-                            this.list.push({
-                                src: '../_assets/images/301.png',
-                                title: '非遗名录非遗名录非遗名录非遗名录非遗名录非遗名录',
-                                date: '2020月8月20日'
-                            })
-                            this.list.push({
-                                src: '../_assets/images/302.png',
-                                title: '非遗名录非遗名录非遗名录非遗名录非遗名录非遗名录',
-                                date: '2020月8月20日'
-                            })
+                        for (let i = 0; i < 5; i++) {
+                            this.list.push( { status : 10 , src: '../_assets/images/202.png'} );
+                            this.list.push( { status : 20 , src: '../_assets/images/201.png'} );
                         }
 
                         // 加载状态结束
@@ -101,7 +107,7 @@
                         if (this.list.length >= 40) {
                         this.finished = true;
                         }
-                    }, 1000);
+                    }, 500);
                 },
             },
         })

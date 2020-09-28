@@ -84,8 +84,9 @@ a.item:active{
 
 @subColor: #999;
 @primaryColor: #158A7E;
+@linkColor: #168FFE;
 @green: #2DB553;
-@dangerColor: #FF5630;
+@dangerColor: #FB1818;
 .text-sub{
 	color: @subColor;
 }
@@ -259,10 +260,8 @@ a.item:active{
 		}
 		.img{
 			width: 3.093333rem;
-			height: 2.133333rem;
 			img{
 				width: 3.093333rem;
-				height: 2.133333rem;
 			}
 		}
 		
@@ -563,7 +562,7 @@ a.item:active{
 		text-align: center;
 		border-radius: .4rem;
 		&-active{
-			background-color: @primaryColor;
+			background: linear-gradient(0deg, #2C91ED 12.5%, #63ABFF 87.5%);
 			color:#fff;
 		}
 		&:not(:last-child){
@@ -583,7 +582,6 @@ a.item:active{
 		}
 		.img img{
 			width: 2.666667rem;
-			height: 1.76rem;
 		}
 		.sub{
 			margin-top: .2rem;
@@ -593,7 +591,7 @@ a.item:active{
 
 
 .btn{
-	border: 1px solid @primaryColor;
+	border: 1px solid @subColor;
 	border-radius: .106667rem;
 	height: .8rem;
 	line-height: 1;
@@ -601,7 +599,7 @@ a.item:active{
 	min-width: 2.666667rem;
 	padding: 0 .266667rem;
 	background-color: #fff;
-	color: @primaryColor;
+	color: @subColor;
 	font-size: .32rem;
 	&-primary{
 		background: linear-gradient(180deg, #0C9A89 0%, #108276 100%);
@@ -684,16 +682,23 @@ a.item:active{
 	}
 	.sub-title{
 		margin-bottom: .4rem;
-		display: flex;
 		.sub{
 			color: @subColor;
+			text-align: right;
 		}
 		.pull-right{
 			text-align: right;
-			flex: 1;
 		}
 		.primary{
 			color: @green;
+		}
+		.tag{
+			font-size: .373333rem;
+		}
+		.tag-active{
+			font-size: .373333rem;
+			font-weight: bold;
+			color: #F36A1C;
 		}
 	}
 	.title-img{
@@ -720,9 +725,9 @@ a.item:active{
 		justify-items: start;
 		.label{
 			span{
-				background: #D9F1EF;
+				background: #FFF1DD;
 				border-radius: .106667rem;
-				color: @primaryColor;
+				color: #CB8755;
 				padding: .08rem .133333rem;
 				display: inline-block;
 				text-align: center;
@@ -874,7 +879,7 @@ a.item:active{
 	text-align: center;
 	padding : .266667rem 0;
 	a{
-		color: @primaryColor;
+		color: @linkColor;
 	}
 }
 .relation-list{
@@ -911,6 +916,9 @@ a.item:active{
 }
 
 .base-activity-list{
+	a{
+		display: block;
+	}
 	.item{
 		padding: .213333rem 0 .48rem;
 		position: relative;
@@ -918,15 +926,18 @@ a.item:active{
 	.tag{
 		position: absolute;
 		left:0;
-		top: .426667rem;
+		top: .213333rem;
 		padding: .053333rem .32rem;
 		background-color: #ddd;
 		color: @subColor;
-		border-radius: 0 .106667rem .106667rem 0;
+		border-radius: .16rem 0 .16rem;
+		color: #666666;
+		background: #DDDDDD;
 	}
 	.tag-active{
-		background-color: #FFAB00;
-		color: #333;
+		background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+		color: #fff;
+		font-weight: bold;
 	}
 	.img{
 		img{
@@ -1126,7 +1137,6 @@ a.item:active{
 
 .full-img-title{
 	position: relative;
-	
 	img{
 		width: 100%;
 		display: block;
@@ -1135,6 +1145,10 @@ a.item:active{
 	.shadow{
 		height: 3.2rem;
 		background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+	}
+	.shadow-blue{
+		height: 3.2rem;
+		background: linear-gradient(0deg, #2C91ED 12.5%, #63ABFF 87.5%);
 	}
 	.text{
 		position: absolute;
@@ -1326,6 +1340,12 @@ a.item:active{
 		bottom: .533333rem;
 	}
 }
+.van-dialog__confirm, .van-dialog__confirm:active{
+	color: @primaryColor;
+}
+
+
+
 .brand-md{
 	.brand-index-list {
 		.item{

@@ -5,23 +5,33 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>文旅活动</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
     <script src="../_assets/js/vue.min.js"></script>
     <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
     <link rel="stylesheet" href="../_assets/css/base.css">
     <link rel="stylesheet" href="../_assets/css/icon.css">
-    <link rel="stylesheet" href="../_assets/css/vant.css">
 </head>
 <body>
-    <div class="activity-md">
+    <div id="app">
         <div class="page-detail">
+            <div class="full-img-title">
+                <img src="../_assets/images/201.png" alt="" />
+            </div>
             <div class="page-md-bg page-gapper">
                 <div class="title">资讯标题资讯标题</div>
-                <div class="sub-title">
-                    <div class="primary">
+                <div class="sub-title clearfix">
+                    <div class="tag-active pull-left">
+                        报名中
+                    </div>
+                    <!-- <div class="pull-left tag">
+                        已结束
+                    </div> -->
+                    <div class="sub pull-right">
                         245人已报名
                     </div>
                 </div>
@@ -47,12 +57,9 @@
                     <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。</p>
 
                     <p>除了医疗健康服务外，记者在服贸会各个展区了解到，数字化技术也融入了教育服务、文化服务、体育服务等多个领域。</p>
-                    <img src="../_assets/images/p1.png" alt="" />
+                    <img src="../_assets/images/203.png" alt="" />
                 </div>
-                <div class="share-bar">
-                    <div class="item"><span class="icon icon-favourite"></span> 点赞</div>
-                    <div class="item"><span class="icon icon-share"></span> 分享</div>
-                </div>
+                <share-bar :count="100" :id="'文章id'"></share-bar>
             </div>
         </div>
 
@@ -63,7 +70,7 @@
             <div class="comment-list">
                 <div class="item">
                     <div class="avatar">
-                        <img src="../_assets/images/p1.png" alt="" />
+                        <img src="../_assets/images/avatar.png" alt="" />
                     </div>
                     <div class="info">
                         <div class="top clearfix">
@@ -74,13 +81,13 @@
                             文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯
                         </div>
                         <div class="bottom">
-                            <span class="icon icon-like"></span> 1224
+                            <likes :count="1"></likes>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="avatar">
-                        <img src="../_assets/images/p1.png" alt="" />
+                        <img src="../_assets/images/avatar.png" alt="" />
                     </div>
                     <div class="info">
                         <div class="top clearfix">
@@ -91,7 +98,7 @@
                             文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯
                         </div>
                         <div class="bottom">
-                            <span class="icon icon-like"></span> 1224
+                            <likes :count="2"></likes>
                         </div>
                     </div>
                 </div>
@@ -99,14 +106,24 @@
             <div class="more-list">
                 <a href="#">查看全部20条评论</a>
             </div>
-        </div>
+            <br>
 
         <div class="fiexd-bottom">
             <div class="height"></div>
             <div class="wrapper">
-                <button class="btn btn-large btn-long">立即报名</button>
+                <button class="btn btn-large btn-warning btn-long">立即报名</button>
             </div>
         </div>
     </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                
+            },
+        })
+    </script>
 </body>
 </html>

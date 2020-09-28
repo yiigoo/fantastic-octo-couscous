@@ -5,26 +5,22 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>文旅资讯</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
     <script src="../_assets/js/vue.min.js"></script>
     <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
     <link rel="stylesheet" href="../_assets/css/base.css">
     <link rel="stylesheet" href="../_assets/css/icon.css">
-    <link rel="stylesheet" href="../_assets/css/vant.css">
 </head>
 <body>
     <div id="app">
-        <div class="news-md page-gapper page-md-bg">
-            <div class="page-search-md">
-                <div class="input-wrapper">
-                    <span class="icon icon-search"></span>
-                    <input type="text" placeholder="搜索你感兴趣的内容" />
-                    <span class="icon icon-clear"></span>
-                </div>
-            </div>
+        <div class="page-gapper page-md-bg">
+            <!-- _assets/js/components.js -->
+            <header-search @enter="search"></header-search>
             <div class="page-tabs">
                 <div class="item item-active">
                     全部
@@ -49,7 +45,7 @@
                     :finished-text="null"
                     @load="onLoad"
                     >
-                    <a href="#" class="item" v-for="item in list" :key="item">
+                    <a href="detail.html" class="item" v-for="item in list" :key="item">
                         <div class="img">
                             <img :src="item.src" alt="" />
                         </div>
@@ -70,22 +66,30 @@
         </div>
     </div>
     <script>
-        Vue.use(vant)
         new Vue({
             el: '#app',
             data: {
-                list: [],
-                loading: false,
-                finished: false,
+                list: [], // 列表
+                loading: false, // 是否加载中
+                finished: false, // 加载完成
             },
             methods: {
+                // 去搜索
+                search(keyword) {
+                    console.log(keyword)
+                },
                 onLoad() {
                     // 异步更新数据
                     // setTimeout 仅做示例，真实场景中一般为 ajax 请求
                     setTimeout(() => {
                         for (let i = 0; i < 10; i++) {
                             this.list.push({
-                                src: '../_assets/images/p1.png',
+                                src: '../_assets/images/100.png',
+                                title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
+                                date: '2020-08-09 10:09:01'
+                            });
+                            this.list.push({
+                                src: '../_assets/images/101.png',
                                 title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
                                 date: '2020-08-09 10:09:01'
                             })
@@ -97,7 +101,7 @@
                         if (this.list.length >= 40) {
                         this.finished = true;
                         }
-                    }, 1000);
+                    }, 500);
                 },
             },
         })

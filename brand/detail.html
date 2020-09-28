@@ -11,9 +11,10 @@
     <script src="../_assets/js/base.js"></script>
     <script src="../_assets/js/vue.min.js"></script>
     <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
     <link rel="stylesheet" href="../_assets/css/base.css">
     <link rel="stylesheet" href="../_assets/css/icon.css">
-    <link rel="stylesheet" href="../_assets/css/vant.css">
 </head>
 <body>
     <div class="news-md">
@@ -38,10 +39,7 @@
                     <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。
                     </p>
                 </div>
-                <div class="share-bar">
-                    <div class="item"><span class="icon icon-favourite"></span> 点赞</div>
-                    <div class="item"><span class="icon icon-share"></span> 分享</div>
-                </div>
+                <share-bar :count="100" :id="'文章id'"></share-bar>
             </div>
         </div>
             

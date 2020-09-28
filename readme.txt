@@ -1,12 +1,17 @@
 ﻿_assets 资源文件夹
+brand  品牌推荐
 activity  文旅活动
 comment  我的评论
+culture_team  文化社团
 feedback  我的反馈
 heritage_inherit 非遗传承
 news  文旅资讯
 reserve  场馆预订
+server_star  服务之星
 server  文旅服务
-shop  积分商城
-team  明星团队
-user 个人中心
+star_team  明星团队
+survey  问卷调查
 volunteer  志愿者
+
+shop  积分商城
+user 个人中心

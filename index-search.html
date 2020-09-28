@@ -6,26 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <title>叙州区文旅云</title>
-    <script src="./_assets/js/flexible.min.js"></script>
-    <script src="./_assets/js/fastclick.js"></script>
-    <script src="./_assets/js/base.js"></script>
-    <script src="./_assets/js/vue.min.js"></script>
-    <script src="./_assets/js/vant.js"></script>
-    <link rel="stylesheet" href="./_assets/css/base.css">
-    <link rel="stylesheet" href="./_assets/css/icon.css">
-    <link rel="stylesheet" href="./_assets/css/vant.css">
+    <script src="_assets/js/flexible.min.js"></script>
+    <script src="_assets/js/fastclick.js"></script>
+    <script src="_assets/js/base.js"></script>
+    <script src="_assets/js/vue.min.js"></script>
+    <script src="_assets/js/vant.js"></script>
+    <script src="_assets/js/components.js"></script>
+    <link rel="stylesheet" href="_assets/css/vant.css">
+    <link rel="stylesheet" href="_assets/css/base.css">
+    <link rel="stylesheet" href="_assets/css/icon.css">
 </head>
 <body>
     <div id="app">
         <div class="index-search-md page-gapper page-md-bg">
-            <div class="page-search-md">
-                <div class="input-wrapper">
-                    <span class="icon icon-search"></span>
-                    <input type="text" placeholder="搜索你感兴趣的内容" />
-                    <span class="icon icon-clear"></span>
-                </div>
-            </div>
-            <!-- <div class="history">
+            <!-- _assets/js/components.js -->
+            <header-search refs="searchInput" v-model="keyword"></header-search>
+
+            <div class="history" v-if="!keyword">
                 <div class="clearfix title-md">
                     <div class="pull-left"><div class="title">历史记录</div></div>
                     <div class="pull-right">
@@ -46,15 +43,15 @@
                         记录内容记录内容记录记录内容记
                     </div>
                 </div>
-            </div> -->
+            </div>
 
-            <!-- <div class="empty">
+            <div class="empty" v-if="list.length === 0">
                 <span class="icon icon-no-search"></span>
                 <div>很抱歉，没有找到符合“文化”相关的内容</div>
-            </div> -->
-            
+            </div>
         </div>
-        <div class="index-search-md">
+
+        <div class="index-search-md" v-if="keyword && list.length">
             <div class="result page-md-bg">
                 <div class="total">
                     找到30条符合“文化”的结果
@@ -80,16 +77,18 @@
             <div class="loading-over" v-show="finished">
                 已经全部加载完毕
             </div>
+            
         </div>
     </div>
     <script>
-        Vue.use(vant)
         new Vue({
             el: '#app',
             data: {
+                keyword: '', // 关键字
+                // 搜索的列表
                 list: [
                     {
-                        src: './_assets/images/p1.png',
+                        src: './_assets/images/p3.png',
                         title: '受中华文明影响较深的东方文明体系被称为“汉<span class="text-highlight">文化</span>圈”，特指社会意识形态，是社会政治、经济与科 ...',
                         sub: '文旅活动'
                     },
@@ -103,13 +102,14 @@
                 finished: false,
             },
             methods: {
+                // 搜索列表加载
                 onLoad() {
                     // 异步更新数据
                     // setTimeout 仅做示例，真实场景中一般为 ajax 请求
                     setTimeout(() => {
                         for (let i = 0; i < 5; i++) {
                             this.list.push({
-                                src: './_assets/images/p1.png',
+                                src: './_assets/images/p5.png',
                                 title: '受中华文明影响较深的东方文明体系被称为“汉 <span class="text-highlight">文化</span>圈”，特指社会意识形态，是社会政治、经济与科 ...',
                                 sub: '文旅活动'
                             })
@@ -126,11 +126,12 @@
                         if (this.list.length >= 40) {
                         this.finished = true;
                         }
-                    }, 1000);
+                    }, 500);
                 },
             },
         })
     </script>
+
     <style>
         html,body{
             background-color: #fff;

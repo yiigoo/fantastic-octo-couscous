@@ -20,22 +20,28 @@
   background-size: 1.333333rem 1.333333rem;
 }
 .icon-favourite {
-  width: 20px;
+  width: 0.533333rem;
   height: 0.48rem;
   background: url('../images/icon/icon-favourite.svg') no-repeat;
-  background-size: 20px 0.48rem;
+  background-size: 0.533333rem 0.48rem;
 }
 .icon-like {
-  width: 20px;
-  height: 20px;
+  width: 0.533333rem;
+  height: 0.533333rem;
   background: url('../images/icon/icon-like.svg') no-repeat;
-  background-size: 20px 20px;
+  background-size: 0.533333rem 0.533333rem;
+}
+.icon-share {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-share.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
 }
 .icon-time {
-  width: 20px;
-  height: 20px;
+  width: 0.533333rem;
+  height: 0.533333rem;
   background: url('../images/icon/icon-time.svg') no-repeat;
-  background-size: 20px 20px;
+  background-size: 0.533333rem 0.533333rem;
 }
 .icon-success,
 .icon-fail {
