@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>阅读品牌</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../_assets/css/icon.css">
 </head>
 <body>
-    <div class="news-md">
+    <div id="app">
         <div class="page-detail">
             <div class="page-md-bg page-gapper">
                 <div class="title">群众文艺展演周群众文艺展演周群众文艺展演周</div>
@@ -29,15 +29,14 @@
                     <div class="pull-right sub">阅读 20</div>
                 </div>
                 <div class="editor">
-                    <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。
-                    </p>
+                    <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。</p>
 
                     <p> 除了医疗健康服务外，记者在服贸会各个展区了解到，数字化技术也融入了教育服务、文化服务、体育服务等多个领域。</p>
 
                     <p> 商务部副部长王炳南认为，数字技术创新发展改变了传统的贸易方式，数字服务贸易正在成为国际贸易发展的新趋势。世界贸易组织预计，到2030年数字技术将促进全球贸易量每年增长1.8到2个百分点。尽管当前全球还没有对数字贸易形成统一认识，但均强调数字化服务和产品在数字贸易中的核心地位。</p>
 
-                    <p> “两脚并拢，双臂平伸，当你模仿出屏幕中的姿势时，系统就会自动播放相应的教学视频，有五禽戏、八段锦、卷云手等功法教学。”在服贸会综合展区中医药服务展台，一位观众正在跟着屏幕里的教学视频练习八段锦。据现场工作人员介绍，这款产品可以自动识别体验者的动作，进行针对性教学。数字化技术让医疗健康服务变得更智能、更人性化，让中医药可以惠及更多普通百姓。
-                    </p>
+                    <p> 王炳南表示，我国数字经济规模巨大，互联网基础完善，在5G、大数据、云计算、人工智能等新技术领域积累了较强的优势，将为数字服务贸易发展提供重要支撑。</p>
+                     <img src="../_assets/images/406.png" alt="" />
                 </div>
                 <share-bar :count="100" :id="'文章id'"></share-bar>
             </div>
@@ -50,7 +49,7 @@
             <div class="base-list relation-list">
                 <a href="#" class="item">
                     <div class="img">
-                        <img src="../_assets/images/p1.png" alt="" />
+                        <img src="../_assets/images/101.png" alt="" />
                     </div>
                     <div class="wrapper">
                         <div class="title title-line-2">
@@ -63,7 +62,7 @@
                 </a>
                 <a href="#" class="item">
                     <div class="img">
-                        <img src="../_assets/images/p2.png" alt="" />
+                        <img src="../_assets/images/100.png" alt="" />
                     </div>
                     <div class="wrapper">
                         <div class="title title-line-2">
@@ -84,7 +83,7 @@
             <div class="comment-list">
                 <div class="item">
                     <div class="avatar">
-                        <img src="../_assets/images/p1.png" alt="" />
+                        <img src="../_assets/images/avatar.png" alt="" />
                     </div>
                     <div class="info">
                         <div class="top clearfix">
@@ -95,13 +94,13 @@
                             文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯
                         </div>
                         <div class="bottom">
-                            <span class="icon icon-like"></span> 1224
+                            <likes :count="1"></likes>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="avatar">
-                        <img src="../_assets/images/p1.png" alt="" />
+                        <img src="../_assets/images/avatar.png" alt="" />
                     </div>
                     <div class="info">
                         <div class="top clearfix">
@@ -112,7 +111,7 @@
                             文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯
                         </div>
                         <div class="bottom">
-                            <span class="icon icon-like"></span> 1224
+                            <likes :count="2"></likes>
                         </div>
                     </div>
                 </div>
@@ -120,7 +119,18 @@
             <div class="more-list">
                 <a href="#">查看全部20条评论</a>
             </div>
+            <br><br><br>
         </div>
     </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                
+            },
+        })
+    </script>
 </body>
 </html>

@@ -1054,11 +1054,9 @@ a.item:active {
 }
 .base-large-list .item .img {
   width: 3.2rem;
-  height: 3.2rem;
 }
 .base-large-list .item .img img {
   width: 3.2rem;
-  height: 3.2rem;
 }
 .base-large-list .item .sub {
   margin-top: 0.213333rem;
