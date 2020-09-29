@@ -19,23 +19,10 @@
 <body>
     <div id="app">
         <div class="page-gapper page-md-bg catalogue-header">
-            <div class="page-tabs">
-                <div class="item item-active">
-                    全部
-                </div>
-                <div class="item">
-                    国家级
-                </div>
-                <div class="item">
-                    省级
-                </div>
-                <div class="item">
-                    市级
-                </div>
-                <div class="item">
-                    县级
-                </div>
-            </div>
+            <page-tabs 
+                @on-change="tabsChange"
+                :datas="[{label: '全部',value: 0},{label: '国家级',value: 1},{label: '省级',value: 2},{label: '市级',value: 3},{label: '县级',value: 4}]">
+            </page-tabs>
         </div>
         <div class="catalogue-md">
             <div class="dir">
@@ -107,6 +94,10 @@
                 ]
             },
             methods: {
+                // 分类切换
+                tabsChange(tab) {
+                    console.log(tab)
+                },
                 dirToggle(item) {
                     this.dirCurrent = item.value
                     // 设置list 

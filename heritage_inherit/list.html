@@ -21,23 +21,10 @@
         <div class="page-gapper page-md-bg">
             <!-- _assets/js/components.js -->
             <header-search @enter="search"></header-search>
-            <div class="page-tabs">
-                <div class="item item-active">
-                    全部
-                </div>
-                <div class="item">
-                    民间文学
-                </div>
-                <div class="item">
-                    传统音乐
-                </div>
-                <div class="item">
-                    传统舞蹈
-                </div>
-                <div class="item">
-                    传统体育
-                </div>
-            </div>
+            <page-tabs 
+                @on-change="tabsChange"
+                :datas="[{label: '全部',value: 0},{label: '民间文学',value: 1},{label: '传统音乐',value: 2},{label: '传统舞蹈',value: 3},{label: '传统体育',value: 4}]">
+            </page-tabs>
             <div class="base-list base-page-list">
                 <van-list
                     v-model="loading"
@@ -77,6 +64,10 @@
                  // 去搜索
                  search(keyword) {
                     console.log(keyword)
+                },
+                // 分类切换
+                tabsChange(tab) {
+                    console.log(tab)
                 },
                 onLoad() {
                     // 异步更新数据

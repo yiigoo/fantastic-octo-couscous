@@ -142,3 +142,43 @@ Vue.component('form-select', {
         {{ value || '请选择' }} <span class="icon icon-arrow-down"></span>
     </div>`
 })
+
+Vue.component('page-tabs', {
+    props: {
+        datas: {
+            type: Array,
+            default: []
+        },
+    },
+    data() {
+        return {
+            currentValue: ''
+        }
+    },
+    methods: {
+        onClick(item) {
+            if( this.currentValue === item.value ){
+                return false
+            }
+            this.currentValue = item.value
+            this.$emit('on-change',item)
+        }
+    },
+    mounted() {
+        if( this.datas.length ){
+            this.onClick(this.datas[0])
+        }
+        
+    },
+    template: `<div class="page-tabs">
+        <div 
+            class="item" 
+            :class="{'item-active': currentValue === item.value}" 
+            v-for="(item, index) in datas" 
+            :key="index" 
+            @click="onClick(item)">
+            {{ item.label }}
+        </div>
+        <div class="item-flex-padding"> &nbsp;</div>
+    </div>`
+})

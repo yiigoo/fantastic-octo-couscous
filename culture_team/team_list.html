@@ -21,17 +21,10 @@
         <div class="page-gapper page-md-bg">
             <!-- _assets/js/components.js -->
             <header-search @enter="search"></header-search>
-            <div class="page-tabs">
-                <div class="item item-active">
-                    文字内容
-                </div>
-                <div class="item">
-                    文字内容
-                </div>
-                <div class="item">
-                    文字内容
-                </div>
-            </div>
+            <page-tabs 
+                @on-change="tabsChange"
+                :datas="[{label: '全部',value: 0},{label: '分类1',value: 1}]">
+            </page-tabs>
             <div class="base-list base-large-list">
                 <van-list
                     v-model="loading"
@@ -72,6 +65,10 @@
                 // 去搜索
                 search(keyword) {
                     console.log(keyword)
+                },
+                // 分类切换
+                tabsChange(tab) {
+                    console.log(tab)
                 },
                 onLoad() {
                     // 异步更新数据

@@ -21,14 +21,10 @@
         <div class="page-gapper page-md-bg">
             <!-- _assets/js/components.js -->
             <header-search @enter="search"></header-search>
-            <div class="page-tabs">
-                <div class="item item-active">
-                    招募中
-                </div>
-                <div class="item">
-                    往期回顾
-                </div>
-            </div>
+            <page-tabs 
+                @on-change="tabsChange"
+                :datas="[{label: '招募中',value: 0},{label: '往期回顾',value: 1}]">
+            </page-tabs>
             <div class="base-activity-list">
                 <van-list
                     v-model="loading"
@@ -81,6 +77,10 @@
                 // 去搜索
                 search(keyword) {
                     console.log(keyword)
+                },
+                // 分类切换
+                tabsChange(tab) {
+                    console.log(tab)
                 },
                 onLoad() {
                     // 异步更新数据

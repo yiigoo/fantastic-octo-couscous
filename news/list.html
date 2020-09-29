@@ -21,23 +21,10 @@
         <div class="page-gapper page-md-bg">
             <!-- _assets/js/components.js -->
             <header-search @enter="search"></header-search>
-            <div class="page-tabs">
-                <div class="item item-active">
-                    全部
-                </div>
-                <div class="item">
-                    文旅动态
-                </div>
-                <div class="item">
-                    相关政策
-                </div>
-                <div class="item">
-                    热点新闻
-                </div>
-                <div class="item">
-                    热点新闻
-                </div>
-            </div>
+            <page-tabs 
+                @on-change="tabsChange"
+                :datas="[{label: '全部',value: 0},{label: '文旅动态',value: 1},{label: '相关政策',value: 2},{label: '热点新闻',value: 3}]">
+            </page-tabs>
             <div class="base-list base-page-list">
                 <van-list
                     v-model="loading"
@@ -77,6 +64,10 @@
                 // 去搜索
                 search(keyword) {
                     console.log(keyword)
+                },
+                // 分类切换
+                tabsChange(tab) {
+                    console.log(tab)
                 },
                 onLoad() {
                     // 异步更新数据

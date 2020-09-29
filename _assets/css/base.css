@@ -539,6 +539,10 @@ a.item:active {
 .page-tabs .item:not(:last-child) {
   margin-right: 0.266667rem;
 }
+.page-tabs .item-flex-padding {
+  height: 0.8rem;
+  width: 0.426667rem;
+}
 .base-page-list .item {
   margin-top: 0;
   margin-bottom: 0;
@@ -1377,7 +1381,7 @@ a.item:active {
   position: fixed;
   bottom: 0;
   left: 2.48rem;
-  top: 0.88rem;
+  top: 1.466667rem;
   right: 0;
   padding: 0.426667rem;
   overflow-y: auto;
