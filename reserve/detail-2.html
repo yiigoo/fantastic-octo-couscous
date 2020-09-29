@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>场馆信息</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="tab-headers page-md-bg">
+            <div class="item">场馆简介</div>
+            <div class="item active">群文活动</div>
+            <div class="item">培训辅导</div>
+            <div class="item">文艺团队</div>
+        </div>
+        <div class="page-gapper page-md-bg">
+            
+            <div class="base-activity-list">
+                <van-list
+                    v-model="loading"
+                    :finished="finished"
+                    :finished-text="null"
+                    @load="onLoad"
+                    >
+                    <div class="item"  v-for="item in list" :key="item">
+                        <a href="detail.html">
+                            <div class="tag" :class="{'tag-active': item.status === 10}">
+                                {{ item.status === 10 ? '报名中' : '已结束' }}
+                            </div>
+                            <div class="img">
+                                <img :src="item.src" alt="" />
+                            </div>
+                            <div class="wrapper">
+                                <div class="title">
+                                    2020叙州-戏曲活动戏曲活动戏曲活动戏曲活动戏曲活动戏曲活动
+                                </div>
+                            </div>
+                        </a>
+                        <div class="clearfix">
+                            <div class="pull-left sub">
+                                <span class="icon icon-time"></span> 2020/10/12 - 2020/10/20
+                            </div>
+                            <div class="pull-right primary">
+                                166人已报名
+                            </div>
+                        </div>
+                    </div>
+                </van-list>
+            </div>
+        </div>
+        <div class="loading-over" v-show="finished">
+            已经全部加载完毕
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // 10 未报名，20 已结束
+                list: [
+                    { status : 10 , src: '../_assets/images/202.png'},
+                    { status : 20 , src: '../_assets/images/201.png'},
+                ], // 列表
+                loading: false, // 是否加载中
+                finished: false, // 加载完成
+            },
+            methods: {
+                // 去搜索
+                search(keyword) {
+                    console.log(keyword)
+                },
+                onLoad() {
+                    // 异步更新数据
+                    // setTimeout 仅做示例，真实场景中一般为 ajax 请求
+                    setTimeout(() => {
+                        for (let i = 0; i < 5; i++) {
+                            this.list.push( { status : 10 , src: '../_assets/images/202.png'} );
+                            this.list.push( { status : 20 , src: '../_assets/images/201.png'} );
+                        }
+
+                        // 加载状态结束
+                        this.loading = false;
+                        // 数据全部加载完成
+                        if (this.list.length >= 40) {
+                        this.finished = true;
+                        }
+                    }, 500);
+                },
+            },
+        })
+    </script>
+</body>
+</html>

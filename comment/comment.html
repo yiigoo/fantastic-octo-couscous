@@ -23,7 +23,7 @@
             <div class="card-form">
                 <van-form @submit="onSubmit">
                     <van-field
-                        v-model="comment"
+                        v-model="pageForm.comment"
                         rows="4"
                         autosize
                         label="发表你的评论"
@@ -36,14 +36,14 @@
 
                     <van-field name="上传图片" label="上传图片" class="van-field-upload">
                         <template #input>
-                            <van-uploader v-model="uploadList" :max-size="1 * 1024 * 1024">
+                            <van-uploader v-model="pageForm.uploadList" :max-size="1 * 1024 * 1024">
                                 <div class="upload-md">
                                     <span class="icon icon-camera"></span>
                                     <br />
                                     添加图片
                                 </div>
                             </van-uploader>
-                            <div class="text-sub" v-show="uploadList.length === 0">支持PNG、JPG格式图片，可上传一张图片，单张不超过1MB。</div>
+                            <div class="text-sub" v-show="pageForm.uploadList.length === 0">支持PNG、JPG格式图片，可上传一张图片，单张不超过1MB。</div>
                         </template>
                     </van-field>
                     <div class="btns">
@@ -58,8 +58,11 @@
     new Vue({
         el: '#app',
         data: {
-            comment: '',
-            uploadList: []
+            pageForm:{
+                comment: '',
+                uploadList: []
+            }
+            
         },
         methods: {
             onSubmit(values) {

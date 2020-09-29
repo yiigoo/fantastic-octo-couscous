@@ -1232,6 +1232,25 @@ a.item:active {
   border: 1px solid #158A7E;
   color: #158A7E;
 }
+.card-form .form-select {
+  padding: 0.133333rem 0.213333rem;
+  padding-right: 1.066667rem;
+  border: 1px solid #999999;
+  border-radius: 0.106667rem;
+  background: none;
+  line-height: 1.75;
+  width: 100%;
+  position: relative;
+}
+.card-form .form-select-empty {
+  color: #999;
+}
+.card-form .form-select .icon {
+  position: absolute;
+  right: 0.373333rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .van-uploader .van-uploader__preview-delete {
   width: 0.48rem;
   height: 0.48rem;
@@ -1270,6 +1289,18 @@ a.item:active {
   width: 100%;
   font-size: 0;
   display: block;
+}
+.van-calendar .van-calendar__selected-day {
+  background: #FFF1DD;
+  color: #000;
+}
+.van-calendar .van-button--danger {
+  border: none;
+  background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+  color: #fff;
+}
+.van-picker .van-picker__confirm {
+  color: #158A7E;
 }
 .brand-md .brand-index-list .item {
   margin-top: 0.426667rem;

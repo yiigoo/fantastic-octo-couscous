@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>场馆信息</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -17,7 +17,26 @@
     <link rel="stylesheet" href="../_assets/css/icon.css">
 </head>
 <body>
-    <div class="order-md">
+    <div id="app">
+        <div class="tab-headers">
+            <div class="item active">场馆简介</div>
+            <div class="item">群文活动</div>
+            <div class="item">培训辅导</div>
+            <div class="item">文艺团队</div>
+        </div>
+        <div class="page-swiper">
+            <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
+                <van-swipe-item>
+                    <img src="../_assets/images/503.png" alt="" />
+                </van-swipe-item>
+                <van-swipe-item>
+                    <img src="../_assets/images/503.png" alt="" />
+                </van-swipe-item>
+                <van-swipe-item>
+                    <img src="../_assets/images/503.png" alt="" />
+                </van-swipe-item>
+            </van-swipe>
+        </div>
         <div class="page-md-bg page-gapper">
             <div class="page-detail">
                 <div class="title">场馆名称场馆名称场馆名称</div>
@@ -44,10 +63,19 @@
         <div class="fiexd-bottom">
             <div class="height"></div>
             <div class="wrapper">
-                <button class="btn btn-large btn-long">场馆预订</button>
+                <button class="btn btn-large btn-warning btn-long">场馆预订</button>
             </div>
         </div>
     </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+            }
+        })
+    </script>
     <style>
         body,html{
             background-color: #fff;

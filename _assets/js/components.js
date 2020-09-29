@@ -121,3 +121,24 @@ Vue.component('likes', {
     },
     template: `<span><span class="icon icon-like" @click="addLike"></span> {{ tempCount }}</span>`
 })
+
+Vue.component('form-select', {
+    props: {
+        value: {
+            type: String,
+            default: ''
+        },
+    },
+    data() {
+        return {
+        }
+    },
+    methods: {
+        onClick() {
+            this.$emit('on-click')
+        }
+    },
+    template: `<div class="form-select" :class="{ 'form-select-empty': !value }" @click="onClick">
+        {{ value || '请选择' }} <span class="icon icon-arrow-down"></span>
+    </div>`
+})

@@ -1322,6 +1322,25 @@ a.item:active{
 			}
 		}
 	}
+	.form-select{
+		padding: 0.133333rem 0.213333rem;
+		padding-right: 1.066667rem;
+		border: 1px solid #999999;
+		border-radius: 0.106667rem;
+		background: none;
+		line-height: 1.75;
+		width: 100%;
+		position: relative;
+		&-empty{
+			color: #999;
+		}
+		.icon{
+			position: absolute;
+			right: .373333rem;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
 }
 .van-uploader{
 	.van-uploader__preview-delete{
@@ -1367,6 +1386,25 @@ a.item:active{
 		display: block;
 	}
 }
+
+.van-calendar{
+	.van-calendar__selected-day{
+		background: #FFF1DD;
+		color: #000;
+	}
+	.van-button--danger{
+		border: none;
+		background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+		color:#fff;
+	}
+	
+}
+.van-picker{
+	.van-picker__confirm{
+		color: @primaryColor;
+	}
+}
+
 
 
 

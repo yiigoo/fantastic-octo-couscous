@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>首页</title>
+    <title>场馆预订</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -17,13 +17,148 @@
     <link rel="stylesheet" href="../_assets/css/icon.css">
 </head>
 <body>
-    <div class="page-card">
+    <div class="page-card" id="app">
         <div class="card-bg"></div>
         <div class="card-wrapper">
-            <div class="text-sub mt15">
-                温馨提示：请佩戴口罩，出示健康码，测量体温才能进入场馆。
+            <div class="card-form">
+                <van-form @submit="onSubmit">
+
+                    <van-field
+                        v-model="pageForm.field1"
+                        label="选择场馆"
+                        placeholder="请选择"
+                        :rules="[{ required: true, message: '请选择' }]">
+                        <template #input>
+                            <form-select v-model="pageForm.field1" @on-click="togglePopup(1)"></form-select>
+                        </template>
+                    </van-field>
+
+                    <van-field
+                        v-model="pageForm.field2"
+                        label="选择场馆"
+                        placeholder="请选择"
+                        :rules="[{ required: true, message: '请选择' }]">
+                        <template #input>
+                            <form-select v-model="pageForm.field2" @on-click="togglePopup(2)"></form-select>
+                        </template>
+                    </van-field>
+
+                    <van-field
+                        v-model="pageForm.field3"
+                        label="预订日期"
+                        placeholder="请选择"
+                        :rules="[{ required: true, message: '请选择' }]">
+                        <template #input>
+                            <form-select v-model="pageForm.field3" @on-click="togglePopup(3)"></form-select>
+                        </template>
+                    </van-field>
+
+                    <van-field
+                        v-model="pageForm.field4"
+                        label="预订时间"
+                        placeholder="请选择"
+                        :rules="[{ required: true, message: '请选择' }]">
+                        <template #input>
+                            <form-select v-model="pageForm.field4" @on-click="togglePopup(4)"></form-select>
+                        </template>
+                    </van-field>
+
+                    <div class="btns">
+                        <button class="btn btn-warning btn-large btn-long">立即提交申请</button>
+                    </div>
+                    <div class="text-sub mt15">
+                        温馨提示：请佩戴口罩，出示健康码，测量体温才能进入场馆。
+                    </div>
+                </van-form>
+
+                <van-popup v-model="options.field1.showPopup" position="bottom">
+                    <van-picker
+                      show-toolbar
+                      :columns="options.field1.columns"
+                      @confirm="options.field1.onConfirm"
+                      @cancel="options.field1.showPopup = false"
+                    />
+                </van-popup>
+
+                <van-popup v-model="options.field2.showPopup" position="bottom">
+                    <van-picker
+                      show-toolbar
+                      :columns="options.field2.columns"
+                      @confirm="options.field2.onConfirm"
+                      @cancel="options.field2.showPopup = false"
+                    />
+                </van-popup>
+
+                <van-calendar 
+                    v-model="options.field3.showPopup" 
+                    @confirm="options.field3.onConfirm">
+                </van-calendar>
+
+                <van-popup v-model="options.field4.showPopup" position="bottom">
+                    <van-picker
+                      show-toolbar
+                      :columns="options.field4.columns"
+                      @confirm="options.field4.onConfirm"
+                      @cancel="options.field4.showPopup = false"
+                    />
+                </van-popup>
+
             </div>
         </div>
     </div>
 </body>
+<script>
+    var _this = new Vue({
+        el: '#app',
+        data: {
+            pageForm: {
+                field1: '',
+                field2: '',
+                field3: '',
+                field4: ''
+            },
+            options: {
+                field1: {
+                    columns: ['场馆1','场馆2','场馆3'],
+                    showPopup: false,
+                    onConfirm(value) {
+                        _this.options.field1.showPopup = false
+                        _this.pageForm.field1 = value
+                    }
+                },
+                field2: {
+                    columns: ['南方城市广场1','南方城市广场2','南方城市广场3'],
+                    showPopup: false,
+                    onConfirm(value) {
+                        _this.options.field2.showPopup = false
+                        _this.pageForm.field2 = value
+                    },
+                },
+                field3: {
+                    showPopup: false,
+                    onConfirm(value) {
+                        _this.options.field3.showPopup = false
+                        _this.pageForm.field3 =  `${value.getFullYear()}年${value.getMonth() + 1}月${value.getDate()}日`
+                       
+                    },
+                },
+                field4: {
+                    columns: ['上午 9:00','下午 2:00'],
+                    showPopup: false,
+                    onConfirm(value) {
+                        _this.options.field4.showPopup = false
+                        _this.pageForm.field4 = value
+                    }
+                },
+            }
+        },
+        methods: {
+            onSubmit(values) {
+            },
+            togglePopup(n) {
+                this.options[`field${n}`].showPopup = true
+            }
+        },
+    })
+</script>
 </html>

@@ -101,6 +101,12 @@
   background: url('../images/icon/icon-next.svg') no-repeat;
   background-size: 0.64rem 0.64rem;
 }
+.icon-arrow-down {
+  width: 0.373333rem;
+  height: 0.213333rem;
+  background: url('../images/icon/icon-arrow-down.svg') no-repeat;
+  background-size: 0.373333rem 0.213333rem;
+}
 .icon-rang {
   width: 0.453333rem;
   height: 0.72rem;
