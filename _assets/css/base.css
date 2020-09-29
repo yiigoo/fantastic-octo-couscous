@@ -927,7 +927,7 @@ a.item:active {
   width: 100%;
 }
 .page-card .card-wrapper {
-  margin: 0 0.426667rem;
+  margin: 0 0.426667rem 0.426667rem;
   padding: 0.32rem 0.426667rem;
   position: relative;
   z-index: 2;
@@ -1305,6 +1305,9 @@ a.item:active {
 }
 .van-picker .van-picker__confirm {
   color: #158A7E;
+}
+.brand-md .brand-index-list {
+  padding-bottom: 0.426667rem;
 }
 .brand-md .brand-index-list .item {
   margin-top: 0.426667rem;
