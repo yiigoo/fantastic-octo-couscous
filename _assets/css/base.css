@@ -1370,9 +1370,10 @@ a.item:active {
   width: 2.48rem;
 }
 .catalogue-md .dir .item {
-  padding: 0.266667rem 0.4rem;
+  padding: 0.32rem 0.4rem;
   text-align: center;
   font-size: 0.373333rem;
+  line-height: 1.2;
 }
 .catalogue-md .dir .item.active {
   background-color: #eee;
