@@ -1635,6 +1635,10 @@ a.item:active {
   color: #158A7E;
   font-size: 0.48rem;
 }
+.calendar-md {
+  padding-bottom: 0.426667rem;
+  background-color: #fff;
+}
 .calendar-md .header-bar {
   background: #EEEEEE;
   height: 1.333333rem;

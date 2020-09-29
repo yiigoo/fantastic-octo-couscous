@@ -63,7 +63,7 @@
         <div class="fiexd-bottom">
             <div class="height"></div>
             <div class="wrapper">
-                <button class="btn btn-large btn-warning btn-long">场馆预订</button>
+                <button class="btn btn-large btn-warning btn-long" @click="apply">场馆预订</button>
             </div>
         </div>
     </div>
@@ -73,6 +73,9 @@
             data: {
             },
             methods: {
+                apply(){
+                    window.location.href = 'order.html'
+                }
             }
         })
     </script>
