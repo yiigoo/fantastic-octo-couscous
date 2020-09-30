@@ -61,13 +61,22 @@
                 finished: false, // 加载完成
             },
             methods: {
-                 // 去搜索
-                 search(keyword) {
+                 // 重置
+                reset() {
+                    this.list = []
+                    this.loading = true
+                    this.finished = false
+                    this.onLoad()
+                },
+                // 去搜索
+                search(keyword) {
                     console.log(keyword)
+                    this.reset()
                 },
                 // 分类切换
                 tabsChange(tab) {
                     console.log(tab)
+                    this.reset()
                 },
                 onLoad() {
                     // 异步更新数据
