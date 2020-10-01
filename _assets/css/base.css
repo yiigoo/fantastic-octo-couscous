@@ -1272,6 +1272,10 @@ a.item:active {
 .van-uploader .van-uploader__preview-image img {
   border-radius: 0.106667rem;
 }
+.van-uploader .van-uploader__preview-image {
+  width: 2.133333rem;
+  height: 2.133333rem;
+}
 .van-image-preview__overlay {
   background-color: #000000 !important;
 }
