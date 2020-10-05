@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>我的积分</title>
+    <title>我的消息</title>
     <script src="../_assets/js/flexible.min.js"></script>
     <script src="../_assets/js/fastclick.js"></script>
     <script src="../_assets/js/base.js"></script>
@@ -18,38 +18,38 @@
 </head>
 <body>
     <div id="app">
-        <div class="point-md">
-            <div class="point-header">
-                <span>299</span><br />
-                目前积分
-            </div>
-            <div class="point-list">
-                <van-list
-                    v-model="loading"
-                    :finished="finished"
-                    :finished-text="null"
-                    @load="onLoad">
-                    <div v-for="(item, index) in list" :key="index">
-                        <div class="cate">
-                            {{ item.month }}
-                        </div>
-                        <div class="list-sub page-md-bg" v-for="(cell, index) in item.items" :key="index">
-                            <div class="item">
-                                <div class="info">
-                                    <div class="text">{{ cell.label }}</div>
-                                    <div class="date">{{ cell.date }}</div>
-                                </div>
-                                <div class="count text-primary" :class="{'text-danger' : cell.status === 20}">
-                                    +2
-                                </div>
+        <div class="page-md-bg page-gapper">
+            <div class="user-md">
+                <div class="view-list">
+                    <van-list
+                        v-model="loading"
+                        :finished="finished"
+                        :finished-text="null"
+                        @load="onLoad">
+                        <div class="wrapper" v-for="(item, index) in list" :key="index">
+                            <div class="date">{{ item.date }}</div>
+                            <div class="base-list relation-list" v-for="(cell, subindex) in item.items" :key="subindex">
+                                <a href="#" class="item">
+                                    <div class="img">
+                                        <img src="../_assets/images/101.png" alt="" />
+                                    </div>
+                                    <div class="wrapper">
+                                        <div class="title title-line-2">
+                                            {{ cell.title }}
+                                        </div>
+                                        <div class="sub">
+                                            {{ cell.date }}
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                </van-list>
-            </div>  
-            <div class="loading-over" v-show="finished">
-                已经全部加载完毕
+                    </van-list>
+                </div>
             </div>
+        </div>
+        <div class="loading-over" v-show="finished">
+            已经全部加载完毕
         </div>
     </div>
     <script>
@@ -67,19 +67,15 @@
                     setTimeout(() => {
                         for (let i = 0; i < 10; i++) {
                             this.list.push({
-                                month: '9月',
+                                date: '9月10日',
                                 items: [
                                     {
-                                        label: '每日签到',
+                                        title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
                                         date: '2020-10-01 15:12:02',
-                                        status: 10,
-                                        point: 2
                                     },
                                     {
-                                        label: '毁约',
+                                        title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
                                         date: '2020-10-01 15:12:02',
-                                        status: 20,
-                                        point: -2
                                     }
                                 ]
                             })

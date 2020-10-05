@@ -59,6 +59,12 @@
   background: url('../images/icon/icon-arrow-right.svg') no-repeat;
   background-size: 0.48rem 0.48rem;
 }
+.icon-arrow-right-gray {
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url('../images/icon/icon-arrow-right-gray.svg') no-repeat;
+  background-size: 0.48rem 0.48rem;
+}
 .icon-camera {
   width: 0.64rem;
   height: 0.64rem;
@@ -114,6 +120,54 @@
   background-size: 0.453333rem 0.72rem;
   text-align: center;
   color: #fff;
+}
+.icon-activity {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url('../images/icon/icon-activity.svg') no-repeat;
+  background-size: 1.2rem 1.2rem;
+}
+.icon-house {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url('../images/icon/icon-house.svg') no-repeat;
+  background-size: 1.2rem 1.2rem;
+}
+.icon-people {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url('../images/icon/icon-people.svg') no-repeat;
+  background-size: 1.2rem 1.2rem;
+}
+.icon-my-comment {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-my-comment.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
+.icon-shopping {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-shopping.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
+.icon-my-feedback {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-my-feedback.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
+.icon-about {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url('../images/icon/icon-about.svg') no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
+.icon-avatar {
+  width: 1.333333rem;
+  height: 1.333333rem;
+  background: url('../images/icon/icon-avatar.svg') no-repeat;
+  background-size: 1.333333rem 1.333333rem;
 }
 .icon-guide-1 {
   background-image: url('../images/icon/icon-guide-1.svg');

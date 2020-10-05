@@ -1,75 +1,130 @@
-<div class="user-md">
-    <div class="user-header">
-        <a href="#" class="set"><span class="icon iconfont iconfont-set"></span></a>
-        <div class="user-view">
-            <div class="avatar">
-                <img src="./images/p2.png" alt="" />
-            </div>
-            <div class="name">萱花酥</div>
-            <div class="signed "><a href="#">签到</a></div>
-        </div>
-        <div class="bar">
-            <div class="item"><span class="count">12</span>消息</div>
-            <div class="item"><span class="count">12</span>积分</div>
-            <div class="item"><span class="count">12</span>足迹</div>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>个人中心</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="user-md">
 
-    <div class="user-guide">
-        <div>
-            <a href="" class="wrapper">
-                <span class="icon iconfont iconfont"></span>
-                活动报名
-            </a>
-        </div>
-        <div>
-            <a href="" class="wrapper">
-                <span class="icon iconfont iconfont"></span>
-                场馆预订
-            </a>
-        </div>
-        <div>
-            <a href="" class="wrapper">
-                <span class="icon iconfont iconfont"></span>
-                志愿者服务
-            </a>
+            <div class="user-header" v-if="logined">
+                <div class="avatar">
+                    <!-- <span class="icon icon-avatar"></span> -->
+                    <img src="../_assets/images/avatar.png" alt="" />
+                </div>
+                <div class="name">萱花酥</div>
+                <div class="signed">
+                    <a>今日签到</a>
+                </div>
+                <div class="edit"><a href="#">编辑</a></div>
+            </div>
+
+            <div class="user-header" v-else>
+                <div class="avatar">
+                    <span class="icon icon-avatar"></span>
+                </div>
+                <div class="name" @click="login">点击登录</div>
+            </div>
+
+            <div class="page-gapper">
+                <div class="user-card">
+                    <div class="card-bar">
+                        <div class="item"><span class="count">10</span>消息</div>
+                        <div class="item"><span class="count">99</span>积分</div>
+                        <div class="item"><span class="count">3</span>足迹</div>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-bar user-guide">
+                        <a class="item">
+                            <span class="icon icon-activity"></span>
+                            活动报名
+                        </a>
+                        <a class="item">
+                            <span class="icon icon-house"></span>
+                            场馆预订
+                        </a>
+                        <a class="item">
+                            <span class="icon icon-people"></span>
+                            志愿者服务
+                        </a>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="common-cell">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="icon icon-my-comment"></span>我的评论
+                                    <div class="right">
+                                        <span class="icon icon-arrow-right-gray"></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon icon-shopping"></span>积分商城
+                                    <div class="right">
+                                        <span class="icon iconfont iconfont"></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon icon-my-feedback"></span>意见反馈
+                                    <div class="right">
+                                        <span class="icon iconfont iconfont"></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon icon-about"></span>关于我们
+                                    <div class="right">
+                                        <span class="icon iconfont iconfont"></span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="copyright text-sub text-center">
+                    叙州区文化馆 V1.0
+                </div>
+
+            </div>
+            
         </div>
     </div>
-    
-    <div class="common-cell">
-        <ul>
-            <li>
-                <a href="#">
-                    <span class="icon iconfont iconfont"></span>我的评论
-                    <div class="right">
-                        <span class="icon iconfont iconfont"></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon iconfont iconfont"></span>积分商城
-                    <div class="right">
-                        <span class="icon iconfont iconfont"></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon iconfont iconfont"></span>意见反馈
-                    <div class="right">
-                        <span class="icon iconfont iconfont"></span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon iconfont iconfont"></span>关于我们
-                    <div class="right">
-                        <span class="icon iconfont iconfont"></span>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                logined: false
+            },
+            methods: {
+                login() {
+                    this.logined = true
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+

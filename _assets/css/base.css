@@ -1013,46 +1013,6 @@ a.item:active {
   border-radius: 50%;
   vertical-align: middle;
 }
-.point-md .point-header {
-  height: 3.733333rem;
-  background: linear-gradient(270deg, #F25613 11.2%, #FF8731 83.47%);
-  color: #fff;
-  text-align: center;
-  padding-top: 0.4rem;
-}
-.point-md .point-header span {
-  font-weight: bold;
-  font-size: 1.28rem;
-}
-.point-md .cate {
-  padding: 0.16rem 0.426667rem;
-  font-weight: bold;
-  font-size: 0.373333rem;
-  color: #999;
-}
-.point-md .point-list .item {
-  border-top: 1px solid #ddd;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  padding: 0.266667rem 0.426667rem;
-}
-.point-md .point-list .item .info {
-  flex: 1;
-}
-.point-md .point-list .item .info .text {
-  font-size: 0.373333rem;
-}
-.point-md .point-list .item .info .date {
-  color: #999;
-}
-.point-md .point-list .count {
-  min-width: 2.133333rem;
-  padding: 0 0.32rem;
-  text-align: right;
-  font-weight: bold;
-  font-size: 0.48rem;
-}
 .base-large-list .item {
   margin-bottom: 0;
   padding: 0.32rem 0;
@@ -1698,4 +1658,196 @@ a.item:active {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0.133333rem;
+}
+.user-md .user-header {
+  height: 3.733333rem;
+  background: linear-gradient(270deg, #F25613 11.2%, #FF8731 83.47%);
+  display: flex;
+  align-items: center;
+  padding: 0 0.426667rem;
+  padding-bottom: 1.013333rem;
+}
+.user-md .user-header .avatar {
+  width: 1.333333rem;
+  height: 1.333333rem;
+  margin-right: 0.4rem;
+}
+.user-md .user-header .avatar img {
+  width: 1.333333rem;
+  height: 1.333333rem;
+  border-radius: 50%;
+}
+.user-md .user-header .name {
+  margin-right: 0.4rem;
+  font-weight: bold;
+  font-size: 0.48rem;
+  color: #fff;
+}
+.user-md .user-header .signed {
+  padding: 0.053333rem 0.32rem;
+  background: #FFAB00;
+  border-radius: 0.32rem;
+  color: #fff;
+}
+.user-md .user-header .edit {
+  flex: 1;
+  text-align: right;
+}
+.user-md .user-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 0.16rem;
+  margin-bottom: 0.32rem;
+}
+.user-md .card-bar {
+  display: flex;
+}
+.user-md .card-bar .item {
+  padding: 0.346667rem 0;
+  flex: 1;
+  text-align: center;
+  color: #666;
+  position: relative;
+}
+.user-md .card-bar .item span {
+  display: block;
+  color: #158A7E;
+  font-size: 0.48rem;
+  font-weight: bold;
+}
+.user-md .card-bar .item::before {
+  content: ' ';
+  position: absolute;
+  top: 0.346667rem;
+  bottom: 0.346667rem;
+  left: 0;
+  border-left: 1px solid #ccc;
+}
+.user-md .card-bar .item:first-child::before {
+  border-width: 0;
+}
+.user-md .user-card:first-child {
+  margin-top: -1.013333rem;
+}
+.user-md .user-guide .item {
+  color: #333;
+}
+.user-md .user-guide .item::before {
+  border-width: 0;
+}
+.user-md .user-guide .item .icon {
+  margin: 0.133333rem auto;
+}
+.user-md .common-cell {
+  padding: 0.16rem 0 0.933333rem;
+}
+.user-md .common-cell li {
+  border-bottom: 1px solid #eee;
+}
+.user-md .common-cell li a {
+  display: flex;
+  font-size: 14px;
+  line-height: 1.333333rem;
+  align-items: center;
+}
+.user-md .common-cell li .right {
+  flex: 1;
+  text-align: right;
+}
+.user-md .common-cell li .icon {
+  margin-left: 0.426667rem;
+  margin-right: 0.426667rem;
+}
+.user-md .view-list .date {
+  color: #999;
+  padding: 12px 16px;
+  background-color: #eee;
+  margin: 0 -16px;
+}
+.point-md .point-header {
+  height: 3.733333rem;
+  background: linear-gradient(270deg, #F25613 11.2%, #FF8731 83.47%);
+  color: #fff;
+  text-align: center;
+  padding-top: 0.4rem;
+}
+.point-md .point-header span {
+  font-weight: bold;
+  font-size: 1.28rem;
+}
+.point-md .cate {
+  padding: 0.16rem 0.426667rem;
+  font-weight: bold;
+  font-size: 0.373333rem;
+  color: #999;
+}
+.point-md .point-list .item {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 0.266667rem 0.426667rem;
+}
+.point-md .point-list .item .info {
+  flex: 1;
+}
+.point-md .point-list .item .info .text {
+  font-size: 0.373333rem;
+}
+.point-md .point-list .item .info .date {
+  color: #999;
+}
+.point-md .point-list .count {
+  min-width: 2.133333rem;
+  padding: 0 0.32rem;
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.48rem;
+}
+.message-list .item {
+  padding: 0.426667rem;
+  display: block;
+  font-size: 0.373333rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.message-list .item .title {
+  max-height: 1.226667rem;
+  line-height: 0.613333rem;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  padding-right: 1.066667rem;
+}
+.message-list .item .date {
+  color: #999;
+  font-size: 0.32rem;
+  margin-top: 0.106667rem;
+}
+.message-list .item:first-child {
+  border-top: 1px solid #eee;
+}
+.message-list .item .tag {
+  background: #FB1818;
+  width: 0.266667rem;
+  height: 0.266667rem;
+  border-radius: 100%;
+  position: absolute;
+  right: 0.6rem;
+  top: 0.5rem;
+}
+.message-card-list .date {
+  color: #999;
+  margin-bottom: 0.266667rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.message-card-list .cell {
+  padding: 0.426667rem 0.613333rem;
+  background-color: #fff;
+  border-radius: 0.106667rem;
+  margin-bottom: 0.32rem;
 }
