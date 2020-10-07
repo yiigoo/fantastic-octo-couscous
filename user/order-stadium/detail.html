@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>场馆预订</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <script src="../../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="order-md">
+            <div class="order-detail">
+                <!-- 审核中 -->
+                <div class="order-header">
+                    <div class="text">
+                        <div class="status">审核中</div>
+                        请等待审核通过
+                    </div>
+                    <div class="opt">
+                        <a href="#" @click="cancel">取消预订</a>
+                    </div>
+                </div>
+
+                <!-- 预订成功 -->
+                <div class="order-header">
+                    <div class="text">
+                        <div class="status">预订成功</div>
+                        签到凭证：0105405762106
+                    </div>
+                    <div class="opt">
+                        <a href="#">扫码签到</a>
+                    </div>
+                </div>
+
+                <!-- 审核不通过 -->
+                <div class="order-header">
+                    <div class="text">
+                        <div class="status">审核不通过</div>
+                        你提交的信息不完整，请重新提交。
+                    </div>
+                    <div class="opt">
+                        <a href="#">重新提交</a>
+                    </div>
+                </div>
+
+                <!-- 已结束 -->
+                <div class="order-header order-header-gray">
+                    <div class="text">
+                        <div class="status">已结束</div>
+                        你提交的信息不完整，请重新提交。
+                    </div>
+                </div>
+
+                <!-- 已取消 -->
+                <div class="order-header order-header-gray">
+                    <div class="text">
+                        <div class="status">已取消</div>
+                        本次预订已取消
+                    </div>
+                </div>
+                
+                <div class="page-title">
+                    预订场馆
+                </div>
+                <div class="order-list">
+                    <div class="item">
+                        <div class="top">
+                            <div class="img">
+                                <img src="../../_assets/images/1201.png" alt="" />
+                            </div>
+                            <div class="wrapper">
+                                <div class="title">
+                                    场馆名称场馆名称场馆名称
+                                </div>
+                                <div class="sub">
+                                    预约场地：一号场地 <br />
+                                    预订日期：2020年10月10日 <br />
+                                    预订时间：9:00 - 17:00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-title">
+                    报名信息
+                </div>
+                <div class="order-cell">
+                    <div class="cell">
+                        <div class="label">　报名人：</div>
+                        <div class="value">李文理</div>
+                    </div>
+                    <div class="cell">
+                        <div class="label">报名人数：</div>
+                        <div class="value">1 人</div>
+                    </div>
+                    <div class="cell">
+                        <div class="label">申请时间：</div>
+                        <div class="value">2020年8月8日 9:30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                cancel() {
+                    this.$dialog.confirm({
+                        title: '要取消预订场馆吗？',
+                        message: '预订时间：2020年9月20日<br />预订时间：9:00 - 10:00'
+                    })
+                    .then(()=>{
+                    })
+                    .catch(()=>{
+                        
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

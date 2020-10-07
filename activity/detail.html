@@ -116,12 +116,13 @@
             <div class="more-list">
                 <a href="#">查看全部20条评论</a>
             </div>
-            <br>
-
+        </div>
+        <br />
+        <br />
         <div class="fiexd-bottom">
             <div class="height"></div>
             <div class="wrapper">
-                <button class="btn btn-large btn-warning btn-long">立即报名</button>
+                <button class="btn btn-large btn-warning btn-long" @click="apply">立即报名</button>
             </div>
         </div>
     </div>
@@ -131,7 +132,9 @@
             data: {
             },
             methods: {
-                
+                apply() {
+                    window.location.href = 'apply.html'
+                }
             },
         })
     </script>

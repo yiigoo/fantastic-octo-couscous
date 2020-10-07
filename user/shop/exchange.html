@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>兑换信息</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <script src="../../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="page-card exchange-md">
+            <div class="card-bg"></div>
+            <div class="card-wrapper">
+                <div class="exchange-header">
+                    <div class="img">
+                        <img src="../../_assets/images/1303.png" alt="" />
+                    </div>
+                    <div class="wrapper">
+                        <div class="title title-line-2">
+                            2020叙州-戏曲活动戏曲活动戏曲活动戏曲活动戏曲活动
+                        </div>
+                        <div class="sub">
+                            所需积分：<span class="count">2000 积分</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-form">
+                    <van-form @submit="onSubmit">
+    
+                        <van-field
+                            v-model="pageForm.count"
+                            label="数量"
+                            placeholder="请输入"
+                            :rules="[{ required: true, message: '请输入' }]">
+                            <template #input>
+                                <van-stepper v-model="pageForm.count" disable-input />
+                            </template>
+                        </van-field>
+
+                        <van-field
+                            v-model="pageForm.name"
+                            label="收货人"
+                            placeholder="请输入"
+                            :rules="[{ required: true, message: '请输入' }]">
+                        </van-field>
+
+                        <van-field
+                            class="pb10"
+                            v-model="pageForm.address1"
+                            label="收货地址"
+                            placeholder="请输入"
+                            :rules="[{ required: true, message: '请选择省/市/区' }]">
+                            <template #input>
+                                <form-select placeholder="请选择省/市/区" v-model="pageForm.address1" @on-click="showArea = true"></form-select>
+                                <van-popup v-model="showArea" position="bottom">
+                                    <van-area
+                                    :area-list="areaList"
+                                    @confirm="onAreaConfirm"
+                                    @cancel="showArea = false"
+                                    />
+                                </van-popup>
+                            </template>
+                        </van-field>
+
+                        <van-field
+                            v-model="pageForm.address2"
+                            placeholder="请输入"
+                            :rules="[{ required: true, message: '请输入详细地址' }]">
+                        </van-field>
+
+                        <van-field
+                            v-model="pageForm.mobile"
+                            label="联系电话"
+                            type="tel"
+                            placeholder="请输入"
+                            :rules="[{ required: true, message: '请输入' }]">
+                        </van-field>
+
+                        <van-field
+                            v-model="pageForm.remark"
+                            label="留言"
+                            type="textarea"
+                            placeholder="请输入"
+                            rows="4">
+                        </van-field>
+
+                        <div class="text-sub text-center mb10">
+                            目前有4000 积分可兑换
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-warning btn-large btn-long">立即兑换</button>
+                        </div>
+                    </van-form>
+    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <style>
+        body,html{
+            background-color: #fff;
+        }
+    </style>
+    <script src="../area.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                pageForm: {
+                    count: 1,
+                    name: '',
+                    address1: '', // 省市区
+                    address2: '', // 地址
+                    mobile: '',
+                    remark: ''
+                },
+                showArea: false,
+                areaList: areas
+            },
+            methods: {
+                onAreaConfirm(values) {
+                    this.showArea = false
+                    let temp = ''
+                    for (let index = 0; index < values.length; index++) {
+                        temp += values[index].name
+                    }
+                    this.pageForm.address1 = temp
+                },
+                onSubmit(values) {
+                    window.location.href = 'exchange-succ.html'
+                },
+            },
+        })
+    </script>
+</body>
+</html>

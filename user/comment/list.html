@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的评论</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <script src="../../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="page-md-bg page-gapper mt15">
+            <div class="comment-list">
+                <van-list
+                    v-model="loading"
+                    :finished="finished"
+                    :finished-text="null"
+                    @load="onLoad">
+                    <div class="item" v-for="item in list" :key="item">
+                        <div class="avatar">
+                            <img :src="item.avatar" alt="" />
+                        </div>
+                        <div class="info">
+                            <div class="top clearfix">
+                                <div class="name pull-left">{{ item.userName }}</div>
+                                <div class="date pull-right">{{ item.date }}</div>
+                            </div>
+                            <a class="text" href="detail.html">
+                                {{ item.text }}
+                            </a>
+                            <div class="img-list clearfix">
+                                
+                                <div 
+                                    @click="preview(item.imgs,index)"
+                                    v-for="(img, index) in item.imgs" 
+                                    v-if="setImgVisible(index , item)"
+                                    :key="index" 
+                                    class="img">
+                                    <img :src="img.src" alt="" />
+                                </div>
+                                <div class="img more" 
+                                    v-if="item.imgs.length > 3 && !item.showMore" 
+                                    @click="more(item)">
+                                    <div class="shadow">+ {{ item.imgs.length - 2 }}</div>
+                                    <img :src="item.imgs[2].src" alt="" />
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <a href="detail.html"><span class="icon icon-comment"></span> 10</a>
+                                <likes :count="2"></likes>
+                            </div>
+                        </div>
+                    </div>
+                </van-list>
+            </div>
+            <van-image-preview 
+                v-model="showPreview" 
+                :images="imagesPreview"
+                :start-position="imagesPreviewIndex">
+            </van-image-preview>
+        </div>
+        <div class="loading-over" v-show="finished">
+            已经全部加载完毕
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showPreview: false,
+                imagesPreview: [],
+                imagesPreviewIndex: 3,
+                list: [{
+                    avatar: '../../_assets/images/404.png',
+                    userName: '1586565878用户',
+                    text: '文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯',
+                    date: '2020-08-20  11:08',
+                    showMore: false,
+                    likes: 100,
+                    imgs: [
+                        {
+                            src: '../../_assets/images/p10.png'
+                        },
+                        {
+                            src: '../../_assets/images/p11.png'
+                        },
+                        {
+                            src: '../../_assets/images/p4.png'
+                        },
+                        {
+                            src: '../../_assets/images/p5.png'
+                        },
+                        {
+                            src: '../../_assets/images/p6.png'
+                        },
+                        {
+                            src: '../../_assets/images/p2.png'
+                        }
+                    ]
+                }],
+                loading: false,
+                finished: false,
+            },
+            methods: {
+                setImgVisible( index, item) {
+                    if( item.showMore ){
+                        return true
+                    }
+                    if( item.imgs.length < 4 ){
+                        return true
+                    }
+                    if( item.imgs.length >= 4 ){
+                        if( index < 2 ){
+                            return true
+                        }
+                    }
+                    return false
+                },
+                more(item) {
+                    item.showMore = !item.showMore
+                },
+                preview(imgs,index) {
+                    this.imagesPreview = []
+                    for (let index = 0; index < imgs.length; index++) {
+                        const img = imgs[index]
+                        this.imagesPreview.push(img.src)
+                    }
+                    this.imagesPreviewIndex = index
+                    this.showPreview = true
+                },
+                onLoad() {
+                    // 异步更新数据
+                    // setTimeout 仅做示例，真实场景中一般为 ajax 请求
+                    setTimeout(() => {
+                        for (let i = 0; i < 3; i++) {
+                            this.list.push({
+                            avatar: '../../_assets/images/403.png',
+                            userName: '1586565878用户',
+                            text: '文旅资讯活动新闻发布会文旅资新闻发布会文旅资讯文旅资讯活动新闻发布会文旅资讯新闻发布会文旅资讯',
+                            date: '2020-08-20  11:08',
+                            showMore: false,
+                            likes: 100,
+                            imgs: [
+                                    {
+                                        src: '../../_assets/images/p10.png'
+                                    },
+                                    {
+                                        src: '../../_assets/images/p11.png'
+                                    },
+                                ]
+                            })
+                        }
+
+                        // 加载状态结束
+                        this.loading = false;
+                        // 数据全部加载完成
+                        if (this.list.length >= 10) {
+                        this.finished = true;
+                        }
+                    }, 1000);
+                },
+            },
+        })
+    </script>
+</body>
+</html>

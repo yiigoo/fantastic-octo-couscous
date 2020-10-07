@@ -615,6 +615,11 @@ a.item:active{
 		background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
 		color:#fff;
 	}
+	&-white{
+		border: 1px solid #fff;
+		background: transparent;
+		color: #fff;
+	}
 	&-large{
 		height: 1.066667rem;
 		border-width: .04rem;
@@ -829,6 +834,7 @@ a.item:active{
 		.text{
 			font-size: .373333rem;
 			padding: .186667rem 0 .4rem 0;
+			display: block;
 		}
 		.img-list{
 			padding-bottom: .4rem;
@@ -878,6 +884,10 @@ a.item:active{
 			.bottom{
 				text-align: right;
 				color: @subColor;
+				a{
+					color: @subColor;
+					margin-right: .266667rem;
+				}
 				.icon{
 					vertical-align: bottom;
 				}
@@ -1050,8 +1060,9 @@ a.item:active{
 
 .base-cell-list{
 	font-size: .373333rem;
+	margin-top: .32rem;
 	.item{
-		margin-bottom: .32rem;
+		
 		display: flex;
 		justify-items: center;
 		align-items: center;
@@ -1135,6 +1146,12 @@ a.item:active{
 		padding-left: .8rem;
 		z-index: 1;
 	}
+	.btns{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: .64rem;
+	}
 }
 
 .survery-md{
@@ -1214,6 +1231,9 @@ a.item:active{
 		}
 		textarea.van-field__control{
 			line-height: inherit;
+		}
+		&.pb10{
+			padding-bottom: .266667rem !important;
 		}
 	}
 	.van-field__error-message{
@@ -1300,6 +1320,34 @@ a.item:active{
 		}
 	}
 }
+
+.page-form{
+	padding: .426667rem;
+	padding-bottom: 1rem;
+	background-color: #fff;
+	.van-cell{
+		padding-bottom: 0.5rem;
+	}
+	.btn-code{
+		height: .96rem;
+		margin-left: .426667rem;
+		min-width: 3.626667rem;
+		border: 1px solid @primaryColor;
+		color: @primaryColor;
+	}
+}
+
+.dialog-form{
+	padding: 20px 40px;
+	input.van-field__control{
+		padding: .133333rem .213333rem;
+		border: 1px solid #999;
+		border-radius: .106667rem;
+		background: none;
+		line-height: 1.75;
+	}
+}
+
 .van-uploader{
 	.van-uploader__preview-delete{
 		width: .48rem;
@@ -2010,5 +2058,248 @@ a.item:active{
 		background-color: #fff;
 		border-radius: .106667rem;
 		margin-bottom: .32rem;
+	}
+}
+
+.order-md{
+	.order-list{
+		.item{
+			background: #fff;
+			margin-bottom: .266667rem;
+			.top{
+				padding: .533333rem .426667rem;
+				display: flex;
+				.img{
+					width: 1.813333rem;
+					margin-right: .32rem;
+					img{
+						width: 1.813333rem;
+						border-radius: .106667rem;
+					}
+				}
+				.wrapper{
+					flex: 1;
+				}
+				.title{
+					padding-right: .32rem;
+					margin-bottom: .133333rem;
+					font-weight: bold;
+				}
+				.sub{
+					color: #666;
+				}
+				.tag{
+					padding: 0 .3rem;
+					font-weight: bold;
+					color: #2DB553;
+				}
+				.tag-gray{
+					color: #999;
+				}
+			}
+			.bottom{
+				border-top: 1px solid #eee;	
+			}
+			.btns{
+				text-align: right;
+				padding: .266667rem .426667rem;
+				a {
+					margin-left: .3rem;
+					display: inline-block;
+					padding: .106667rem .266667rem;
+					border: 1px solid #999;
+					border-radius: .106667rem;
+					color: @subColor;
+				}
+			}
+		}
+		.item:first-child{
+			border-top: 1px solid #eee;
+		}
+	}
+	.order-detail{
+		.order-header{
+			background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+			padding: .5rem .533333rem;
+			height: 2.186667rem;
+			display: flex;
+			color: #fff;
+			.text{
+				flex: 1;
+			}
+			.status{
+				font-weight: bold;
+				font-size: .373333rem;
+			}
+			.opt{
+				padding-top: .15rem;
+				a{
+					border: 1px solid #FFFFFF;
+					border-radius: .106667rem;
+					color: #fff;
+					padding: .133333rem .32rem;
+					display: inline-block;
+				}
+			}
+			&-gray{
+				background: #666666;
+			}
+		}
+		.order-list{
+			.item{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.order-cell{
+		background-color: #fff;
+		padding: .4rem .533333rem;
+		.cell{
+			display: flex;
+			padding: .08rem 0;
+			.label{
+				color: @subColor;
+			}
+			.value{
+				flex: 1;
+			}
+		}
+	}
+}
+
+.shop-list{
+	padding: .266667rem;
+	padding-top: 0;
+	.item{
+		float: left;
+		width: 50%;
+		padding: .16rem;
+	}
+	.wrapper{
+		background-color: #fff;
+	}
+	.title{
+		color: #666;
+		font-size: 14px;
+		height: 1.066667rem;
+		line-height: .533333rem;
+		overflow: hidden;
+		margin-bottom: .266667rem;
+	}
+	.info{
+		padding: .266667rem;
+	}
+	.img{
+		height: 3.333333rem;
+		line-height: 3.333333rem;
+		img{
+			max-width: 100%;
+			max-height: 3.333333rem;
+		}
+	}
+	.count{
+		padding-top: .133333rem;
+		color: #F36A1C;
+	}
+	.change{
+		display: inline-block;
+		background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
+		border-radius: .106667rem;
+		padding: .133333rem .4rem;
+		color: #fff;
+	}
+}
+.shop-order-list{
+	.item{
+		background: #fff;
+		margin-top: .266667rem;
+		.top{
+			padding:.426667rem .426667rem .533333rem;
+			display: flex;
+			.img{
+				width: 2.666667rem;
+				margin-right: .32rem;
+				img{
+					width: 2.666667rem;
+					border-radius: .106667rem;
+				}
+			}
+			.wrapper{
+				flex: 1;
+			}
+			.title{
+				padding-right: .32rem;
+				margin-bottom: .133333rem;
+				font-weight: bold;
+				font-size: .373333rem;
+			}
+			.sub{
+				margin-top: .4rem;
+			}
+		}
+		.bottom{
+			border-top: 1px solid #eee;	
+		}
+		.btns{
+			text-align: right;
+			padding: .266667rem .426667rem;
+			a {
+				margin-left: .3rem;
+				display: inline-block;
+				padding: .106667rem .266667rem;
+				border: 1px solid #999;
+				border-radius: .106667rem;
+				color: @subColor;
+			}
+		}
+		.bar{
+			color: @subColor;
+			padding: .32rem .426667rem;
+		}
+	}
+}
+
+.exchange-md{
+	.exchange-header{
+		margin-bottom: .4rem;
+		display: flex;
+		.img{
+			width: 2.133333rem;
+			margin-right: .32rem;
+			img{
+				width: 2.133333rem;
+			}
+		}
+		.wrapper{
+			.title{
+				font-weight: bold;
+				font-size: .373333rem;
+				line-height: 1.5;
+			}
+			.sub{
+				margin-top: .5rem;
+				.count{
+					color: #F36A1C;
+				}
+			}
+		}
+	}
+}
+
+.van-stepper{
+	&__input{
+		background-color: #fff;
+		font-size: .373333rem;
+		min-width: 1.333333rem;
+	}
+	.van-stepper__minus, .van-stepper__plus{
+		width: .96rem;
+		height: .96rem;
+		border-radius: .106667rem;
+		border: 1px solid #999999;
+		background-color: #fff;
+	}
+	.van-stepper__minus--disabled,.van-stepper__plus--disabled{
+		border: 1px solid #eee;
 	}
 }

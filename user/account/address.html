@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>联系地址</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <script src="../../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="card-form page-form">
+            <van-form @submit="onSubmit">
+
+                <van-field
+                    v-model="pageForm.address1"
+                    label="选择地区"
+                    placeholder="请选择地区"
+                    :rules="[{ required: true, message: '请选择地区' }]">
+                    <template #input>
+                        <form-select placeholder="请选择省/市/区" v-model="pageForm.address1" @on-click="showArea = true"></form-select>
+                        <van-popup v-model="showArea" position="bottom">
+                            <van-area
+                            :area-list="areaList"
+                            @confirm="onAreaConfirm"
+                            @cancel="showArea = false"
+                            />
+                        </van-popup>
+                    </template>
+                </van-field>
+
+                <van-field
+                    v-model="pageForm.address2"
+                    label="详细地址"
+                    placeholder="街道门牌、楼层房间号等信息"
+                    :rules="[{ required: true, message: '请输入街道门牌、楼层房间号等信息' }]">
+                </van-field>
+
+
+                <div class="btns">
+                    <button class="btn btn-warning btn-large btn-long">保存</button>
+                </div>
+                </van-form>
+        </div>
+</body>
+
+<script src="../area.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            pageForm: {
+                address1: '',
+                address2: ''
+            },
+            showArea: false,
+            areaList: areas
+        },
+        methods: {
+            onSubmit(values) {
+                this.$toast('修改成功')
+                setTimeout(()=>{
+                    window.history.go(-1)
+                },500)
+            },
+            onAreaConfirm(values) {
+                this.showArea = false
+                let temp = ''
+                for (let index = 0; index < values.length; index++) {
+                    temp += values[index].name
+                }
+                this.pageForm.address1 = temp
+            },
+        },
+    })
+</script>
+</html>

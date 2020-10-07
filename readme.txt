@@ -6,7 +6,7 @@ culture_team  文化社团
 feedback  我的反馈
 heritage_inherit 非遗传承
 news  文旅资讯
-reserve  场馆预订
+stadium_reserve  场馆预订
 server_star  服务之星
 server  文旅服务
 survey  问卷调查

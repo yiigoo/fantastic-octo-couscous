@@ -85,7 +85,7 @@ Vue.component('share-bar', {
     },
     template: 
     `<div class="share-bar">
-        <div class="item" @click="addLikes"><span class="icon icon-favourite"></span> 点赞 {{ tempCount }}</div>
+        <div class="item" @click="addLikes"><span class="icon icon-like"></span> 点赞 {{ tempCount }}</div>
         <div class="item" @click="share"><span class="icon icon-share"></span> 分享</div>
         <van-share-sheet
             v-model="showShare"
@@ -128,6 +128,10 @@ Vue.component('form-select', {
             type: String,
             default: ''
         },
+        placeholder: {
+            type: String,
+            default: '请选择'
+        },
     },
     data() {
         return {
@@ -139,7 +143,7 @@ Vue.component('form-select', {
         }
     },
     template: `<div class="form-select" :class="{ 'form-select-empty': !value }" @click="onClick">
-        {{ value || '请选择' }} <span class="icon icon-arrow-down"></span>
+        {{ value || placeholder }} <span class="icon icon-arrow-down"></span>
     </div>`
 })
 

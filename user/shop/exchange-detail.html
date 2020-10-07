@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>兑换详情</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <script src="../../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="order-md">
+            <div class="order-detail">
+                <div class="order-header">
+                    <div class="text">
+                        <div class="status">已兑换</div>
+                        兑换时间：2020年10月12日 9:40
+                    </div>
+                </div>
+                
+                <div class="page-title">
+                    兑换礼品
+                </div>
+                <div class="order-list">
+                    <div class="item">
+                        <div class="top">
+                            <div class="img">
+                                <img src="../../_assets/images/1303.png" alt="" />
+                            </div>
+                            <div class="wrapper">
+                                <div class="title">
+                                    场馆名称场馆名称场馆名称
+                                </div>
+                                <div class="sub">
+                                    礼品编号：D232145465 <br />
+                                    消费积分：2000 积分 <br />
+                                    发货地址：叙州区文化馆
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-title">
+                    收货信息
+                </div>
+                <div class="order-cell">
+                    <div class="cell">
+                        <div class="label">　收货人：</div>
+                        <div class="value">李文理</div>
+                    </div>
+                    <div class="cell">
+                        <div class="label">联系电话：</div>
+                        <div class="value">1234567891234</div>
+                    </div>
+                    <div class="cell">
+                        <div class="label">收货地址：</div>
+                        <div class="value">叙州区某某路某某号某某地区一楼叙州区某某路某叙州区某某路某叙州区某某路某</div>
+                    </div>
+                    <div class="cell">
+                        <div class="label">留　　言：</div>
+                        <div class="value">请尽快发送商品</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                cancel() {
+                    this.$dialog.confirm({
+                        title: '要取消预订场馆吗？',
+                        message: '预订时间：2020年9月20日<br />预订时间：9:00 - 10:00'
+                    })
+                    .then(()=>{
+                    })
+                    .catch(()=>{
+                        
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

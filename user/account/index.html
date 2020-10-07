@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>个人资料</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <script src="../../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="base-cell-list page-md-bg">
+            <a class="item">
+                <div class="label">
+                    头像
+                </div>
+                <div class="value">
+                    <van-uploader :after-read="avatarUploader">
+                        <img :src="pageForm.avatar" alt="" class="avatar" />
+                    </van-uploader>
+                    
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+        </div>
+    
+        <div class="base-cell-list page-md-bg">
+            <a class="item" @click="nickNameShow = true">
+                <div class="label">
+                    昵称
+                </div>
+                <div class="value">
+                    {{ pageForm.nickName }}
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+            <a class="item" @click="sexShow = true">
+                <div class="label">
+                    性别
+                </div>
+                <div class="value">
+                    {{ pageForm.sex }}
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+            <a class="item" @click="birthdayShow = true">
+                <div class="label">
+                    我的生日
+                </div>
+                <div class="value">
+                    {{ pageForm.birthday }}
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+        </div>
+    
+        <div class="base-cell-list page-md-bg">
+            <a class="item" href="password.html">
+                <div class="label">
+                    修改密码
+                </div>
+                <div class="value">
+                    
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+            <a class="item" href="mobile.html">
+                <div class="label">
+                    绑定手机
+                </div>
+                <div class="value">
+                    123456789123
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+            <a class="item" href="address.html">
+                <div class="label">
+                    联系地址
+                </div>
+                <div class="value">
+                    <div class="text">宜宾市叙州区某路某小区某楼某层某号房</div>
+                </div>
+                <div class="arrow">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </a>
+        </div>
+        <div class="page-gapper mt20">
+            <button class="btn btn-warning btn-large btn-long">
+                保存
+            </button>
+        </div>
+
+        <!-- 昵称 -->
+        <van-dialog v-model="nickNameShow" title="修改昵称" show-cancel-button :before-close="nickNameConfirm">
+            <div class="dialog-form">
+                <input placeholder="不得超过10个字符" type="text" class="van-field__control" v-model="tempNickName" />
+            </div>
+        </van-dialog>
+
+        <!-- 性别 -->
+        <van-popup v-model="sexShow" position="bottom">
+            <van-picker
+                title='性别修改'
+                show-toolbar
+                :columns="sexColumns"
+                @confirm="sexConfirm"
+                @cancel="sexShow = false"
+            />
+        </van-popup>
+
+        <!-- 生日 -->
+        <van-popup v-model="birthdayShow" position="bottom">
+            <van-datetime-picker
+                v-model="tempBirthday"
+                type="date"
+                title="选择年月日"
+                :min-date="minDate"
+                :max-date="maxDate"
+                @confirm="birthdayConfirm"
+                @cancel="birthdayShow = false"
+            />
+        </van-popup>
+       
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                pageForm: {
+                    avatar: '../../_assets/images/avatar.png',
+                    nickName: '张文丽',
+                    sex: '男',
+                    birthday: '1990年9月9日'
+                },
+                tempNickName: '', // 临时昵称字段
+                nickNameShow: false, // 是否显示昵称修改
+
+                sexShow: false, // 是否显示性别修改
+                sexColumns: ['男','女'],
+
+                birthdayShow: false, // 是否显示生日修改
+                minDate: new Date(1980, 0, 1),
+                maxDate: new Date(2025, 10, 1),
+                tempBirthday: new Date(),
+
+            },
+            methods: {
+                // 头像上传
+                avatarUploader(file,detail) {
+                    this.pageForm.avatar = file.content
+                },
+                // 昵称修改
+                nickNameConfirm(action, done) {
+                    if(action === 'confirm') {
+                        let value = this.tempNickName
+                        if( value ) {
+                            if( value.length > 10 ){
+                                this.$toast({position: 'top', message: '不得超过10个字符'})
+                                done(false)
+                            }
+                            else{
+                                done()
+                                this.pageForm.nickName = value
+                            }
+                        }else{
+                            this.$toast({position: 'top', message: '请输入昵称'})
+                            done(false)
+                        }
+                    } else if(action === 'cancel') {
+                        done() //关闭
+                    }
+                    this.tempNickName = ''
+                },
+                // 性别修改
+                sexConfirm(value) {
+                    this.pageForm.sex = value
+                    this.sexShow = false
+                },
+                // 生日修改
+                birthdayConfirm(value) {
+                    this.birthdayShow = false
+                    this.pageForm.birthday =  `${value.getFullYear()}年${value.getMonth() + 1}月${value.getDate()}日`
+                }
+            },
+        })
+    </script>
+</body>
+</html>
