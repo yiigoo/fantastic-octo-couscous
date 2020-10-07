@@ -170,9 +170,8 @@ Vue.component('page-tabs', {
     },
     mounted() {
         if( this.datas.length ){
-            this.onClick(this.datas[0])
+            this.currentValue = this.datas[0].value
         }
-        
     },
     template: `<div class="page-tabs">
         <div 
@@ -184,5 +183,51 @@ Vue.component('page-tabs', {
             {{ item.label }}
         </div>
         <div class="item-flex-padding"> &nbsp;</div>
+    </div>`
+})
+
+Vue.component('tab-headers', {
+    props: {
+        datas: {
+            type: Array,
+            default: []
+        },
+        value: {
+            type: String,
+            default: ''
+        }
+    },
+    data() {
+        return {
+            currentValue: ''
+        }
+    },
+    methods: {
+        onClick(item) {
+            if( this.currentValue === item.value ){
+                return false
+            }
+            this.currentValue = item.value
+            this.$emit('on-change',item)
+        }
+    },
+    mounted() {
+        if( this.value ){
+            this.currentValue = this.value
+        }else{
+            if( this.datas.length ){
+                this.currentValue = this.datas[0].value
+            }
+        }
+    },
+    template: `<div class="tab-headers page-gapper">
+        <div 
+            class="item" 
+            :class="{'active': currentValue === item.value}" 
+            v-for="(item, index) in datas" 
+            :key="index" 
+            @click="onClick(item)">
+            {{ item.label }}
+        </div>
     </div>`
 })

@@ -18,12 +18,10 @@
 </head>
 <body>
     <div id="app">
-        <div class="tab-headers page-md-bg">
-            <a class="item active">全部</a>
-            <a class="item">已预订</a>
-            <a href="#" class="item">已结束</a>
-            <a href="#" class="item">已取消</a>
-        </div>
+        <tab-headers
+            @on-change="tabChange"
+            :datas="[{label:'全部',value: '1'},{label:'已预订',value: '2'},{label:'已结束',value: '3'},{label:'已取消',value: '4'}]">
+        </tab-headers>
         <div class="order-md">
             <div class="order-list">
                 <van-list
@@ -77,6 +75,13 @@
                 }
             },
             methods: {
+                tabChange(item) {
+                    console.log(item)
+                    this.loading = true
+                    this.finished = false
+                    this.list = []
+                    this.onLoad()
+                },
                 onLoad() {
                     // 异步更新数据
                     // setTimeout 仅做示例，真实场景中一般为 ajax 请求

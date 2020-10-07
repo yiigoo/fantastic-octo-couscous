@@ -18,11 +18,10 @@
 </head>
 <body>
     <div id="app">
-        <div class="tab-headers page-md-bg page-gapper">
-            <a href="#" class="item active">全部</a>
-            <a href="#" class="item">未读</a>
-            <a href="#" class="item">已读</a>
-        </div>
+        <tab-headers
+            @on-change="tabChange"
+            :datas="[{label:'全部',value: '1'},{label:'未读',value: '2'},{label:'已读',value: '3'}]">
+        </tab-headers>
         <div class="message-list page-md-bg">
             <van-list
                 v-model="loading"
@@ -49,6 +48,13 @@
                 finished: false, // 加载完成
             },
             methods: {
+                tabChange(item) {
+                    console.log(item)
+                    this.loading = true
+                    this.finished = false
+                    this.list = []
+                    this.onLoad()
+                },
                 onLoad() {
                     // 异步更新数据
                     // setTimeout 仅做示例，真实场景中一般为 ajax 请求

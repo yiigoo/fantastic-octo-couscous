@@ -19,10 +19,11 @@
 <body>
     <div id="app">
         <div class="tab-headers page-md-bg">
-            <a href="detail-1.html" class="item">场馆简介</a>
-            <a href="detail-2.html" class="item active">群文活动</a>
-            <a href="#" class="item">培训辅导</a>
-            <a href="#" class="item">文艺团队</a>
+            <tab-headers
+                :value="'2'"
+                @on-change="tabChange"
+                :datas="[{label:'场馆简介',value: '1'},{label:'群文活动',value: '2'},{label:'培训辅导',value: '3'},{label:'文艺团队',value: '4'}]">
+            </tab-headers>
         </div>
         <div class="page-gapper page-md-bg">
             
@@ -76,9 +77,10 @@
                 finished: false, // 加载完成
             },
             methods: {
-                // 去搜索
-                search(keyword) {
-                    console.log(keyword)
+                tabChange(item) {
+                    if( item.value === '1' ){
+                        window.location.href = 'detail-1.html'
+                    }
                 },
                 onLoad() {
                     // 异步更新数据

@@ -337,6 +337,7 @@ a.item:active {
 .tab-headers {
   height: 1.226667rem;
   line-height: 1.226667rem;
+  background-color: #fff;
 }
 .tab-headers .item {
   width: 25%;
@@ -2003,6 +2004,7 @@ a.item:active {
 }
 .shop-list .wrapper {
   background-color: #fff;
+  border-radius: 0.106667rem;
 }
 .shop-list .title {
   color: #666;

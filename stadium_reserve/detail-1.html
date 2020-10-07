@@ -18,12 +18,11 @@
 </head>
 <body>
     <div id="app">
-        <div class="tab-headers">
-            <a href="detail-1.html" class="item active">场馆简介</a>
-            <a href="detail-2.html" class="item">群文活动</a>
-            <a href="#" class="item">培训辅导</a>
-            <a href="#" class="item">文艺团队</a>
-        </div>
+        <tab-headers
+            @on-change="tabChange"
+            :datas="[{label:'场馆简介',value: '1'},{label:'群文活动',value: '2'},{label:'培训辅导',value: '3'},{label:'文艺团队',value: '4'}]">
+        </tab-headers>
+        
         <div class="page-swiper">
             <van-swipe :autoplay="5000" indicator-color="white" :stop-propagation="false">
                 <van-swipe-item>
@@ -75,7 +74,12 @@
             methods: {
                 apply(){
                     window.location.href = 'order.html'
-                }
+                },
+                tabChange(item) {
+                    if( item.value === '2' ){
+                        window.location.href = 'detail-2.html'
+                    }
+                },
             }
         })
     </script>

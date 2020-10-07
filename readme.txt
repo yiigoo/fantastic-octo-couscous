@@ -14,7 +14,4 @@ star_team  明星团队
 team_registry  团队注册
 volunteer  志愿者
 volunteer_mien  志愿者风采
-
-
-shop  积分商城
 user 个人中心

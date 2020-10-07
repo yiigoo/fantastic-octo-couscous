@@ -19,16 +19,40 @@
 <body>
     <div id="app">
         <div class="service-md">
-            <div class="tab-headers">
-                <a href="#" class="item active">景点</a>
-                <a href="#" class="item">公园</a>
-                <a href="#" class="item">商场</a>
-                <a href="#" class="item">图书馆</a>
-            </div>
+
+            <tab-headers
+                @on-change="tabChange"
+                :datas="[{label:'景点',value: '1'},{label:'公园',value: '2'},{label:'商场',value: '3'},{label:'图书馆',value: '4'}]">
+            </tab-headers>
+
             <div class="maps-show">
                 <img src="../_assets/images/map-large.png" alt="" />
             </div>
             <div class="address-list">
+                <a href="#" class="item">
+                    <div class="img">
+                        <img src="../_assets/images/p1.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="title">5.6 公里</div>
+                        <div class="sub">四川省宜宾市叙州区七星路段</div>
+                    </div>
+                    <div class="right">
+                        5.6 公里
+                    </div>
+                </a>
+                <a href="#" class="item">
+                    <div class="img">
+                        <img src="../_assets/images/p1.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="title">5.6 公里</div>
+                        <div class="sub">四川省宜宾市叙州区七星路段</div>
+                    </div>
+                    <div class="right">
+                        5.6 公里
+                    </div>
+                </a>
                 <a href="#" class="item">
                     <div class="img">
                         <img src="../_assets/images/p1.png" alt="" />
@@ -97,5 +121,18 @@
             background: #fff;
         }
     </style>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            methods: {
+                tabChange(item) {
+                    console.log(item)
+                },
+            },
+        })
+    </script>
 </body>
 </html>
