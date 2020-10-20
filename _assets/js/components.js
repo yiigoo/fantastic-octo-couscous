@@ -119,7 +119,7 @@ Vue.component('likes', {
             this.$toast('点赞+1')
         },
     },
-    template: `<span><span class="icon icon-like" @click="addLike"></span> {{ tempCount }}</span>`
+    template: `<span><span class="icon icon-like" @click="addLike"></span> {{ tempCount }} &nbsp; <span class="icon icon-comment" @click="addLike"></span> {{ tempCount }}</span>`
 })
 
 Vue.component('form-select', {
