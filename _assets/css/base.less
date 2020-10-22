@@ -1261,14 +1261,37 @@ a.item:active{
 
 
 .card-form{
+	.van-checkbox{
+		align-items: flex-start;
+		padding: .266667rem 0;
+		.van-checkbox__icon{
+			margin-top: .133333rem;
+			transition-duration: .0s;
+			width: .48rem;
+			height: .48rem;
+			border-radius: .08rem;
+		}
+		.van-checkbox__icon--checked{
+			background-color: #F36A1C;
+			border: none;
+			.van-icon{
+				line-height: 2;
+				&::before{
+					font-size: .4rem;
+				}
+				
+			}
+		}
+	}
 	.van-radio{
 		align-items: flex-start;
 		padding: .266667rem 0;
 		.van-radio__icon{
 			transition-duration: .0s;
+			width: .533333rem;
+			height: .533333rem;
 		}
 		.van-radio__icon .van-icon{
-			border: .026667rem solid rgba(33, 33, 33, 0.3);
 			width: .533333rem;
 			height: .533333rem;
 			border-radius: 50%;
@@ -1278,10 +1301,10 @@ a.item:active{
 			background-color: #F36A1C;
 			border: none;
 			.van-icon{
-				border: .026667rem solid #F36A1C;
+				border: none;
 				background-color: #F36A1C;
 				&::before{
-					margin: .106667rem 0 00;
+					margin: .133333rem 0 0 0;
 					content: ' ';
 					background-color: #fff;
 					width: .32rem;
