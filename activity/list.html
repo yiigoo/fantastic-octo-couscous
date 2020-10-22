@@ -20,11 +20,18 @@
     <div id="app">
         <div class="page-gapper page-md-bg">
             <!-- _assets/js/components.js -->
-            <header-search @enter="search"></header-search>
+            <div class="header-search-calendar">
+                <a href="#" class="right">
+                    <span class="icon icon-calendar"></span>
+                </a>
+                <header-search @enter="search"></header-search>
+                
+            </div>
             <page-tabs 
                 @on-change="tabsChange"
                 :datas="[{label: '全部',value: 0},{label: '培训',value: 1},{label: '讲座',value: 2},{label: '演出',value: 3},{label: '展览',value: 4}]">
             </page-tabs>
+           
             <div class="base-activity-list">
                 <van-list
                     v-model="loading"

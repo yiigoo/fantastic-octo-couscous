@@ -15,6 +15,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.inline-block {
+  display: inline-block;
+}
+view {
+  font-size: 0.32rem;
+  box-sizing: border-box;
+}
+image {
+  height: 100%;
+}
 a:link,
 a:visited,
 a:hover,
@@ -128,6 +138,9 @@ a.item:active {
   margin-top: 0.533333rem;
   padding: 0 0.426667rem 0.426667rem;
 }
+.index-md .home-swiper swiper {
+  height: 4rem;
+}
 .index-md .home-swiper .van-swipe__indicators {
   bottom: 0.266667rem;
 }
@@ -139,7 +152,7 @@ a.item:active {
   line-height: 0.8rem;
   height: 0.8rem;
   overflow: hidden;
-  bottom: 0.52rem;
+  bottom: 0.6rem;
   width: 100%;
   padding: 0 0.426667rem;
 }
@@ -158,6 +171,18 @@ a.item:active {
   transition: 0.3s width;
 }
 .index-md .home-swiper .van-swipe__indicator--active {
+  width: 0.453333rem;
+}
+.index-md .home-swiper .wx-swiper-dot {
+  width: 0.213333rem;
+  height: 0.106667rem;
+  opacity: 1;
+  border-radius: 0.213333rem;
+  transition: 0.3s width;
+  background-color: #fff;
+  display: inline-block;
+}
+.index-md .home-swiper .wx-swiper-dot-active {
   width: 0.453333rem;
 }
 .index-md .home-header {
@@ -185,7 +210,6 @@ a.item:active {
 .index-md .home-header .input-wrapper input {
   background: #FFFFFF;
   border-radius: 0.666667rem;
-  width: 100%;
   height: 0.853333rem;
   line-height: 0.853333rem;
   border: none;
@@ -257,6 +281,25 @@ a.item:active {
 .base-list .item .wrapper {
   padding-left: 0.213333rem;
   flex: 1;
+}
+.base-list .item .bottom .opt-bar {
+  line-height: 0.48rem;
+  height: 0.48rem;
+}
+.base-list .item .bottom .icon {
+  vertical-align: top;
+}
+.base-list .item .bottom [is="static/vant/icon/index"] {
+  vertical-align: top;
+}
+.base-list .item .bottom .van-icon {
+  width: 0.48rem;
+  color: #ccc;
+  height: 0.48rem;
+  font-size: 0.48rem;
+}
+.base-list .item .bottom .van-icon:before {
+  vertical-align: top;
 }
 .base-img-list {
   height: 3.866667rem;
@@ -363,6 +406,9 @@ a.item:active {
 .base-list-2 {
   margin: 0 -0.426667rem;
 }
+.base-list-2 swiper {
+  height: 6.05rem;
+}
 .base-list-2 .van-swipe {
   padding-bottom: 0.44rem;
 }
@@ -376,6 +422,21 @@ a.item:active {
   margin-right: 0.266667rem;
 }
 .base-list-2 .van-swipe__indicator--active {
+  background-color: #36B37E !important;
+}
+.base-list-2 .van-swipe__indicator {
+  opacity: 1;
+  background-color: #ccc;
+  width: 0.213333rem;
+  height: 0.213333rem;
+}
+.base-list-2 .wx-swiper-dot {
+  opacity: 1;
+  background-color: #ccc;
+  width: 0.213333rem;
+  height: 0.213333rem;
+}
+.base-list-2 .wx-swiper-dot-active {
   background-color: #36B37E !important;
 }
 .base-list-2 .wrapper {
@@ -508,12 +569,18 @@ a.item:active {
 .page-search-md .input-wrapper input {
   background: #eee;
   border-radius: 0.16rem;
-  width: 100%;
   height: 0.853333rem;
   line-height: 0.853333rem;
   border: none;
   padding: 0 0.88rem;
   color: #999;
+}
+.header-search-calendar .right {
+  margin-top: 0.373333rem;
+  float: right;
+}
+.header-search-calendar .page-search-md {
+  margin-right: 1.066667rem;
 }
 .page-tabs {
   padding: 0.213333rem 0;
@@ -588,6 +655,7 @@ a.item:active {
 }
 .btn-large {
   height: 1.066667rem;
+  line-height: 1.066667rem;
   border-width: 0.04rem;
   font-size: 0.373333rem;
   min-width: 3.733333rem;
@@ -1108,16 +1176,22 @@ a.item:active {
   align-items: flex-start;
   padding: 0.266667rem 0;
 }
+.card-form .van-radio .van-radio__icon {
+  transition-duration: 0s;
+}
 .card-form .van-radio .van-radio__icon .van-icon {
-  border: 1px solid rgba(33, 33, 33, 0.3);
+  border: 0.026667rem solid rgba(33, 33, 33, 0.3);
   width: 0.533333rem;
   height: 0.533333rem;
   border-radius: 50%;
-  transition-duration: 0s;
 }
-.card-form .van-radio .van-radio__icon--checked .van-icon {
+.card-form .van-radio .van-radio__icon--checked {
   background-color: #F36A1C;
   border: none;
+}
+.card-form .van-radio .van-radio__icon--checked .van-icon {
+  border: 0.026667rem solid #F36A1C;
+  background-color: #F36A1C;
 }
 .card-form .van-radio .van-radio__icon--checked .van-icon::before {
   margin: 0.106667rem 0 0;
@@ -1131,7 +1205,7 @@ a.item:active {
 .card-form .van-cell {
   padding: 0;
   padding-bottom: 0.64rem;
-  display: block;
+  display: block !important;
   font-size: 0.373333rem;
 }
 .card-form .van-cell .van-field__label {
@@ -1155,6 +1229,26 @@ a.item:active {
 }
 .card-form .van-cell.pb10 {
   padding-bottom: 0.266667rem !important;
+}
+.card-form .van-field__body .van-field__input {
+  background-color: #000;
+  padding: 0.133333rem 0.213333rem;
+  border: 1px solid #999999;
+  border-radius: 0.106667rem;
+  background: none;
+  line-height: 1.75;
+  height: auto;
+}
+.card-form .van-field__body .van-field__input--textarea {
+  padding: 0.213333rem;
+  min-height: 2.666667rem;
+  line-height: inherit;
+}
+.card-form .van-cell__title {
+  max-width: 100% !important;
+}
+.card-form .van-field__label {
+  color: #000;
 }
 .card-form .van-field__error-message {
   font-size: 0.373333rem;
