@@ -1116,6 +1116,10 @@ a.item:active {
   display: block;
   font-size: 0;
 }
+.full-img-title .banner {
+  width: 10rem;
+  height: 3.2rem;
+}
 .full-img-title .shadow {
   height: 3.2rem;
   background: linear-gradient(180deg, #FF881A 0%, #F36A1C 100%);
@@ -1722,16 +1726,17 @@ a.item:active {
   padding: 0.426667rem 0.293333rem 0.266667rem;
 }
 .volunteer-md .page-grid-3 .item {
-  padding: 0 0.133333rem 0.266667rem;
   display: block;
   float: left;
   width: 33.3333%;
+  box-sizing: content-box;
 }
 .volunteer-md .page-grid-3 .item .wrapper {
+  margin: 0 0.133333rem 0.266667rem;
   padding: 0.346667rem 0 0.346667rem 0.32rem;
   line-height: 0.64rem;
   color: #000;
-  background: #EEEEEE;
+  background: #FFF1DD;
   border-radius: 0.106667rem;
 }
 .volunteer-md .page-grid-3 .item .icon {
@@ -2244,11 +2249,11 @@ a.item:active {
 }
 .work-list .img img {
   border-radius: 0.16rem;
-  width: 100%;
+  width: 9.146667rem;
   height: 4.533333rem;
 }
 .work-list .wrapper {
-  margin-top: 0.266667rem;
+  margin-top: 0.1rem;
   display: flex;
 }
 .work-list .wrapper .name {
@@ -2299,7 +2304,7 @@ a.item:active {
   top: 2.826667rem;
 }
 .work-img-list .img-3 img {
-  width: 2.613333rem;
+  width: 2.506667rem;
   height: 2.293333rem;
 }
 .work-img-list .img-4 {
@@ -2309,6 +2314,6 @@ a.item:active {
   top: 2.826667rem;
 }
 .work-img-list .img-4 img {
-  width: 2.613333rem;
+  width: 2.506667rem;
   height: 2.293333rem;
 }
