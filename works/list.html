@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>文旅资讯</title>
+    <script src="../_assets/js/flexible.min.js"></script>
+    <script src="../_assets/js/fastclick.js"></script>
+    <script src="../_assets/js/base.js"></script>
+    <script src="../_assets/js/vue.min.js"></script>
+    <script src="../_assets/js/vant.js"></script>
+    <script src="../_assets/js/components.js"></script>
+    <link rel="stylesheet" href="../_assets/css/vant.css">
+    <link rel="stylesheet" href="../_assets/css/base.css">
+    <link rel="stylesheet" href="../_assets/css/icon.css">
+</head>
+<body>
+    <div id="app">
+        <div class="page-gapper page-md-bg">
+            <!-- _assets/js/components.js -->
+            <header-search @enter="search"></header-search>
+            <page-tabs 
+                @on-change="tabsChange"
+                :datas="[{label: '全部',value: 0},{label: '文旅动态',value: 1},{label: '相关政策',value: 2},{label: '热点新闻',value: 3}]">
+            </page-tabs>
+            <div class="work-list">
+                <van-list
+                    v-model="loading"
+                    :finished="finished"
+                    :finished-text="null"
+                    @load="onLoad"
+                    >
+                    <a href="detail.html" class="item" v-for="item in list" :key="item">
+                        <div class="img">
+                            <img :src="item.src" alt="" />
+                        </div>
+                        <div class="wrapper">
+                            <div class="name">
+                                {{ item.title }}
+                            </div>
+                            <div class="sub">
+                                {{ item.date }}
+                            </div>
+                        </div>
+                    </a>
+                </van-list>
+            </div>
+        </div>
+        <div class="loading-over" v-show="finished">
+            已经全部加载完毕
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                list: [], // 列表
+                loading: false, // 是否加载中
+                finished: false, // 加载完成
+            },
+            methods: {
+                // 重置
+                reset() {
+                    this.list = []
+                    this.loading = true
+                    this.finished = false
+                    this.onLoad()
+                },
+                // 去搜索
+                search(keyword) {
+                    console.log(keyword)
+                    this.reset()
+                },
+                // 分类切换
+                tabsChange(tab) {
+                    console.log(tab)
+                    this.reset()
+                },
+                onLoad() {
+                    // 异步更新数据
+                    // setTimeout 仅做示例，真实场景中一般为 ajax 请求
+                    setTimeout(() => {
+                        for (let i = 0; i < 10; i++) {
+                            this.list.push({
+                                src: '../_assets/images/100.png',
+                                title: '三江口夜景',
+                                date: '作者：黄清峰 2020/10/12'
+                            });
+                            this.list.push({
+                                src: '../_assets/images/101.png',
+                                title: '文旅资讯活动新闻发布会文旅资讯文旅资讯活动',
+                                date: '2020-08-09 10:09:01'
+                            })
+                        }
+
+                        // 加载状态结束
+                        this.loading = false;
+                        // 数据全部加载完成
+                        if (this.list.length >= 40) {
+                        this.finished = true;
+                        }
+                    }, 500);
+                },
+            },
+        })
+    </script>
+</body>
+</html>
