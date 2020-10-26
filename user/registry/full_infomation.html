@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>完善资料</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div class="page-card" id="app">
+        <div class="card-bg card-bg-height"></div>
+        <div class="card-title page-gapper">
+            完善资料
+        </div>
+        <div class="card-wrapper">
+           
+            <div class="card-form">
+                <van-form>
+                    <van-field
+                        :value="pageForm.nickname"
+                        label="昵称"
+                        required
+                        placeholder="请输入"
+                        :error-message="errorMsg">
+                    </van-field>
+
+                    <van-field
+                        :value="pageForm.name"
+                        label="真实姓名"
+                        required
+                        placeholder="请输入"
+                        :error-message="errorMsg">
+                    </van-field>
+
+                    <van-field
+                        :value="pageForm.sex"
+                        label="性别"
+                        required
+                        placeholder="请输入"
+                        :error-message="errorMsg">
+                    </van-field>
+
+                    <van-field
+                        :value="pageForm.idcard"
+                        label="身份证号码"
+                        required
+                        placeholder="请输入"
+                        :error-message="errorMsg">
+                    </van-field>
+
+                    <van-field
+                        v-model="pageForm.address1"
+                        label="选择地区"
+                        placeholder="请选择地区"
+                        @focus="onFoucs"
+                        :error-message="errorMsg">
+                    </van-field>
+
+                    <van-field
+                        @change="changeAddress"
+                        v-model="pageForm.address2"
+                        label="详细地址"
+                        placeholder="街道门牌、楼层房间号等信息"
+                        :error-message="errorMsg">
+                    </van-field>
+
+                    <div class="van-cell van-field-upload">
+                        <div class="van-field__label">上传头像</div>
+                        <div class="van-field__body">
+                            <div class="van-field__control van-field__control--custom">
+                                <van-uploader max-count="1" v-model="pageForm.uploadList" :max-size="1 * 1024 * 1024">
+                                    <div class="upload-md">
+                                        <span class="icon icon-camera"></span>
+                                        <br />
+                                        添加图片
+                                    </div>
+                                </van-uploader>
+                                <div class="text-sub">支持PNG、JPG格式图片，可上传一张图片，单张不超过1MB。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="btn btn-warning btn-large btn-long">立即提交</button>
+                    </div>
+
+                    <div class="text-sub mt15">
+                        温馨提示：请佩戴口罩，出示健康码，测量体温才能进入场馆。
+                    </div>
+                  </van-form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            pageForm: {
+                nickname: '',
+                name: '',
+                sex: '',
+                idcard: '',
+                province: '',
+                city: '',
+                district: '',
+                address1: '',
+                address2: '',
+                uploadList: []
+            },
+            errorMsg: ''
+        },
+        methods: {
+            onSubmit(values) {
+            },
+            changeMobile () {
+            },
+            changeCode () {
+
+            },
+            getCode() {
+            },
+            onFoucs (e) {
+                this.showArea = true
+                this.areaList = areas
+                this.value = '511504' //默认加载叙州区
+            },
+            onAreaConfirm(values) {
+                let data = values.target.values
+                this.pageForm.province = data[0].name
+                this.pageForm.city = data[1].name
+                this.pageForm.district = data[2].name
+                this.showArea = false
+                this.pageForm.address1 = this.pageForm.province + this.pageForm.city + this.pageForm.district
+            },
+            changeAddress (event) {
+                this.pageForm.address2 = event.mp.detail
+            },
+        },
+    })
+</script>
+</html>

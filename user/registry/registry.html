@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>立即注册</title>
+    <script src="../../_assets/js/flexible.min.js"></script>
+    <script src="../../_assets/js/fastclick.js"></script>
+    <script src="../../_assets/js/base.js"></script>
+    <script src="../../_assets/js/vue.min.js"></script>
+    <script src="../../_assets/js/vant.js"></script>
+    <link rel="stylesheet" href="../../_assets/css/vant.css">
+    <link rel="stylesheet" href="../../_assets/css/base.css">
+    <link rel="stylesheet" href="../../_assets/css/icon.css">
+</head>
+<body>
+    <div class="page-card" id="app">
+        <div class="card-bg card-bg-height"></div>
+        <div class="card-title page-gapper">
+            立即注册
+        </div>
+        <div class="card-wrapper">
+           
+            <div class="card-form">
+                <van-form>
+                    <van-field
+                        @change="changeMobile"
+                        :value="pageForm.mobile"
+                        clearable
+                        maxlength="11"
+                        label="手机号"
+                        placeholder="请输入手机号"
+                        :error-message="errorMsg1">
+                    </van-field>
+
+                    <van-field
+                        @change="changeCode"
+                        :value="pageForm.code"
+                        clearable
+                        label="验证码"
+                        placeholder="请输入"
+                        :error-message="errorMsg2"
+                        use-button-slot>
+                            <van-button slot="button" size="small" type="primary" :disabled="disabled" @click="getCode()">获取验证码</van-button>
+                        </van-field>
+
+                        <van-field
+                            @change="changePassword"
+                            v-model="pageForm.password"
+                            label="密码"
+                            type="password"
+                            placeholder="请输入"
+                            :error-message="errorMsg3">
+                        </van-field>
+
+                        <van-field
+                            @change="changeConformPassword"
+                            v-model="pageForm.conformPassword"
+                            label="确认密码"
+                            type="password"
+                            placeholder="请输入"
+                            :error-message="errorMsg4">
+                        </van-field>
+                    </div>
+
+                    <div class="btns">
+                        <button class="btn btn-warning btn-large btn-long">立即提交</button>
+                    </div>
+
+                    <div class="text-sub mt15">
+                        温馨提示：请佩戴口罩，出示健康码，测量体温才能进入场馆。
+                    </div>
+                  </van-form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            pageForm: {
+                mobile: '',
+                code: '',
+                password: '',
+                conformPassword: '',
+                uploadList: []
+            },
+            disabled: false,
+            errorMsg1: '',
+            errorMsg2: '',
+            errorMsg3: '',
+            errorMsg4: ''
+        },
+        methods: {
+            onSubmit(values) {
+            },
+            changeMobile () {
+            },
+            changeCode () {
+
+            },
+            getCode() {
+            },
+            //获取用户输入
+            changePassword (event) {
+                this.pageForm.password = event.mp.detail
+            },
+            //获取用户输入
+            changeConformPassword (event) {
+                this.pageForm.conformPassword = event.mp.detail
+            },
+        },
+    })
+</script>
+</html>

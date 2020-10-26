@@ -60,6 +60,9 @@ a.item:active {
 .mt5 {
   margin-top: 0.133333rem;
 }
+.ml10 {
+  margin-left: 0.266667rem;
+}
 .mt10 {
   margin-top: 0.266667rem;
 }
@@ -230,6 +233,9 @@ a.item:active {
 .index-md .home-guide a span {
   display: block;
   margin: 0 auto;
+}
+.index-md .page-home-guide a {
+  width: 25%;
 }
 .base-title {
   font-size: 0.48rem;
@@ -1005,6 +1011,17 @@ a.item:active {
   top: 0;
   width: 100%;
 }
+.page-card .card-bg-height {
+  height: 3.733333rem;
+}
+.page-card .card-title {
+  font-weight: bold;
+  font-size: 0.64rem;
+  margin-bottom: 0.533333rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
 .page-card .card-wrapper {
   margin: 0 0.426667rem 0.426667rem;
   padding: 0.32rem 0.426667rem;
@@ -1024,6 +1041,7 @@ a.item:active {
   font-weight: bold;
   color: #2DB553;
   padding-bottom: 1.066667rem;
+  border-bottom: 0.026667rem dashed #ccc;
 }
 .page-card .success .icon,
 .page-card .fail .icon {
@@ -1115,6 +1133,10 @@ a.item:active {
   width: 100%;
   display: block;
   font-size: 0;
+}
+.full-img-title .banner {
+  width: 10rem;
+  height: 3.2rem;
 }
 .full-img-title .shadow {
   height: 3.2rem;
@@ -1251,6 +1273,12 @@ a.item:active {
 }
 .card-form .van-cell.pb10 {
   padding-bottom: 0.266667rem !important;
+}
+.card-form .van-cell--required .van-field__label {
+  padding-left: 0.4rem;
+}
+.card-form .van-cell--required::before {
+  left: 0;
 }
 .card-form .van-field__body .van-field__input {
   background-color: #000;
@@ -1722,16 +1750,17 @@ a.item:active {
   padding: 0.426667rem 0.293333rem 0.266667rem;
 }
 .volunteer-md .page-grid-3 .item {
-  padding: 0 0.133333rem 0.266667rem;
   display: block;
   float: left;
   width: 33.3333%;
+  box-sizing: content-box;
 }
 .volunteer-md .page-grid-3 .item .wrapper {
+  margin: 0 0.133333rem 0.266667rem;
   padding: 0.346667rem 0 0.346667rem 0.32rem;
   line-height: 0.64rem;
   color: #000;
-  background: #EEEEEE;
+  background: #FFF1DD;
   border-radius: 0.106667rem;
 }
 .volunteer-md .page-grid-3 .item .icon {
@@ -2237,4 +2266,78 @@ a.item:active {
 .van-stepper .van-stepper__minus--disabled,
 .van-stepper .van-stepper__plus--disabled {
   border: 1px solid #eee;
+}
+.work-list .item {
+  display: block;
+  padding: 0.213333rem 0 0.373333rem;
+}
+.work-list .img img {
+  border-radius: 0.16rem;
+  width: 9.146667rem;
+  height: 4.533333rem;
+}
+.work-list .wrapper {
+  margin-top: 0.1rem;
+  display: flex;
+}
+.work-list .wrapper .name {
+  flex: 1;
+  font-weight: bold;
+  font-size: 0.373333rem;
+  color: #666;
+}
+.work-list .wrapper .sub {
+  flex: 1;
+  color: #999;
+  text-align: right;
+}
+.work-img-list {
+  margin: 0 0.106667rem;
+  position: relative;
+  height: 5.333333rem;
+}
+.work-img-list .img {
+  position: absolute;
+  display: block;
+}
+.work-img-list img {
+  border-radius: 0.133333rem;
+}
+.work-img-list .img-1 {
+  left: 0;
+  width: 3.546667rem;
+  height: 5.12rem;
+}
+.work-img-list .img-1 img {
+  width: 3.546667rem;
+  height: 5.12rem;
+}
+.work-img-list .img-2 {
+  right: 0;
+  width: 5.253333rem;
+  height: 2.613333rem;
+}
+.work-img-list .img-2 img {
+  width: 5.253333rem;
+  height: 2.613333rem;
+}
+.work-img-list .img-3 {
+  left: 3.68rem;
+  width: 2.506667rem;
+  height: 2.293333rem;
+  top: 2.826667rem;
+}
+.work-img-list .img-3 img {
+  width: 2.506667rem;
+  height: 2.293333rem;
+}
+.work-img-list .img-4 {
+  right: 0;
+  width: 2.506667rem;
+  height: 2.293333rem;
+  top: 2.826667rem;
+}
+.work-img-list .img-4 img {
+  width: 2.506667rem;
+  height: 2.293333rem;
 }

@@ -202,6 +202,9 @@
 .icon-guide-9 {
   background-image: url('../images/icon/icon-guide-9.svg');
 }
+.icon-guide-100 {
+  background-image: url('../images/icon/icon-guide-100.svg');
+}
 .icon-guide-10 {
   background-image: url('../images/icon/icon-guide-10.svg');
 }
@@ -211,20 +214,20 @@
   background-size: 0.64rem 0.64rem;
 }
 .icon-nav-1 {
-  background-image: url('../images/icon/icon-nav-1.svg');
+  background-image: url('../images/icon/icon-nav-1.png');
 }
 .icon-nav-2 {
-  background-image: url('../images/icon/icon-nav-2.svg');
+  background-image: url('../images/icon/icon-nav-2.png');
 }
 .icon-nav-3 {
-  background-image: url('../images/icon/icon-nav-3.svg');
+  background-image: url('../images/icon/icon-nav-3.png');
 }
 .icon-nav-4 {
-  background-image: url('../images/icon/icon-nav-4.svg');
+  background-image: url('../images/icon/icon-nav-4.png');
 }
 .icon-nav-5 {
-  background-image: url('../images/icon/icon-nav-5.svg');
+  background-image: url('../images/icon/icon-nav-5.png');
 }
 .icon-nav-6 {
-  background-image: url('../images/icon/icon-nav-6.svg');
+  background-image: url('../images/icon/icon-nav-6.png');
 }
